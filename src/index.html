@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Social Network</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Social Network</title>
 </head>
+
 <body>
-<header></header>
-<main>
-  <h1>inicia sesion</h1>
-  <!-- <input type="text"id="input"> -->
-  <button type="button"id="login">inicia con google</button>
+    <header></header>
+    <main>
+        <h1>registro de usuario</h1>
+        <input id="email" type="email" placeholder="ingresa email">
+        <input id="contraseña" type="password" placeholder="ingresa contraseña">
+        <button id="login" type="button">enviar</button>
 
-  </div>
-</main>
+        <h1>ingreso de usuario</h1>
+        <input id="email-registrado" type="email" placeholder="ingresa email">
+        <input id="contraseña-registrado" type="password" placeholder="ingresa contraseña">
+        <button id="login-registrado" type="button">enviar</button>
 
-<footer>afdtsygfydsguifguidhui</footer>
+        <div id="contenido" class="contenido"></div>
+
+    </main>
+
+    <!-- <footer>afdtsygfydsguifguidhui</footer> -->
 
 
-  <script type="module" src="main.js"></script>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDfuLuqE0BCBBNZk-DklM0JRJ3hdyflVSU",
-    authDomain: "social-network-3938b.firebaseapp.com",
-    databaseURL: "https://social-network-3938b.firebaseio.com",
-    projectId: "social-network-3938b",
-    storageBucket: "",
-    messagingSenderId: "887676341487",
-    appId: "1:887676341487:web:3e837b84e4501e0f"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+    <script type="module" src="main.js"></script>
 </body>
+
 </html>
