@@ -5,4 +5,3 @@ export const viewHome = () => {
     formHome.innerHTML = template;
     return formHome;
   };
-}

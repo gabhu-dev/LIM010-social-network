@@ -14,7 +14,7 @@ export const viewSignIn = () => {
 											</form>
 											<input type="button" name="" value="Salir" id="btn-sign-out">
 											<p id="hola"></p>
-										</section>`;
+										</section>`; 
   formSignIn.innerHTML = template;
   return formSignIn;
 };
