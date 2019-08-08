@@ -1,0 +1,21 @@
+*{
+	box-sizing: border-box;
+}
+.flex-c{
+	display: flex;
+	flex-direction: column;
+}
+.flex-r{
+	display: flex;
+	flex-direction: row;
+}
+.center-items{
+	align-items: center;
+	justify-content: center;
+}
+.hide{
+	display: none;
+}
+.size{
+	height: 100vh;
+}
