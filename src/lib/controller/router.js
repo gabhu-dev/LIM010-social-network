@@ -1,5 +1,5 @@
-import { viewSignIn } from './views/sign-in.js';
-import { viewSignUp } from './views/sign-up.js';
+import { viewSignIn } from '../views/sign-in.js';
+import { viewSignUp } from '../views/sign-up.js';
 
 const viewTemplate = (routers) => {
   const router = routers.substr(2, routers.length - 2);
@@ -18,14 +18,13 @@ const viewTemplate = (routers) => {
   }
 };
 const changeTemplate = (hash) => {
-  if (hash === '#/signup' || hash === '#/signin') return viewTemplate(hash);
+  if (hash === '#/signup' || hash === '#/signin') {
+    return viewTemplate(hash);
+  }
+  return viewTemplate(hash);
 };
 
 export const initRouter = () => {
   window.addEventListener('load', changeTemplate(window.location.hash));
   if (('onhashchange' in window)) window.onhashchange = () => changeTemplate(window.location.hash);
 };
-
-/* export const initRouter = () => {
-  window.addEventListener('hashchange', () => changeTemplate(window.location.hash));
-}; */

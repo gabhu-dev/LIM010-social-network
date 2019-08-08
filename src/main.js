@@ -4,7 +4,7 @@
 
 // myFunction();
 
-import { initRouter } from './lib/router.js';
+import { initRouter } from './lib/controller/router.js';
 
 const init = () => {
   const firebaseConfig = {

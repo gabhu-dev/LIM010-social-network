@@ -1,7 +1,7 @@
 /* eslint-disable no-tabs */
 export const viewSignUp = () => {
   const formSignUp = document.createElement('form');
-  const template = ` 	<section class="">
+  const template = ` 	<section class="flex-c center-items size">
 												<img src="" alt="">
 												<h1>Crea una cuenta</h1>
 												<input type="email" name="email" placeholder="Email" id="email" class="" required>
