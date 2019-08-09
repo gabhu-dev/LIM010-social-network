@@ -2,9 +2,9 @@
 import { signInEmail, signInGoogle, signInFacebook } from '../controller/ingresar.js';
 
 export const viewSignIn = () => {
-    const formSignIn = document.createElement('section');
-    const template =
-        `<section id="log-in" class="flex-c center-items size bg-color-blue">
+  const formSignIn = document.createElement('section');
+  const template = `
+  <section id="log-in" class="flex-c center-items size bg-color-blue">
         <p>Aqui va la imagen</p>
         <p>Se da la bienvenida</p>
         <form name="login-form" class="flex-f">
@@ -22,18 +22,18 @@ export const viewSignIn = () => {
 			  <p id="hola"></p>
        </section>`;
 
-    formSignIn.innerHTML = template;
-    const btnSignIn = formSignIn.querySelector('#btn-login');
-    const btnSignGog = formSignIn.querySelector('#login-gog');
-    const btnSignFb = formSignIn.querySelector('#login-fb');
-    btnSignIn.addEventListener('click', () => {
-        signInEmail();
-    });
-    btnSignGog.addEventListener('click', () => {
-        signInGoogle();
-    });
-    btnSignFb.addEventListener('click', () => {
-        signInFacebook();
-    });
-    return formSignIn;
+  formSignIn.innerHTML = template;
+  const btnSignIn = formSignIn.querySelector('#btn-login');
+  const btnSignGog = formSignIn.querySelector('#login-gog');
+  const btnSignFb = formSignIn.querySelector('#login-fb');
+  btnSignIn.addEventListener('click', () => {
+    signInEmail();
+  });
+  btnSignGog.addEventListener('click', () => {
+    signInGoogle();
+  });
+  btnSignFb.addEventListener('click', () => {
+    signInFacebook();
+  });
+  return formSignIn;
 };
