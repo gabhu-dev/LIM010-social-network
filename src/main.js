@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -16,7 +15,6 @@ const init = () => {
     messagingSenderId: '887676341487',
     appId: '1:887676341487:web:3e837b84e4501e0f',
   };
-    // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 };
 
