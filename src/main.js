@@ -22,4 +22,5 @@ const init = () => {
 
 window.addEventListener('load', () => {
   initRouter();
+  init();
 });
