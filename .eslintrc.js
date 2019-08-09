@@ -27,6 +27,10 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
+<<<<<<< HEAD
     'linebreak-style':0
+=======
+    "linebreak-style": 0
+>>>>>>> acc0ab2099529e3a3190d3cb95552ad93fa3876a
   },
 };
