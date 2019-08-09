@@ -16,7 +16,7 @@ export const viewSignIn = () => {
 												<p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate">Regístrate</a></p>
 											</form>
 											<p id="hola"></p>
-										</section>`;
+										</section>`; 
   formSignIn.innerHTML = template;
   const btnSignIn = formSignIn.querySelector('#btn-login');
   const btnSignGog = formSignIn.querySelector('#login-gog');
