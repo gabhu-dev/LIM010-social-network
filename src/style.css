@@ -1,5 +1,6 @@
 *{
 	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
 }
 .flex-c{
 	display: flex;
@@ -18,4 +19,50 @@
 }
 .size{
 	height: 100vh;
+}
+.bg-color-blue{
+	background-color: #8fd8d2;	
+}
+.bg-color-pink{
+	background-color: #fedcd2;
+}
+.input-form{
+	height: 3em;
+	width: 20em;
+	border-radius: 1em;
+	border: none;
+	margin: 1em;
+}
+.btn-signin{
+	background-color: #fedcd2;
+	height: 2em;
+	width: 5em;
+	border-radius: 1em;
+	border: none;
+	outline: none;
+	color: #df744a;
+	font-size: 1em;
+	font-weight: 500;
+	margin: 1em;
+}
+.btn-signup{
+	background-color: #8fd8d2;
+	height: 2em;
+	width: 6em;
+	border-radius: 1em;
+	border: none;
+	outline: none;
+	color: #2d8d85;
+	font-size: 1em;
+	font-weight: 500;
+	margin: 1em;
+}
+.btn-registrate{
+	outline: none;
+	text-decoration: none;
+	color: #2d8d85;
+	font-weight: 500;
+}
+.w-max{
+	width: max-content;
 }

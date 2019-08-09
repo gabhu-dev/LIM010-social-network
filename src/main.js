@@ -22,4 +22,5 @@ firebase.initializeApp(firebaseConfig);
 
 window.addEventListener('load', () => {
   initRouter();
+  init();
 });
