@@ -14,6 +14,7 @@ const init = () => {
     storageBucket: '',
     messagingSenderId: '887676341487',
     appId: '1:887676341487:web:3e837b84e4501e0f',
+    
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

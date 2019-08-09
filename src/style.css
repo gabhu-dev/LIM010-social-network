@@ -97,3 +97,6 @@
     display: flex;
     flex-direction: row;
 }
+.icons-size{
+    font-size: 2.5em;
+}
