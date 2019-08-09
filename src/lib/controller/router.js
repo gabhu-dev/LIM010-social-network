@@ -1,5 +1,4 @@
 // esto actua como controlador general de las urls
-
 import { viewSignIn } from '../views/sign-in.js';
 import { viewSignUp } from '../views/sign-up.js';
 
