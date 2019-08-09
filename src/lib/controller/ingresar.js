@@ -1,4 +1,5 @@
 export const signInEmail = (email, password) => {
+  // eslint-disable-next-line no-console
   console.log('ya te loguease');
   firebase.auth().signInWithEmailAndPassword(email, password);
 };
@@ -12,4 +13,8 @@ export const signInFacebook = () => {
 };
 export const signUpWithEmail = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password);
+};
+export const signOut = () => {
+  firebase.auth().signOut().then(() => {})
+    .catch((error) => {});
 };

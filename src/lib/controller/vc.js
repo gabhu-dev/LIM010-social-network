@@ -1,4 +1,9 @@
-import { signInEmail, signInGoogle, signInFacebook, signUpWithEmail } from './ingresar.js';
+import {
+  signInEmail,
+  signInGoogle,
+  signInFacebook,
+  signUpWithEmail,
+} from './ingresar.js';
 
 export const signInwithEmail = () => {
   const emailSignIn = document.querySelector('#email-signin').value;
