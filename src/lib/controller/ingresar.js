@@ -1,4 +1,3 @@
-
 export const signInEmail = (email, password) => {
   // console.log('ya te loguease');
   firebase.auth().signInWithEmailAndPassword(email, password);
