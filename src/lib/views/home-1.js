@@ -7,4 +7,5 @@ export const viewHome = () => {
 <a></a>
 `;
   screenOne.innerHTML = template;
+  return screenOne;
 };
