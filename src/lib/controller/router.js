@@ -1,6 +1,7 @@
 // esto actua como controlador general de las urls
 import { viewSignIn } from '../views/sign-in.js';
 import { viewSignUp } from '../views/sign-up.js';
+import { viewHome } from '../views/home-1.js';
 
 const viewTemplate = (routers) => {
   const router = routers.substr(2, routers.length - 2);
@@ -13,13 +14,16 @@ const viewTemplate = (routers) => {
     case 'signup':
       container.appendChild(viewSignUp());
       break;
+    case 'home':
+      container.appendChild(viewHome());
+      break;
     default:
       container.appendChild(viewSignIn());
       break;
   }
 };
 const changeTemplate = (hash) => {
-  if (hash === '#/signup' || hash === '#/signin') {
+  if (hash === '#/signup' || hash === '#/signin' || hash === '#/home') {
     return viewTemplate(hash);
   }
   return viewTemplate(hash);
