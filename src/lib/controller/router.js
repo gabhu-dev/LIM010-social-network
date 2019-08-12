@@ -1,7 +1,12 @@
+/* eslint-disable import/no-cycle */
 // esto actua como controlador general de las urls
 import { viewSignIn } from '../views/sign-in.js';
 import { viewSignUp } from '../views/sign-up.js';
-// import { viewHome } from '../views/home-1.js';
+import { viewHome } from '../views/home-1.js';
+
+export const changeHash = (nameHash) => {
+  window.location.hash = nameHash;
+};
 
 const viewTemplate = (routers) => {
   const router = routers.substr(2, routers.length - 2);
@@ -14,9 +19,9 @@ const viewTemplate = (routers) => {
     case 'signup':
       container.appendChild(viewSignUp());
       break;
-    // case 'home':
-    //   container.appendChild(viewHome());
-    //   break;
+    case 'home':
+      container.appendChild(viewHome());
+      break;
     default:
       container.appendChild(viewSignIn());
       break;
@@ -33,3 +38,5 @@ export const initRouter = () => {
   window.addEventListener('load', changeTemplate(window.location.hash));
   if (('onhashchange' in window)) window.onhashchange = () => changeTemplate(window.location.hash);
 };
+
+

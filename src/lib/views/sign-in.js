@@ -1,5 +1,7 @@
-import {signInEmail, signInGoogle, signInFacebook, signOut } from '../controller/ingresar.js';
-import { viewHome } from './home-1.js';
+/* eslint-disable import/no-cycle */
+import { signInEmail, signInGoogle, signInFacebook, signOut } from '../controller/ingresar.js';
+import { changeHash } from '../controller/router.js';
+// import { viewHome } from './home-1.js';
 
 export const viewSignIn = () => {
   const formSignIn = document.createElement('section');
@@ -19,7 +21,7 @@ export const viewSignIn = () => {
     <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate">Regístrate</a></p>
     <button id="btn-cerrar">cerrar sesion</button>
     `;
-    // <input type="button" ><a href="#/home" name="log-in" value="Log in" id="btn-login" class="btn-signin "></a>
+  // <input type="button" ><a href="#/home" name="log-in" value="Log in" id="btn-login" class="btn-signin "></a>
   formSignIn.innerHTML = template;
   formSignIn.setAttribute('class', 'flex-c center-items size bg-color-blue');
   const btnSignIn = formSignIn.querySelector('#btn-login');
@@ -30,10 +32,7 @@ export const viewSignIn = () => {
     const email = document.getElementById('email-signin').value;
     const password = document.getElementById('password-signin').value;
     signInEmail(email, password)
-      .then(() => {
-        alert('por fin');
-        viewHome();
-      });
+      .then(() => changeHash('/home'));
   });
   btnSignGog.addEventListener('click', () => {
     signInGoogle();
