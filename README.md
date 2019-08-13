@@ -1,4 +1,4 @@
-# HAYLLU
+# Hey! HAYLLU
 
 Con la nueva ola de la cultura corena en Latinoámerica ,las peliculas,novelas,comida y musica coreana constituyen una nueva alternativa ante los ojos de muchas personas,sobretodo en la musica y las novelas por el deleite de ver a sus artistas favoritos en accion.
 
