@@ -9,7 +9,7 @@ export const viewSignIn = () => {
   <div class ="two-columns">
     <img src="./lib/img/2.png" class="hide flex-c sizing" alt="logo hayllu"/>
     <div class="flex-c center-items">
-      <img src="./lib/img/logo3.PNG"/ class="logo" alt="logo hey! hallyu">
+      <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
       <p>Bienvenidxs a Hey! Hallyu.</p>
       <form name="login-form" class="flex-c center-items">
         <input type="email" name="email" placeholder="Email" id="email-signin" class="input-form flex-c " required>
