@@ -5,7 +5,7 @@ export const viewSignUp = () => {
   const formSignUp = document.createElement('section');
   const template = `
   <form class="flex-c center-items size">
-		<img src="" alt="">
+    <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
 		<p>Crea tu cuenta y disfruta del contenido</p>
 		<input type="email" name="email" placeholder="Email" id="email-signup" class="input-form" required>
     <input type="password" name="password" placeholder="Password" id="password-signup" class="input-form" required>
@@ -27,7 +27,7 @@ export const viewSignUp = () => {
           verification(email);
           error.innerHTML = 'Se le envio un correo de confirmación a su bandeja de entrada';
         });
-    } else{
+    } else {
       error.innerHTML = 'La contraseña debe ser mayor a 6 caracteres';
     }
   });
