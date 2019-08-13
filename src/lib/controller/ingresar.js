@@ -1,4 +1,3 @@
-// import { verification } from './verification.js';
 
 export const signUpWithEmail = (email, password) => {
   return firebase.auth().createUserWithEmailAndPassword(email, password);

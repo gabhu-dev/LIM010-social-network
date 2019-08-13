@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-cycle */
 // esto actua como controlador general de las urls
 import { viewSignIn } from '../views/sign-in.js';
 import { viewSignUp } from '../views/sign-up.js';
-import { viewHome } from '../views/home-1.js';
+import { viewHome } from '../views/profile.js';
 
 export const changeHash = (hashName) => {
   window.location.hash = hashName;
