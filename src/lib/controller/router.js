@@ -4,8 +4,8 @@ import { viewSignIn } from '../views/sign-in.js';
 import { viewSignUp } from '../views/sign-up.js';
 import { viewHome } from '../views/home-1.js';
 
-export const changeHash = (nameHash) => {
-  window.location.hash = nameHash;
+export const changeHash = (hashName) => {
+  window.location.hash = hashName;
 };
 
 const viewTemplate = (routers) => {
@@ -38,5 +38,3 @@ export const initRouter = () => {
   window.addEventListener('load', changeTemplate(window.location.hash));
   if (('onhashchange' in window)) window.onhashchange = () => changeTemplate(window.location.hash);
 };
-
-

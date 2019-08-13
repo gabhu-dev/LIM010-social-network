@@ -6,12 +6,12 @@ export const viewSignUp = () => {
   const template = `
   <form class="flex-c center-items size">
 		<img src="" alt="">
-		<h1>Crea una cuenta</h1>
+		<p>Crea tu cuenta y disfruta del contenido</p>
 		<input type="email" name="email" placeholder="Email" id="email-signup" class="input-form" required>
     <input type="password" name="password" placeholder="Password" id="password-signup" class="input-form" required>
-    <button  class="btn-signup" id="btn-sign-up">Registrar</button>
+    <button  class="btn-signup bg-color-blue c-darkblue" id="btn-sign-up">Registrar</button>
     <a href ="#/signin">Volver</a>
-    <p class="" id="msg-warning" ></p>
+    <p class="error" id="msg-warning" ></p>
 	</form>`;
   formSignUp.innerHTML = template;
   formSignUp.setAttribute('class', 'bg-color-pink');
@@ -20,14 +20,14 @@ export const viewSignUp = () => {
     e.preventDefault();
     const email = document.querySelector('#email-signup').value;
     const password = document.querySelector('#password-signup').value;
+    const error = document.querySelector('#msg-warning');
     if (password.length >= 6) {
       signUpWithEmail(email, password)
         .then(() => {
-          alert('valida tu correo');
           verification(email);
         });
     } else {
-      document.getElementById('msg-warning').innerHTML = 'La contraseña debe ser mayor a 6 caracteres';
+      error.innerHTML = 'La contraseña debe ser mayor a 6 caracteres';
     }
   });
   return formSignUp;
