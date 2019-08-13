@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 
 export const signUpWithEmail = (email, password) => {
   return firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -16,18 +17,17 @@ export const signInFacebook = () => {
   return firebase.auth().signInWithRedirect(provider);
 };
 
-export const signOut = () => {
-  firebase.auth().signOut().then(() => {
-    console.log('saliste');
-  })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+// export const signOut = () => {
+//   firebase.auth().signOut().then(() => {
+//   })
+//   .catch((error) => {
+//     });
+// };
 
 export const verification = () => {
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {
+    // eslint-disable-next-line no-console
     console.log('se verifico');
     // Email sent.
   }).catch((error) => {
