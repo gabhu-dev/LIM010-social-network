@@ -25,8 +25,9 @@ export const viewSignUp = () => {
       signUpWithEmail(email, password)
         .then(() => {
           verification(email);
+          error.innerHTML = 'Se le envio un correo de confirmación a su bandeja de entrada';
         });
-    } else {
+    } else{
       error.innerHTML = 'La contraseña debe ser mayor a 6 caracteres';
     }
   });
