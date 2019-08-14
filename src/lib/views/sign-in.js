@@ -9,19 +9,21 @@ export const viewSignIn = () => {
     <img src="./lib/img/2.png" class="hide flex-c sizing" alt="logo hayllu"/>
     <div class="flex-c center-items">
       <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
-      <p>Bienvenidxs a Hey! Hallyu.</p>
+      <p>Bienvenidxs a Hey! Hallyu.<br>
+      La web más comentada</p>
+      <p class="error" id=msg-wrong></p>
       <form name="login-form" class="flex-c center-items">
-        <input type="email" name="email" placeholder="Correo Electrónico" id="email-signin" class="input-form flex-c " required autofocus>
-        <input type="password" name="password" placeholder="Contraseña" id="password-signin" class="input-form flex-c" required>
+        <input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email-signin" class="input-form flex-c " required autofocus>
+        <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signin" class="input-form flex-c" required>
         <input type="button"name="log-in" value="Iniciar Sesión" id="btn-login" class="btn-signin c-darkpink bg-color-pink" ><a href="#/home"></a>
       </form>
       <p>O bien ingresa con...</p>
       <div class="logos-face-google w-max">
         <i class='bx bxl-facebook-square icons-size' style='color:#485aa3' id="login-fb" ></i>
-        <i class='bx bxl-google-plus-circle icons-size' style='color:#e4e55a' id="login-gog" ></i>
+        <i class='bx bxl-google-plus-circle icons-size' style='color:#d2070a' id="login-gog" ></i>
       </div>
       <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate c-darkblue">Regístrate</a></p>
-      <p class="error" id=msg-wrong></p>
+      
     </div>
   </div>
   `;
@@ -40,7 +42,7 @@ export const viewSignIn = () => {
       signInEmail(email, password)
         .then(() => changeHash('/home'))
         .catch(() => {
-          error.innerHTML = 'eroro';
+          error.innerHTML = '¡Escribe una cuenta válida!';
         });
     }
   });

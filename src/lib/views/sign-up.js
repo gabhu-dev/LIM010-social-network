@@ -9,8 +9,8 @@ export const viewSignUp = () => {
   <form class="flex-c center-items size bg-color-white">
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
 		<p>Crea tu cuenta y disfruta del contenido</p>
-		<input type="email" name="email" placeholder="Correo Electrónico" id="email-signup" class="input-form" required autofocus>
-    <input type="password" name="password" placeholder="Contraseña" id="password-signup" class="input-form" required>
+		<input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email-signup" class="input-form" required autofocus>
+    <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signup" class="input-form" required>
     <button  class="btn-signup bg-color-blue c-darkblue" id="btn-sign-up">Registrar</button>
     <a href ="#/signin">Volver</a>
     <p class="error" id="msg-warning" ></p>
@@ -27,7 +27,7 @@ export const viewSignUp = () => {
       if (password.length >= 6) {
         signUpWithEmail(email, password)
           .then(() => {
-            error.innerHTML = 'Se le envio un correo de confirmación a su bandeja de entrada';
+            error.innerHTML = 'Se le envio un correo de confirmación a su correo dado &#9993;';
             verification(email)
               .then(() => {
                 changeHash('/signin');
