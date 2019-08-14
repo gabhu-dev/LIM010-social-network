@@ -38,7 +38,7 @@
 .input-form {
     height: 3em;
     width: 20em;
-    border-radius: 1em;
+    border-radius: 2em;
     border: none;
     margin: 1em;
     outline-style: none;
@@ -52,7 +52,7 @@
 .btn-signin {
     height: 2.5em;
     width: max-content;
-    border-radius: 1em;
+    border-radius: 2em;
     border: none;
     outline: none;
     font-size: 1em;
@@ -111,6 +111,12 @@
         flex-grow: 1;
         width: 50%;
         background-image: url(./lib/img/2.png);
+        background-size: cover;
+    }
+    .banner-r{
+        flex-grow: 1;
+        width: 50%;
+        background-image: url(./lib/img/3.png);
         background-size: cover;
     }
     .flex-c {

@@ -4,9 +4,11 @@ import { signUpWithEmail, verification } from '../controller/ingresar.js';
 import { changeHash } from '../controller/router.js';
 
 export const viewSignUp = () => {
-  const formSignUp = document.createElement('section');
+  const formSignUp = document.createElement('div');
   const template = `
-  <form class="flex-c center-items size bg-color-white">
+  <div class="banner-r two-col center-items">
+  </div>
+  <form class="flex-c center-items two-col">
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
     <p>Crea tu cuenta y disfruta del contenido</p>
     <input type="text" name="nickname" placeholder=" &#128100; Usuario" id="nickname" class="input-form pink" required focus >
@@ -17,7 +19,7 @@ export const viewSignUp = () => {
     <p class="error" id="msg-warning" ></p>
 	</form>`;
   formSignUp.innerHTML = template;
-  formSignUp.setAttribute('class', 'bg-color-pink flex-c center-items');
+  formSignUp.setAttribute('class', 'bg-color-pink flex-r size center-items');
   const btnSignUp = formSignUp.querySelector('#btn-sign-up');
   btnSignUp.addEventListener('click', (e) => {
     e.preventDefault();
