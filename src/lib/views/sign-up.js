@@ -9,8 +9,8 @@ export const viewSignUp = () => {
   <form class="flex-c center-items size bg-color-white">
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
 		<p>Crea tu cuenta y disfruta del contenido</p>
-		<input type="email" name="email" placeholder="Email" id="email-signup" class="input-form" required>
-    <input type="password" name="password" placeholder="Password" id="password-signup" class="input-form" required>
+		<input type="email" name="email" placeholder="Correo Electrónico" id="email-signup" class="input-form" required autofocus>
+    <input type="password" name="password" placeholder="Contraseña" id="password-signup" class="input-form" required>
     <button  class="btn-signup bg-color-blue c-darkblue" id="btn-sign-up">Registrar</button>
     <a href ="#/signin">Volver</a>
     <p class="error" id="msg-warning" ></p>
