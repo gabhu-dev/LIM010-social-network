@@ -3,13 +3,13 @@ import { signInEmail, signInGoogle, signInFacebook } from '../controller/ingresa
 import { changeHash } from '../controller/router.js';
 
 export const viewSignIn = () => {
-  const formSignIn = document.createElement('section');
+  const formSignIn = document.createElement('div');
   const template = `
-  <div class ="two-columns">
-    <img src="./lib/img/2.png" class="hide flex-c sizing" alt="logo hayllu"/>
-    <div class="flex-c center-items">
+  <div class ="banner center-items two-col">
+  </div>
+  <div class="center-items two-col flex-c">
       <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
-      <p>Bienvenidxs a Hey! Hallyu.<br>
+      <p class="w-max">Bienvenidxs a Hey! Hallyu.<br>
       La web más comentada</p>
       <p class="error" id=msg-wrong></p>
       <form name="login-form" class="flex-c center-items">
@@ -19,16 +19,14 @@ export const viewSignIn = () => {
       </form>
       <p>O bien ingresa con...</p>
       <div class="logos-face-google w-max">
-        <i class='bx bxl-facebook-square icons-size' style='color:#485aa3' id="login-fb" ></i>
-        <i class='bx bxl-google-plus-circle icons-size' style='color:#d2070a' id="login-gog" ></i>
+        <i class='bx bxl-facebook icons-size' style='color:#485aa3' id="login-fb" ></i>
+        <i class='bx bxl-google icons-size' style='color:#d2070a' id="login-gog" ></i>
       </div>
       <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate c-darkblue">Regístrate</a></p>
-      
-    </div>
   </div>
   `;
   formSignIn.innerHTML = template;
-  formSignIn.setAttribute('class', 'flex-c center-items size bg-color-blue');
+  formSignIn.setAttribute('class', 'flex-r center-items size bg-color-blue');
   const btnSignIn = formSignIn.querySelector('#btn-login');
   const btnSignGog = formSignIn.querySelector('#login-gog');
   const btnSignFb = formSignIn.querySelector('#login-fb');
