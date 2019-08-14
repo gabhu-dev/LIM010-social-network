@@ -13,8 +13,8 @@ export const viewSignIn = () => {
       La web más comentada</p>
       <p class="error" id=msg-wrong></p>
       <form name="login-form" class="flex-c center-items">
-        <input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email-signin" class="input-form flex-c " required autofocus>
-        <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signin" class="input-form flex-c" required>
+        <input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email-signin" class="input-form flex-c pink" required focus>
+        <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signin" class="input-form flex-c pink" required>
         <input type="button"name="log-in" value="Iniciar Sesión" id="btn-login" class="btn-signin c-darkpink bg-color-pink" ><a href="#/home"></a>
       </form>
       <p>O bien ingresa con...</p>

@@ -52,7 +52,10 @@
     outline-style: none;
     padding: 1em;
 }
-
+.pink:focus{
+    box-shadow: 0 0 5px rgb(233, 186, 186);
+    border:1px solid rgba(236, 151, 151, 0.8);
+}
 .btn-signup,
 .btn-signin {
     height: 2.5em;
