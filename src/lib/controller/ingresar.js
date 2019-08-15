@@ -1,11 +1,11 @@
-/* eslint-disable arrow-body-style */
-
 export const signUpWithEmail = (email, password) => {
-  return firebase.auth().createUserWithEmailAndPassword(email, password);
+  const signUp = firebase.auth().createUserWithEmailAndPassword(email, password);
+  return signUp;
 };
 
 export const signInEmail = (email, password) => {
-  return firebase.auth().signInWithEmailAndPassword(email, password);
+  const signEmail = firebase.auth().signInWithEmailAndPassword(email, password);
+  return signEmail;
 };
 
 export const signInGoogle = () => {
