@@ -87,6 +87,7 @@
 .icons-size {
     font-size: 3em;
     margin: .2em;
+    cursor: pointer;
 }
 .logo {
     height: 9em;
@@ -96,7 +97,6 @@
 .error {
     color: red;
     font-size: 1em;
-    font-weight: bolder;
     margin: 1em;
 }
 
