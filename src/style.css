@@ -87,6 +87,7 @@
 .icons-size {
     font-size: 3em;
     margin: .2em;
+    cursor: pointer;
 }
 .logo {
     height: 9em;
@@ -94,9 +95,8 @@
     margin-bottom: 1em;
 }
 .error {
-    color: red;
+    color:#2d8d85;
     font-size: 1em;
-    font-weight: bolder;
     margin: 1em;
 }
 
@@ -110,13 +110,13 @@
     .banner{
         flex-grow: 1;
         width: 50%;
-        background-image: url(./lib/img/2.png);
+        background-image: url(./lib/img/1.png);
         background-size: cover;
     }
     .banner-r{
         flex-grow: 1;
         width: 50%;
-        background-image: url(./lib/img/3.png);
+        background-image: url(./lib/img/8.png);
         background-size: cover;
     }
     .flex-c {
@@ -141,5 +141,8 @@
     .input-form {
         height: 4em;
         width: 38em;
+    }
+    .center{
+        text-align: center;
     }
 }
