@@ -33,8 +33,7 @@ export const signIn = (e) => {
 
 export const signInFb = (e) => {
   e.preventDefault();
-  const provider = new firebase.auth.FacebookAuthProvider();
-  signInFacebook(provider)
+  signInFacebook()
     .then(() => {
       window.location.hash = '#/home';
     }).catch((error) => {
@@ -46,14 +45,10 @@ export const signInFb = (e) => {
     });
 };
 
-export const signInGoogleV = (e) => {
-  e.preventDefault();
-  const provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  signInGoogle(provider)
+export const signInGoogleV = () => {
+  signInGoogle()
     .then(() => {
-      //window.location.hash = '#/signin';
-      alert();
+      window.location.hash = '#/home';
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
