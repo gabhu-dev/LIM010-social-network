@@ -1,33 +1,27 @@
-// importamos la funcion que vamos a testear
-// eslint-disable-next-line import/no-unresolved
-// import { myFunction } from '../src/lib/index';
+import { signInEmail, signUpWithEmail } from '../src/lib/controller/ingresar.js';
 
-// describe('myFunction', () => {
-//   it('debería ser una función', () => {
-//     expect(typeof myFunction).toBe('function');
-//   });
-// })
-import { signInEmail } from '../src/lib/controller/ingresar.js';
-
+// configuracion de mock de firebase
 const firebasemock = require('firebase-mock');
 
-const mockauth = new firebasemock.MockAuthentication();
+const mockauth = new firebasemock.MockFirebase();
 const mockdatabase = new firebasemock.MockFirebase();
+mockauth.autoFlush();
 
 global.firebase = firebasemock.MockFirebaseSdk(
+  // use null if your code does not use RTDB
   path => (path ? mockdatabase.child(path) : null),
   () => mockauth,
 );
 
-// describe('registro', () => {
-//   it('Deberia poder registrarse', () => signUpWithEmail('laboratoria@lab.com', '123456789')
-//     .then((additionalUserInfo) => {
-//       expect(additionalUserInfo.isNewUser).toBe('true');
-//     }));
-// });
-describe('Iniciar Sesión', () => {
-  it('Debería iniciar sesion', () => signInEmail('kmontezam@gmail.com', '123456')
+describe('registro', () => {
+  it('Deberia poder registrarse', () => signUpWithEmail('laboratoria@lab.com', '123456789')
     .then((user) => {
-      expect(user.email).toBe('kmontezam@gmail.com');
+      expect(user.email).toBe('laboratoria@lab.com');
+    }));
+});
+describe('inicio de sesion', () => {
+  it('Debería poder iniciar sesion', () => signInEmail('laboratoria@hotmail.la', '123456')
+    .then((user) => {
+      expect(user.email).toBe('laboratoria@hotmail.la');
     }));
 });
