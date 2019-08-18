@@ -16,13 +16,11 @@ export default () => {
       <p class="error" id=msg-wrong></p>
       <p>O bien ingresa con...</p>
       <div class="logos-face-google w-max">
-        <i class='bx bxl-facebook icons-size' style='color:#485aa3' id="login-fb" ></i>
-        <i class='bx bxl-google icons-size' style='color:#d2070a' id="login-gog" ></i>
+        <button type="button" id="login-fb"><i class='bx bxl-facebook icons-size' style='color:#485aa3'></i></button>
+        <button type="button" id="login-gog"><i class='bx bxl-google icons-size' style='color:#d2070a' ></i></button>
       </div>
       <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate c-darkblue">Regístrate</a></p>
-      
-  </div>
-  `;
+  </div>`;
   formSignIn.innerHTML = template;
   formSignIn.setAttribute('class', 'flex-r center-items size bg-color-blue');
   const btnSignIn = formSignIn.querySelector('#btn-login');

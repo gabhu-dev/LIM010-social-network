@@ -3,9 +3,15 @@ export const signUpWithEmail = (email, password) => firebase.auth().createUserWi
 
 export const signInEmail = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
 
-export const signInGoogle = provider => firebase.auth().signInWithRedirect(provider);
+export const signInGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(provider);
+};
 
-export const signInFacebook = provider => firebase.auth().signInWithRedirect(provider);
+export const signInFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  return firebase.auth().signInWithPopup(provider);
+};
 
 export const signOut = () => firebase.auth().signOut();
 
@@ -15,8 +21,8 @@ export const verification = () => {
     // eslint-disable-next-line no-console
     console.log('se verifico');
     // Email sent.
-  }).catch((error) => {
+  }).catch(() => {
     // An error happened.
-    console.log(error);
+    // console.log(error);
   });
 };
