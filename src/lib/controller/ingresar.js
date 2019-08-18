@@ -5,12 +5,12 @@ export const signInEmail = (email, password) => firebase.auth().signInWithEmailA
 
 export const signInGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth().signInWithRedirect(provider);
+  return firebase.auth().signInWithPopup(provider);
 };
 
 export const signInFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
-  return firebase.auth().signInWithRedirect(provider);
+  return firebase.auth().signInWithPopup(provider);
 };
 
 export const signOut = () => firebase.auth().signOut();
