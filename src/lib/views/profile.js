@@ -1,7 +1,11 @@
 export default () => {
   const screenOne = document.createElement('section');
   const template = `
-<header><nav>menu y encabezado</nav></header>
+<header>
+  <p>menu y encabezado</p>
+  <nav>
+  </nav>
+</header>
 <p>aqui va el contenido</p>
 <a></a>
 `;

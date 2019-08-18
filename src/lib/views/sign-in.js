@@ -16,8 +16,8 @@ export default () => {
       <p class="error" id=msg-wrong></p>
       <p>O bien ingresa con...</p>
       <div class="logos-face-google w-max">
-        <button type="button" id="login-fb"><i class='bx bxl-facebook icons-size' style='color:#485aa3'></i></button>
-        <button type="button" id="login-gog"><i class='bx bxl-google icons-size' style='color:#d2070a' ></i></button>
+        <button type="button" id="login-fb" class="btn-signin-social"><i class='bx bxl-facebook icons-size' style='color:#485aa3'></i></button>
+        <button type="button" id="login-gog" class="btn-signin-social"><i class='bx bxl-google icons-size' style='color:#d2070a' ></i></button>
       </div>
       <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate c-darkblue">Regístrate</a></p>
   </div>`;
