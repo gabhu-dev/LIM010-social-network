@@ -45,13 +45,18 @@
 .c-darkblue {
     color: #2d8d85;
 }
-.w-max {
+
+.w-h-max {
     width: max-content;
-}
-.h-max {
     height: max-content;
 }
-/*------------------------------------------------------------------------------------------------------*/
+.just-cont-sa{
+    justify-content: space-around;
+}
+.just-cont-sb{
+    justify-content: space-between;
+}
+/*----------------------------------------- hu1,hu2--------------------------------------------*/
 .input-form {
     height: 3em;
     width: 20em;
@@ -61,12 +66,10 @@
     outline-style: none;
     padding: 1em;
 }
-
 .pink:focus {
     box-shadow: 0 0 5px rgb(233, 186, 186);
     border: 1px solid rgba(236, 151, 151, 0.8);
 }
-
 .btn-signup,
 .btn-signin {
     height: 2.5em;
@@ -80,15 +83,12 @@
     cursor: pointer;
     padding: 11px;
 }
-
 .btn-signin:active {
     background-color: #fdb098;
 }
-
 .btn-signup:active {
     background-color: #61d8ce;
 }
-
 .btn-registrate {
     outline: none;
     text-decoration: none;
@@ -97,18 +97,15 @@
 .saludo {
     margin: 1em;
 }
-
 ::placeholder {
     padding: 3%;
 }
-
 .logos-face-google {
     height: 10%;
     display: flex;
     flex-direction: row;
     align-content: center
 }
-
 .icons-size {
     font-size: 3em;
     margin: .2em;
@@ -120,60 +117,62 @@
     margin: .5em;
     background-color: transparent;
 }
-
 .logo {
     height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
     /*border-radius: 2em;*/
     margin: 2em;
 }
-
 .error {
     color: #2d8d85;
     font-size: 1em;
     margin: 0 0 1em;
 }
-
+/*-------------------------------hu3------------------------------------------------*/
 .h-f-height{
     height: 5em;
 }
 
-.flex-sb {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.profile {
-    width: 20%;
-    height: 5em;
-    border: 2px solid black;
-}
-
-.post-l {
-    width: 70%;
-    height: 12em;
+.post-label {
+    width: 80%;
+    height: 11.5em;
     border-radius: 2em;
     border: none;
     align-items: center;
     justify-content: center;
+    margin: 1em;
 }
+
 .post{
     width: 90%;
     height: 9em;
     border-radius: 2em;
     border: none;
 }
+
 .btn-share{
     border: none;
     border-radius: 1em;
-    margin: 1em 0 .2em .5em;
+    margin: 1em 1.5em 0;
     padding: .4em;
     cursor: pointer;
     align-self: flex-end;
 }
 
+.logo-home{
+    width:4em;
+}
+.one-col{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
+
 @media screen and (min-width:1126px) {
+    /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
         display: flex;
         flex-direction: column;
@@ -188,6 +187,7 @@
         width: 50%;
         height: 100vh;
     }
+    /*---------------------------------hu1--------------------------------------------------*/
     .banner {
         flex-grow: 1;
         width: 50%;
@@ -199,7 +199,6 @@
     .bnsu-image{
         background-image: url(./lib/img/8.png);
     }
-    
     .btn-signin:hover {
         background-color: #fdb098;
     }
@@ -209,5 +208,38 @@
     .input-form {
         height: 4em;
         width: 38em;
+    }
+    /*-------------------------------hu3------------------------------------------------*/
+    .h-f-height{
+        height: 5em;
+    }
+
+    .post-label {
+        width: 70%;
+        height: 11.5em;
+        border-radius: 2em;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .post{
+        width: 90%;
+        height: 9em;
+        border-radius: 2em;
+        border: none;
+    }
+
+    .btn-share{
+        border: none;
+        border-radius: 1em;
+        margin: 1em 1.5em 0;
+        padding: .4em;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    .logo-home{
+        height: 4em;
     }
 }

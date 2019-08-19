@@ -1,32 +1,36 @@
 import { addPost } from '../controller/home-control.js';
+import { logOut } from '../controller/sign-in-control.js';
 
 export default () => {
   const viewHome = document.createElement('div');
   const template = `
   <header>
-    <nav class="flex-r center-items bg-color-blue h-f-height">
-      <p>Nombre de Usuario</p>
-      <p>Logo</p>
-      <p>Cerrar Sesión</p>
+    <nav class="flex-r center-items bg-color-blue h-f-height just-cont-sa">
+      <p class="logo-home">Usuario</p>
+      <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-home" alt="logo hey! hallyu">
+      <button type="button" id="log-out" class="logo-home">Cerrar Sesión</button>
     </nav>
   </header>
   <div class="flex-r">
-    <div class="two-col center-items">
-      aqui va el perfil del usuario
-    </div>
-    <div class="two-col center-items">
-      <label class="flex-c post-l bg-color-pink">
-        <input type="text" id="text-post" class="post flex-c" placeholder="¿Qué quieres compartir?">
-        <button type="button" id="btn-save" class="w-max bg-color-blue btn-share c-darkblue flex-c">Compartir</button>
+     <!--<div class="one-col two-col center-items flex-c">
+     <p>Nombre del usuario</p>
+      <p>Imagen de perfil</p>
+    </div>-->
+    <div class="one-col two-col center-items flex-c">
+      <label class="flex-c post-label bg-color-pink">
+        <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
+        <button type="button" id="btn-save" class="w-h-max bg-color-blue btn-share c-darkblue flex-c">Compartir</button>
       </label>
     </div>
   </div>
-  <footer  class="bg-color-pink h-f-height">
-    <p class="flex-r center-items">aqui va el footer</p>
+  <footer class="flex-r bg-color-pink h-f-height center-items">
+    <p class="w-h-max">Creado por Gabhu y Sara con <3. Todos los Derechos Reservados.</p>
   </footer>`;
   viewHome.innerHTML = template;
-  viewHome.setAttribute('class', ' size');
+  viewHome.setAttribute('class', 'size flex-c just-cont-sb');
   const btnSave = viewHome.querySelector('#btn-save');
+  const btnLogOut = viewHome.querySelector('#log-out');
   btnSave.addEventListener('click', addPost);
+  btnLogOut.addEventListener('click', logOut);
   return viewHome;
 };
