@@ -1,7 +1,7 @@
-export const addPost = (textPost) => {
-  const adPost = firebase.firestore().collection('posts').add({
+export const savePost = (textPost) => {
+  const addPost = firebase.firestore().collection('posts').add({
     title: textPost,
     state: false,
   });
-  return adPost;
+  return addPost;
 };
