@@ -1,6 +1,6 @@
 import { addPost } from './post.js';
 
-const createPost = (e) => {
+export const createPost = (e) => {
   e.preventDefault();
   const post = document.getElementById('addPosts').value;
   return addPost(post)
