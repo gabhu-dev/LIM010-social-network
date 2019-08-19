@@ -34,8 +34,7 @@ export const signIn = (e) => {
     });
 };
 
-export const signInFb = (e) => {
-  e.preventDefault();
+export const signInFb = () => {
   signInFacebook()
     .then(() => {
       window.location.hash = '#/home';
