@@ -1,3 +1,5 @@
+import { createPost } from '../controller/profile-control.js';
+
 export default () => {
   const screenOne = document.createElement('section');
   const template = `
@@ -14,8 +16,7 @@ export default () => {
 `;
   screenOne.innerHTML = template;
   screenOne.setAttribute('class', ' size flex-sb');
-  const post = document.getElementById('addPosts').value;
-  const save = document.getElementById('savePost');
-  save.addEventListener('click', profile);
+  const btnSave = screenOne.querySelector('#savePost');
+  btnSave.addEventListener('click', createPost);
   return screenOne;
 };
