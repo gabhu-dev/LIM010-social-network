@@ -1,5 +1,8 @@
 import {
-  signInGoogle, signInEmail, signInFacebook, signOut,
+  signInGoogle,
+  signInEmail,
+  signInFacebook,
+  signOut,
 } from './ingresar.js';
 
 export const signIn = (e) => {
@@ -49,6 +52,7 @@ export const signInGoogleV = () => {
   signInGoogle()
     .then(() => {
       window.location.hash = '#/home';
+      // console.log(user);
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
