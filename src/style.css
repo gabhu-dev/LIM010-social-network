@@ -1,4 +1,5 @@
-* {
+/*--------------------------------------Generales--------------------------------------*/
+*{
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
@@ -44,7 +45,13 @@
 .c-darkblue {
     color: #2d8d85;
 }
-
+.w-max {
+    width: max-content;
+}
+.h-max {
+    height: max-content;
+}
+/*------------------------------------------------------------------------------------------------------*/
 .input-form {
     height: 3em;
     width: 20em;
@@ -87,9 +94,8 @@
     text-decoration: none;
     font-weight: 500;
 }
-
-.w-max {
-    width: max-content;
+.saludo {
+    margin: 1em;
 }
 
 ::placeholder {
@@ -106,24 +112,29 @@
 .icons-size {
     font-size: 3em;
     margin: .2em;
+}
+.btn-signin-social{
     cursor: pointer;
+    border-radius: 3em;
+    border:none;
+    margin: .5em;
+    background-color: transparent;
 }
 
 .logo {
-    height: 9em;
-    margin-bottom: 1em;
+    height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
+    /*border-radius: 2em;*/
+    margin: 2em;
 }
 
 .error {
     color: #2d8d85;
     font-size: 1em;
-    margin: 1em;
+    margin: 0 0 1em;
 }
 
-header {
-    width: 100%;
-    height: 4em;
-    background-color: blueviolet;
+.h-f-height{
+    height: 5em;
 }
 
 .flex-sb {
@@ -139,20 +150,39 @@ header {
     border: 2px solid black;
 }
 
-.post {
-    width: 40%;
-    height: 10em;
-    border: 2px solid black;
+.post-l {
+    width: 70%;
+    height: 12em;
+    border-radius: 2em;
+    border: none;
+    align-items: center;
+    justify-content: center;
 }
-
-footer {
-    width: 100%;
-    height: 3.5em;
-    background-color: #2d8d85;
+.post{
+    width: 90%;
+    height: 9em;
+    border-radius: 2em;
+    border: none;
+}
+.btn-share{
+    border: none;
+    border-radius: 1em;
+    margin: 1em 0 .2em .5em;
+    padding: .4em;
+    cursor: pointer;
+    align-self: flex-end;
 }
 
 @media screen and (min-width:1126px) {
-    .two-col {
+    .flex-c {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-r{
+        display: flex;
+        flex-direction: row; 
+    }
+    .two-col{
         display: flex;
         flex-direction: column;
         width: 50%;
@@ -161,39 +191,23 @@ footer {
     .banner {
         flex-grow: 1;
         width: 50%;
+        background-size: cover;
+    }
+    .bnsi-image{
         background-image: url(./lib/img/1.png);
-        background-size: cover;
     }
-    .banner-r {
-        flex-grow: 1;
-        width: 50%;
+    .bnsu-image{
         background-image: url(./lib/img/8.png);
-        background-size: cover;
     }
-    .flex-c {
-        display: flex;
-        flex-direction: column;
-    }
-    .flex-r {
-        display: flex;
-        flex-direction: row;
-    }
+    
     .btn-signin:hover {
         background-color: #fdb098;
     }
     .btn-signup:hover {
         background-color: #61d8ce;
     }
-    .bg-color-white {
-        background-color: rgba(255, 255, 255, .4);
-        height: 25%;
-        width: 30%;
-    }
     .input-form {
         height: 4em;
         width: 38em;
-    }
-    .center {
-        text-align: center;
     }
 }

@@ -3,11 +3,11 @@ import { signInGoogleV, signInFb, signIn } from '../controller/sign-in-control.j
 export default () => {
   const formSignIn = document.createElement('div');
   const template = `
-  <div class ="banner center-items two-col">
+  <div class ="banner bnsi-image center-items two-col">
   </div>
   <div class="center-items two-col flex-c">
       <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
-      <p class="w-max">Bienvenidas a ..........</p>
+      <p class="w-max saludo">Siente la ola coreana</p>
       <form name="login-form" class="flex-c center-items">
         <input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email" class="input-form flex-c pink" required focus>
         <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password" class="input-form flex-c pink" required>
@@ -16,8 +16,8 @@ export default () => {
       <p class="error" id=msg-wrong></p>
       <p>O bien ingresa con...</p>
       <div class="logos-face-google w-max">
-        <button type="button" id="login-fb"><i class='bx bxl-facebook icons-size' style='color:#485aa3'></i></button>
-        <button type="button" id="login-gog"><i class='bx bxl-google icons-size' style='color:#d2070a' ></i></button>
+        <button type="button" id="login-fb" class="btn-signin-social"><i class='bx bxl-facebook icons-size' style='color:#485aa3'></i></button>
+        <button type="button" id="login-gog" class="btn-signin-social"><i class='bx bxl-google icons-size' style='color:#d2070a' ></i></button>
       </div>
       <p class="w-max">¿No tienes una cuenta?&nbsp;<a id="btn-sign-up" href="#/signup" class="btn-registrate c-darkblue">Regístrate</a></p>
   </div>`;

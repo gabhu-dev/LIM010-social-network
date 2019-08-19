@@ -4,11 +4,11 @@ import { signUp } from '../controller/sign-up-control.js';
 export default () => {
   const formSignUp = document.createElement('div');
   const template = `
-  <div class="banner-r two-col center-items">
+  <div class="banner bnsu-image two-col center-items">
   </div>
   <form class="flex-c center-items two-col">
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
-    <p>Crea tu cuenta y disfruta del contenido</p>
+    <p class="saludo">Crea una cuenta y disfruta!</p>
     <input type="text" name="nickname" placeholder=" &#128100; Usuario" id="nickname" class="input-form pink" required focus >
 		<input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email-signup" class="input-form pink" required focus>
     <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signup" class="input-form pink" required>
