@@ -1,5 +1,7 @@
+import { addPost } from '../controller/home-control.js';
+
 export default () => {
-  const viewProfile = document.createElement('div');
+  const viewHome = document.createElement('div');
   const template = `
   <header>
     <nav class="flex-r center-items bg-color-blue h-f-height">
@@ -23,8 +25,9 @@ export default () => {
   <footer  class="bg-color-pink h-f-height">
     <p class="flex-r center-items">aqui va el footer</p>
   </footer>`;
-  viewProfile.innerHTML = template;
-  viewProfile.setAttribute('class', 'size');
-  console.log(document.getElementById('post'));
-  return viewProfile;
+  viewHome.innerHTML = template;
+  viewHome.setAttribute('class', ' size');
+  const btnSave = viewHome.querySelector('#btn-save');
+  btnSave.addEventListener('click', addPost);
+  return viewHome;
 };

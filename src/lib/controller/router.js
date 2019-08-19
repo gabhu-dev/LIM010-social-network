@@ -12,7 +12,7 @@ export const viewTemplate = (routes) => {
       container.appendChild(components.signUp());
       break;
     case '#/home':
-      container.appendChild(components.profile());
+      container.appendChild(components.home());
       break;
     default:
       container.appendChild(components.signIn());
