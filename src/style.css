@@ -5,34 +5,43 @@
     margin: 0;
     padding: 0;
 }
+
 .flex-c {
     display: flex;
     flex-direction: column;
 }
+
 .flex-r {
     display: flex;
     flex-direction: row;
 }
+
 .center-items {
     align-items: center;
     justify-content: center;
 }
+
 .hide {
     display: none;
 }
+
 .size {
     min-height: 100vh;
     width: 100%;
 }
+
 .bg-color-blue {
     background-color: #8fd8d2;
 }
+
 .bg-color-pink {
     background-color: #fedcd2;
 }
+
 .c-darkpink {
     color: #df744a;
 }
+
 .c-darkblue {
     color: #2d8d85;
 }
@@ -52,10 +61,12 @@
     outline-style: none;
     padding: 1em;
 }
-.pink:focus{
+
+.pink:focus {
     box-shadow: 0 0 5px rgb(233, 186, 186);
-    border:1px solid rgba(236, 151, 151, 0.8);
+    border: 1px solid rgba(236, 151, 151, 0.8);
 }
+
 .btn-signup,
 .btn-signin {
     height: 2.5em;
@@ -69,12 +80,15 @@
     cursor: pointer;
     padding: 11px;
 }
+
 .btn-signin:active {
     background-color: #fdb098;
 }
+
 .btn-signup:active {
     background-color: #61d8ce;
 }
+
 .btn-registrate {
     outline: none;
     text-decoration: none;
@@ -83,15 +97,18 @@
 .saludo {
     margin: 1em;
 }
+
 ::placeholder {
     padding: 3%;
 }
+
 .logos-face-google {
     height: 10%;
     display: flex;
     flex-direction: row;
     align-content: center
 }
+
 .icons-size {
     font-size: 3em;
     margin: .2em;
@@ -103,15 +120,48 @@
     margin: .5em;
     background-color: transparent;
 }
+
 .logo {
     height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
     /*border-radius: 2em;*/
     margin: 2em;
 }
+
 .error {
-    color:#2d8d85;
+    color: #2d8d85;
     font-size: 1em;
     margin: 0 0 1em;
+}
+
+header {
+    width: 100%;
+    height: 4em;
+    background-color: blueviolet;
+}
+
+.flex-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.profile {
+    width: 20%;
+    height: 5em;
+    border: 2px solid black;
+}
+
+.post {
+    width: 40%;
+    height: 10em;
+    border: 2px solid black;
+}
+
+footer {
+    width: 100%;
+    height: 3.5em;
+    background-color: #2d8d85;
 }
 
 @media screen and (min-width:1126px) {
@@ -129,7 +179,7 @@
         width: 50%;
         height: 100vh;
     }
-    .banner{
+    .banner {
         flex-grow: 1;
         width: 50%;
         background-size: cover;
