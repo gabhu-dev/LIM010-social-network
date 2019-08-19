@@ -152,10 +152,9 @@
 
 .post-l {
     width: 70%;
-    height: 10em;
+    height: 12em;
     border-radius: 2em;
     border: none;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -168,7 +167,10 @@
 .btn-share{
     border: none;
     border-radius: 1em;
-    padding: .2em;
+    margin: 1em 0 .2em .5em;
+    padding: .4em;
+    cursor: pointer;
+    align-self: flex-end;
 }
 
 @media screen and (min-width:1126px) {

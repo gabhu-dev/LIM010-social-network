@@ -15,11 +15,10 @@ export default () => {
       aqui va el perfil del usuario
     </div>
     <div class="two-col center-items">
-      <label class="post-l bg-color-pink">
-        <input type="text" id="post" class="post" placeholder="¿Qué quieres compartir?">
-        <button type="button" class="w-max bg-color-blue btn-share c-darkblue">Compartir</button>
+      <label class="flex-c post-l bg-color-pink">
+        <input type="text" id="text-post" class="post flex-c" placeholder="¿Qué quieres compartir?">
+        <button type="button" id="btn-save" class="w-max bg-color-blue btn-share c-darkblue flex-c">Compartir</button>
       </label>
-      <button type="button" id="savePost">Postear</button>
     </div>
   </div>
   <footer  class="bg-color-pink h-f-height">
