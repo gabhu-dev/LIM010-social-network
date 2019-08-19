@@ -1,4 +1,9 @@
-import { signInEmail, signUpWithEmail } from '../src/lib/controller/ingresar.js';
+import {
+  signInEmail,
+  signUpWithEmail,
+  signInGoogle,
+  signInFacebook,
+} from '../src/lib/controller/ingresar.js';
 
 // configuracion de mock de firebase
 const firebasemock = require('firebase-mock');
@@ -23,5 +28,18 @@ describe('inicio de sesion', () => {
   it('Debería poder iniciar sesion', () => signInEmail('laboratoria@hotmail.la', '123456')
     .then((user) => {
       expect(user.email).toBe('laboratoria@hotmail.la');
+    }));
+});
+describe('login con google', () => {
+  it('Debería poder loguearse con google', () => signInGoogle('gabymir2k@gmail.com')
+    .then((user) => {
+      expect(user.providerData[0].providerId).toBe('google.com');
+    }));
+});
+
+describe('login con facebook', () => {
+  it('Debería poder loguearse con facebook', () => signInFacebook('gabhu@hotmail.es')
+    .then((user) => {
+      expect(user.providerData[0].providerId).toBe('facebook.com');
     }));
 });
