@@ -133,10 +133,8 @@
     margin: 0 0 1em;
 }
 
-header {
-    width: 100%;
-    height: 4em;
-    background-color: blueviolet;
+.h-f-height{
+    height: 5em;
 }
 
 .flex-sb {
@@ -152,16 +150,25 @@ header {
     border: 2px solid black;
 }
 
-.post {
-    width: 40%;
+.post-l {
+    width: 70%;
     height: 10em;
-    border: 2px solid black;
+    border-radius: 2em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-footer {
-    width: 100%;
-    height: 3.5em;
-    background-color: #2d8d85;
+.post{
+    width: 90%;
+    height: 9em;
+    border-radius: 2em;
+    border: none;
+}
+.btn-share{
+    border: none;
+    border-radius: 1em;
+    padding: .2em;
 }
 
 @media screen and (min-width:1126px) {
