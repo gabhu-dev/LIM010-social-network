@@ -1,3 +1,4 @@
+/*--------------------------------------Generales--------------------------------------*/
 *{
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
@@ -35,6 +36,13 @@
 .c-darkblue {
     color: #2d8d85;
 }
+.w-max {
+    width: max-content;
+}
+.h-max {
+    height: max-content;
+}
+/*------------------------------------------------------------------------------------------------------*/
 .input-form {
     height: 3em;
     width: 20em;
@@ -57,7 +65,7 @@
     outline: none;
     font-size: 1em;
     font-weight: 500;
-    margin: 1em 0 0 0;
+    margin: 1em;
     cursor: pointer;
     padding: 11px;
 }
@@ -72,8 +80,8 @@
     text-decoration: none;
     font-weight: 500;
 }
-.w-max {
-    width: max-content;
+.saludo {
+    margin: 1em;
 }
 ::placeholder {
     padding: 3%;
@@ -98,16 +106,23 @@
 .logo {
     height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
     /*border-radius: 2em;*/
-    margin-bottom: 1em;
+    margin: 2em;
 }
 .error {
     color:#2d8d85;
     font-size: 1em;
-    margin: 1em;
-    height: max-content;
+    margin: 0 0 1em;
 }
 
 @media screen and (min-width:1126px) {
+    .flex-c {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-r{
+        display: flex;
+        flex-direction: row; 
+    }
     .two-col{
         display: flex;
         flex-direction: column;
@@ -117,39 +132,23 @@
     .banner{
         flex-grow: 1;
         width: 50%;
+        background-size: cover;
+    }
+    .bnsi-image{
         background-image: url(./lib/img/1.png);
-        background-size: cover;
     }
-    .banner-r{
-        flex-grow: 1;
-        width: 50%;
+    .bnsu-image{
         background-image: url(./lib/img/8.png);
-        background-size: cover;
     }
-    .flex-c {
-        display: flex;
-        flex-direction: column;
-    }
-    .flex-r{
-        display: flex;
-        flex-direction: row; 
-    }
+    
     .btn-signin:hover {
         background-color: #fdb098;
     }
     .btn-signup:hover {
         background-color: #61d8ce;
     }
-    .bg-color-white {
-        background-color: rgba(255, 255, 255, .4);
-        height: 25%;
-        width: 30%;
-    }
     .input-form {
         height: 4em;
         width: 38em;
-    }
-    .center{
-        text-align: center;
     }
 }
