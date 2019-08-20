@@ -1,4 +1,4 @@
-import { addPost } from '../controller/home-control.js';
+import { addPost, update } from '../controller/home-control.js';
 import { logOut } from '../controller/sign-in-control.js';
 
 export default () => {
@@ -20,8 +20,10 @@ export default () => {
       <label class="flex-c post-label bg-color-pink">
         <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
         <button type="button" id="btn-save" class="w-h-max bg-color-blue btn-share c-darkblue flex-c">Compartir</button>
-      </label>
+      <button type="button" id="btn-up">subir</button>
+        </label>
     </div>
+    <input type="text" id="post-up">
   </div>
   <footer class="flex-r bg-color-pink h-f-height center-items">
     <p class="w-h-max">Creado por Gabhu y Sara con <3. Todos los Derechos Reservados.</p>
@@ -30,7 +32,10 @@ export default () => {
   viewHome.setAttribute('class', 'size flex-c just-cont-sb');
   const btnSave = viewHome.querySelector('#btn-save');
   const btnLogOut = viewHome.querySelector('#log-out');
+  const btnUp = viewHome.querySelector('#btn-up');
   btnSave.addEventListener('click', addPost);
   btnLogOut.addEventListener('click', logOut);
+  btnUp.addEventListener('click', update);
+
   return viewHome;
 };

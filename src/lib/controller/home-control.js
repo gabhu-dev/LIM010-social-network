@@ -26,3 +26,14 @@ export const addPost = () => {
       console.error('Error adding document: ', error);
     });
 };
+export const update = (e) => {
+  e.preventDefault();
+  const postUp = document.getElementById('post-up');
+  postUp.innerHTML = '';
+  firebase.firestore().collection('usuarios').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      postUp.innerHTML += ` ${doc.data().title}`;
+    });
+  });
+};

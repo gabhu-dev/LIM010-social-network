@@ -15,3 +15,12 @@ export const createUser = () => {
   });
   return addUserCollection;
 };
+// leer la data de la base de datos
+// export const readPost = () => {
+//   const upPost = firebase.firestore().collection('users').get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       console.log(`${doc.id} => ${doc.data()}`);
+//     });
+//   });
+//   return upPost;
+// };
