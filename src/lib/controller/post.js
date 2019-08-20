@@ -1,19 +1,19 @@
-// variable general de firestore7
-// const firestore = firebase.firestore();
-// creando la coleccion users
-export const userCollection = (emailUser) => {
-  const users = firebase.firestore().collection('usuarios').set({
-    title: emailUser,
-  });
-  return users;
-};
+// export const savePost = (textPost) => {
+//   const addPost = firebase.firestore().collection('posts').add({
+//     title: textPost,
+//     state: false,
+//   });
+//   return addPost;
+// };
 
-export const savePost = (textPost) => {
-  const addPost = firebase.firestore().collection('posts').add({
-    title: textPost,
-    state: false,
+export const createUser = () => {
+  const nickname = document.getElementById('nickname').value;
+  const email = document.getElementById('email-signup').value;
+  const addUserCollection = firebase.firestore().collection('users').add({
+    Usuario: nickname,
+    Correo: email,
   });
-  return addPost;
+  return addUserCollection;
 };
 // leer la data de la base de datos
 // export const readPost = () => {

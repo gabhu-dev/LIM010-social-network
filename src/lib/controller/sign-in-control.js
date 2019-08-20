@@ -55,7 +55,7 @@ export const signInGoogleV = () => {
       // console.log(user.user.displayName);
       // .then(() => {
       window.location.hash = '#/home';
-      // });
+      // console.log(user);
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
