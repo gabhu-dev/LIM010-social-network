@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import { signUpWithEmail } from './ingresar.js';
+import { createUser } from './post.js';
 
 export const signUp = (e) => {
   e.preventDefault();
@@ -10,8 +12,10 @@ export const signUp = (e) => {
     .then(() => {
       messageErrorLabel.classList.remove('error');
       messageErrorLabel.innerHTML = '';
+      const user = firebase.auth().currentUser;
+      console.log(user);
       window.location.hash = '#/';
-      // alert('Usuario creado correctamente'); // Poner un mensaje bonito
+      createUser();
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');

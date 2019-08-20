@@ -13,7 +13,7 @@ export default () => {
   </header>
   <div class="flex-r">
      <!--<div class="one-col two-col center-items flex-c">
-     <p>Nombre del usuario</p>
+      <p>Nombre del usuario</p>
       <p>Imagen de perfil</p>
     </div>-->
     <div class="one-col two-col center-items flex-c">

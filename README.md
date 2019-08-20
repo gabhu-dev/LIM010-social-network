@@ -16,7 +16,7 @@ Nuestros usuarios son personas que tienen  problemas al momento de escoger que d
 
 ***
 ## Objetivo
-Por eso *Hey! Hayllu* aparece como la nueva solución a esos problemas,enfocadas en las necesidades de nuestros usuarios ,*Hey! Hayllu* permite que las personas puedan tener perfiles propios para la red social ,donde podran postear sus preguntas y ser constestadas ,sus dudas con respecto a algun dorama,y a la vez podran elegir si lo que quieren postear sea de modo publico o privado.y darle likes a los posts que mas le ha gustado.
+Por eso *Hey! Hayllu* aparece como la nueva solución a esos problemas,enfocadas en las necesidades de nuestros usuarios, *Hey! Hayllu* permite que las personas puedan tener perfiles propios para la red social ,donde podran postear sus preguntas y ser constestadas ,sus dudas con respecto a algun dorama,y a la vez podran elegir si lo que quieren postear sea de modo publico o privado.y darle likes a los posts que mas le ha gustado.
 
 ***
 Es una comunidad donde los apasionados por la cultura coreana dan recomendaciones de novelas
