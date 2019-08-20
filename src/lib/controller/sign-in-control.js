@@ -4,6 +4,7 @@ import {
   signInFacebook,
   signOut,
 } from './ingresar.js';
+import { userCollection } from './post.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -49,9 +50,12 @@ export const signInFb = () => {
 
 export const signInGoogleV = () => {
   signInGoogle()
-    .then(() => {
+    .then((user) => {
+      userCollection(user.user.displayName);
+      // console.log(user.user.displayName);
+      // .then(() => {
       window.location.hash = '#/home';
-      // console.log(user);
+      // });
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
