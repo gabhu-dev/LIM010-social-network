@@ -49,11 +49,10 @@ export const signInFb = (e) => {
 export const signInGoogleV = (e) => {
   e.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
-  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
   signInGoogle(provider)
     .then(() => {
-      //window.location.hash = '#/signin';
-      alert();
+      window.location.hash = '#/signin';
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {

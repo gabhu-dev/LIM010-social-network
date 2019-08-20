@@ -17,6 +17,7 @@ export const verification = () => {
     // Email sent.
   }).catch((error) => {
     // An error happened.
+    // eslint-disable-next-line no-console
     console.log(error);
   });
 };
