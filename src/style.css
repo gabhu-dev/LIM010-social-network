@@ -1,40 +1,62 @@
+/*--------------------------------------Generales--------------------------------------*/
 *{
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
 }
+
 .flex-c {
     display: flex;
     flex-direction: column;
 }
+
 .flex-r {
     display: flex;
     flex-direction: row;
 }
+
 .center-items {
     align-items: center;
     justify-content: center;
 }
+
 .hide {
     display: none;
 }
+
 .size {
     min-height: 100vh;
     width: 100%;
 }
+
 .bg-color-blue {
     background-color: #8fd8d2;
 }
+
 .bg-color-pink {
     background-color: #fedcd2;
 }
+
 .c-darkpink {
     color: #df744a;
 }
+
 .c-darkblue {
     color: #2d8d85;
 }
+
+.w-h-max {
+    width: max-content;
+    height: max-content;
+}
+.just-cont-sa{
+    justify-content: space-around;
+}
+.just-cont-sb{
+    justify-content: space-between;
+}
+/*----------------------------------------- hu1,hu2--------------------------------------------*/
 .input-form {
     height: 3em;
     width: 20em;
@@ -44,9 +66,9 @@
     outline-style: none;
     padding: 1em;
 }
-.pink:focus{
+.pink:focus {
     box-shadow: 0 0 5px rgb(233, 186, 186);
-    border:1px solid rgba(236, 151, 151, 0.8);
+    border: 1px solid rgba(236, 151, 151, 0.8);
 }
 .btn-signup,
 .btn-signin {
@@ -72,8 +94,8 @@
     text-decoration: none;
     font-weight: 500;
 }
-.w-max {
-    width: max-content;
+.saludo {
+    margin: 1em;
 }
 ::placeholder {
     padding: 3%;
@@ -87,38 +109,70 @@
 .icons-size {
     font-size: 3em;
     margin: .2em;
+}
+.btn-signin-social{
     cursor: pointer;
+    border-radius: 3em;
+    border:none;
+    margin: .5em;
+    background-color: transparent;
 }
 .logo {
-    height: 9em;
+    height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
     /*border-radius: 2em;*/
-    margin-bottom: 1em;
+    margin: 2em;
 }
 .error {
-    color:#2d8d85;
+    color: #2d8d85;
     font-size: 1em;
+    margin: 0 0 1em;
+}
+/*-------------------------------hu3------------------------------------------------*/
+.h-f-height{
+    height: 5em;
+}
+
+.post-label {
+    width: 80%;
+    height: 11.5em;
+    border-radius: 2em;
+    border: none;
+    align-items: center;
+    justify-content: center;
     margin: 1em;
 }
 
+.post{
+    width: 90%;
+    height: 9em;
+    border-radius: 2em;
+    border: none;
+}
+
+.btn-share{
+    border: none;
+    border-radius: 1em;
+    margin: 1em 1.5em 0;
+    padding: .4em;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.logo-home{
+    width:4em;
+}
+.one-col{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+
+
 @media screen and (min-width:1126px) {
-    .two-col{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 100vh;
-    }
-    .banner{
-        flex-grow: 1;
-        width: 50%;
-        background-image: url(./lib/img/1.png);
-        background-size: cover;
-    }
-    .banner-r{
-        flex-grow: 1;
-        width: 50%;
-        background-image: url(./lib/img/8.png);
-        background-size: cover;
-    }
+    /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
         display: flex;
         flex-direction: column;
@@ -127,22 +181,65 @@
         display: flex;
         flex-direction: row; 
     }
+    .two-col{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+    }
+    /*---------------------------------hu1--------------------------------------------------*/
+    .banner {
+        flex-grow: 1;
+        width: 50%;
+        background-size: cover;
+    }
+    .bnsi-image{
+        background-image: url(./lib/img/1.png);
+    }
+    .bnsu-image{
+        background-image: url(./lib/img/8.png);
+    }
     .btn-signin:hover {
         background-color: #fdb098;
     }
     .btn-signup:hover {
         background-color: #61d8ce;
     }
-    .bg-color-white {
-        background-color: rgba(255, 255, 255, .4);
-        height: 25%;
-        width: 30%;
-    }
     .input-form {
         height: 4em;
         width: 38em;
     }
-    .center{
-        text-align: center;
+    /*-------------------------------hu3------------------------------------------------*/
+    .h-f-height{
+        height: 5em;
+    }
+
+    .post-label {
+        width: 70%;
+        height: 11.5em;
+        border-radius: 2em;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .post{
+        width: 90%;
+        height: 9em;
+        border-radius: 2em;
+        border: none;
+    }
+
+    .btn-share{
+        border: none;
+        border-radius: 1em;
+        margin: 1em 1.5em 0;
+        padding: .4em;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+
+    .logo-home{
+        height: 4em;
     }
 }

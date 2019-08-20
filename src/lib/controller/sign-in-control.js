@@ -1,6 +1,10 @@
 import {
-  signInGoogle, signInEmail, signInFacebook, signOut,
+  signInGoogle,
+  signInEmail,
+  signInFacebook,
+  signOut,
 } from './ingresar.js';
+// import { userCollection } from './post.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -31,10 +35,8 @@ export const signIn = (e) => {
     });
 };
 
-export const signInFb = (e) => {
-  e.preventDefault();
-  const provider = new firebase.auth.FacebookAuthProvider();
-  signInFacebook(provider)
+export const signInFb = () => {
+  signInFacebook()
     .then(() => {
       window.location.hash = '#/home';
     }).catch((error) => {
@@ -46,13 +48,14 @@ export const signInFb = (e) => {
     });
 };
 
-export const signInGoogleV = (e) => {
-  e.preventDefault();
-  const provider = new firebase.auth.GoogleAuthProvider();
-  // provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-  signInGoogle(provider)
+export const signInGoogleV = () => {
+  signInGoogle()
     .then(() => {
-      window.location.hash = '#/signin';
+      // userCollection(user.user.displayName);
+      // console.log(user.user.displayName);
+      // .then(() => {
+      window.location.hash = '#/home';
+      // console.log(user);
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
