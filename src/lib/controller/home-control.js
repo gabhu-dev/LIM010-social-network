@@ -19,7 +19,7 @@ export const addPost = (e) => {
       console.log('se añadio correctamente');
     });
 };
-const update = (e) => {
+export const update = (e) => {
   e.preventDefault();
   const postUp = document.getElementById('post-up');
   postUp.innerHTML = '';

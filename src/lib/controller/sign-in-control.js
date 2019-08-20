@@ -4,7 +4,7 @@ import {
   signInFacebook,
   signOut,
 } from './ingresar.js';
-import { userCollection } from './post.js';
+// import { userCollection } from './post.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -50,8 +50,8 @@ export const signInFb = () => {
 
 export const signInGoogleV = () => {
   signInGoogle()
-    .then((user) => {
-      userCollection(user.user.displayName);
+    .then(() => {
+      // userCollection(user.user.displayName);
       // console.log(user.user.displayName);
       // .then(() => {
       window.location.hash = '#/home';
