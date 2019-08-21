@@ -189,12 +189,23 @@
 }
 
 
-/* .one-col {
+.one-col {
     display: flex;
     flex-direction: column;
     width: 100%;
-} */
-
+}
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+.label-nav{
+    display: block;
+    padding: 10px;
+}
+.label-nav:hover {
+cursor: pointer;
+background:rgba(0,0,0,0.2);
+}
 @media screen and (min-width:1126px) {
     /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
@@ -209,6 +220,7 @@
         display: flex;
         flex-direction: column;
         width: 50%;
+        height: 100vh;
     }
     /*---------------------------------hu1--------------------------------------------------*/
     .banner {
@@ -236,14 +248,12 @@
     .h-f-height {
         height: 5em;
     }
-    .btn-menu {
-        display: none;
-    }
+  
     .nav {
         width: 90%;
         background-color: #df744a;
     }
-    header label {
+    .label-nav{
         display: none;
     }
     .nav ul {
@@ -253,6 +263,7 @@
     .list {
         margin: 1em 3em 0em 2em;
     }
+   
     .size-profile {
         width: 26%;
         height: 13em;

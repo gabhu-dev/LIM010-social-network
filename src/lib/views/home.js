@@ -6,8 +6,8 @@ export default () => {
   const template = `
   <!-- ------------------------------------------------ -->
   <header class="flex-r  bg-color-blue h-f-height ">
-  <input type="checkbox" id="btn-menu" class="btn-menu">
-  <label for="btn-menu"><i class='bx bx-menu bx-flip-vertical' ></i></label>
+  <input type="checkbox" id="btn-menu" class="hide">
+  <label for="btn-menu" class="label-nav"><i class='bx bx-menu bx-flip-vertical icons-size' ></i></label>
     <nav class="nav">
       <ul>
         <li class="list"><a href="">usuario</a></li>
@@ -29,11 +29,10 @@ export default () => {
       <label class="flex-c post-label bg-color-pink">
         <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
         <button type="button" id="btn-save" class="w-h-max bg-color-blue btn-share c-darkblue flex-c">Guardar</button>
-      <button type="button" id="btn-up">subir</button>
-        </label>
-         <label class="flex-c post-label bg-color-pink">
+        <button type="button" id="btn-up">subir</button>
+      </label>
+      <!-- <label class="flex-c post-label bg-color-pink">-->
       <div id="post-up" class="post flex-c c-darkblue">
-    <td>Celda 1</td>
     </div>
 </div>
     </label>
