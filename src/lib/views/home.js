@@ -17,9 +17,7 @@ export default () => {
     </nav>
   </header>
   <!-- ------------------------------------------------ -->
-
-
-  <div class="flex-r just-cont-cen">
+<div class="flex-r just-cont-cen">
      <div class="center-items flex-cn size-profile">
      <label class="img-profile"><p>Imagen de perfil</p></label>
       <p>Nombre del usuario</p>
@@ -30,14 +28,14 @@ export default () => {
         <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
         <button type="button" id="btn-save" class="w-h-max bg-color-blue btn-share c-darkblue flex-c">Guardar</button>
       <button type="button" id="btn-up">subir</button>
-        </label>
+            </label>
          <label class="flex-c post-label bg-color-pink">
       <div id="post-up" class="post flex-c c-darkblue">
     <td>Celda 1</td>
     </div>
 </div>
     </label>
-  </div>
+  </div> 
   <footer class="flex-r bg-color-pink h-f-height center-items">
     <p class="w-h-max">Creado por Gabhu y Sara con <3. Todos los Derechos Reservados.</p>
   </footer>`;
