@@ -1,5 +1,6 @@
 /*--------------------------------------Generales--------------------------------------*/
-*{
+
+* {
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
@@ -50,13 +51,22 @@
     width: max-content;
     height: max-content;
 }
-.just-cont-sa{
+
+.just-cont-sa {
     justify-content: space-around;
 }
-.just-cont-sb{
+
+.just-cont-sb {
     justify-content: space-between;
 }
+
+.just-cont-cen {
+    justify-content: center;
+}
+
+
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
+
 .input-form {
     height: 3em;
     width: 20em;
@@ -66,10 +76,12 @@
     outline-style: none;
     padding: 1em;
 }
+
 .pink:focus {
     box-shadow: 0 0 5px rgb(233, 186, 186);
     border: 1px solid rgba(236, 151, 151, 0.8);
 }
+
 .btn-signup,
 .btn-signin {
     height: 2.5em;
@@ -83,52 +95,66 @@
     cursor: pointer;
     padding: 11px;
 }
+
 .btn-signin:active {
     background-color: #fdb098;
 }
+
 .btn-signup:active {
     background-color: #61d8ce;
 }
+
 .btn-registrate {
     outline: none;
     text-decoration: none;
     font-weight: 500;
 }
+
 .saludo {
     margin: 1em;
 }
+
 ::placeholder {
     padding: 3%;
 }
+
 .logos-face-google {
     height: 10%;
     display: flex;
     flex-direction: row;
     align-content: center
 }
+
 .icons-size {
     font-size: 3em;
     margin: .2em;
 }
-.btn-signin-social{
+
+.btn-signin-social {
     cursor: pointer;
     border-radius: 3em;
-    border:none;
+    border: none;
     margin: .5em;
     background-color: transparent;
 }
+
 .logo {
-    height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
+    height: 8em;
+    /*verificar si el logo no se ve muy grande en el celular*/
     /*border-radius: 2em;*/
     margin: 2em;
 }
+
 .error {
     color: #2d8d85;
     font-size: 1em;
     margin: 0 0 1em;
 }
+
+
 /*-------------------------------hu3------------------------------------------------*/
-.h-f-height{
+
+.h-f-height {
     height: 5em;
 }
 
@@ -142,14 +168,14 @@
     margin: 1em;
 }
 
-.post{
+.post {
     width: 90%;
     height: 9em;
     border-radius: 2em;
     border: none;
 }
 
-.btn-share{
+.btn-share {
     border: none;
     border-radius: 1em;
     margin: 1em 1.5em 0;
@@ -158,18 +184,16 @@
     align-self: flex-end;
 }
 
-.logo-home{
-    width:4em;
+.logo-home {
+    width: 4em;
 }
-.one-col{
+
+
+/* .one-col {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-
-
-
-
+} */
 
 @media screen and (min-width:1126px) {
     /*--------------------------Generales-------------------------------------------------*/
@@ -177,15 +201,14 @@
         display: flex;
         flex-direction: column;
     }
-    .flex-r{
+    .flex-r {
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
     }
-    .two-col{
+    .two-col {
         display: flex;
         flex-direction: column;
         width: 50%;
-        height: 100vh;
     }
     /*---------------------------------hu1--------------------------------------------------*/
     .banner {
@@ -193,10 +216,10 @@
         width: 50%;
         background-size: cover;
     }
-    .bnsi-image{
+    .bnsi-image {
         background-image: url(./lib/img/1.png);
     }
-    .bnsu-image{
+    .bnsu-image {
         background-image: url(./lib/img/8.png);
     }
     .btn-signin:hover {
@@ -210,10 +233,31 @@
         width: 38em;
     }
     /*-------------------------------hu3------------------------------------------------*/
-    .h-f-height{
+    .h-f-height {
         height: 5em;
     }
-
+    .btn-menu {
+        display: none;
+    }
+    .nav {
+        width: 90%;
+        background-color: #df744a;
+    }
+    header label {
+        display: none;
+    }
+    .nav ul {
+        display: flex;
+        list-style: none;
+    }
+    .list {
+        margin: 1em 3em 0em 2em;
+    }
+    .size-profile {
+        width: 26%;
+        height: 13em;
+        background-color: #2d8d85;
+    }
     .post-label {
         width: 70%;
         height: 11.5em;
@@ -222,15 +266,13 @@
         align-items: center;
         justify-content: center;
     }
-
-    .post{
+    .post {
         width: 90%;
         height: 9em;
         border-radius: 2em;
         border: none;
     }
-
-    .btn-share{
+    .btn-share {
         border: none;
         border-radius: 1em;
         margin: 1em 1.5em 0;
@@ -238,8 +280,7 @@
         cursor: pointer;
         align-self: flex-end;
     }
-
-    .logo-home{
+    .logo-home {
         height: 4em;
     }
 }
