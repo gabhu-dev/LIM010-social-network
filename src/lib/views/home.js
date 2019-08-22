@@ -12,16 +12,23 @@ export default () => {
     </nav>
   </header>
   <div class="flex-r">
-     <!--<div class="one-col two-col center-items flex-c">
+     <div class="one-col two-col center-items flex-c">
       <p>Nombre del usuario</p>
       <p>Imagen de perfil</p>
-    </div>-->
+      <p id="emails"></p>
+    </div>
+
     <div class="one-col two-col center-items flex-c">
       <label class="flex-c post-label bg-color-pink">
         <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
         <button type="button" id="btn-save" class="w-h-max bg-color-blue btn-share c-darkblue flex-c">Compartir</button>
+        <select id="status">
+        <option value="Público">Público</option>
+        <option value="Privado">Privado</option>
+      </select>
       </label>
     </div>
+    <div id="show-post"></div>
   </div>
   <footer class="flex-r bg-color-pink h-f-height center-items">
     <p class="w-h-max">Creado por Gabhu y Sara con <3. Todos los Derechos Reservados.</p>

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { signUpWithEmail } from './ingresar.js';
+import { signUpWithEmail } from '../model/firebase-auth.js';
 import { createUser } from './post.js';
 
 export const signUp = (e) => {
@@ -7,6 +7,7 @@ export const signUp = (e) => {
   // const nickname = document.getElementById('nickname').value;
   const email = document.getElementById('email-signup').value;
   const password = document.getElementById('password-signup').value;
+  const nickname = document.getElementById('nickname').value;
   const messageErrorLabel = document.getElementById('msg-warning');
   signUpWithEmail(email, password)
     .then(() => {
@@ -15,7 +16,7 @@ export const signUp = (e) => {
       const user = firebase.auth().currentUser;
       console.log(user);
       window.location.hash = '#/';
-      createUser();
+      createUser(nickname, email, user.uid);
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');

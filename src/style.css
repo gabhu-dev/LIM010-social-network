@@ -194,7 +194,7 @@
         background-size: cover;
     }
     .bnsi-image{
-        background-image: url(./lib/img/1.png);
+        background-image: url(./lib/img/11.png);
     }
     .bnsu-image{
         background-image: url(./lib/img/8.png);
@@ -228,6 +228,7 @@
         height: 9em;
         border-radius: 2em;
         border: none;
+        background-color: #ffffff;
     }
 
     .btn-share{
