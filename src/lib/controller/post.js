@@ -7,4 +7,3 @@ export const createUser = (nombre, email, id) => {
   });
   return addUserCollection;
 };
-

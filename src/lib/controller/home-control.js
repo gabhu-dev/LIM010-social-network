@@ -43,4 +43,14 @@ const deletePost = (id) => {
     .catch((error) => {
       console.error('Error removing document: ', error);
     });
+export const update = (e) => {
+  e.preventDefault();
+  const postUp = document.getElementById('post-up');
+  postUp.innerHTML = '';
+  firebase.firestore().collection('usuarios').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      postUp.innerHTML += ` ${doc.data().title}`;
+    });
+  });
 };
