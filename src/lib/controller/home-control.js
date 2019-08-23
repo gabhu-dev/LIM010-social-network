@@ -1,5 +1,5 @@
 // leer post
-const showPost = () => {
+export const showPost = () => {
   const tabla = document.getElementById('show-post');
   firebase.firestore().collection('Post').onSnapshot((querySnapshot) => {
     tabla.innerHTML = '';
@@ -43,6 +43,8 @@ const deletePost = (id) => {
     .catch((error) => {
       console.error('Error removing document: ', error);
     });
+};
+
 export const update = (e) => {
   e.preventDefault();
   const postUp = document.getElementById('post-up');
@@ -54,3 +56,16 @@ export const update = (e) => {
     });
   });
 };
+// export const signOutUser = () => {
+//   signOutLogin().then(() => {
+//     window.location.hash = '#/';
+//   }, () => {
+//     // console.log(error);
+//   });
+// };
+// export const changeViewToProfile = () => {
+//   window.location.hash = '#/profile';
+// };
+// export const changeViewToMyPosts = () => {
+//   window.location.hash = '#/myPost';
+// };
