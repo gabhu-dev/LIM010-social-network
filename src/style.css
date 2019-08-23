@@ -176,9 +176,19 @@
 
 .post-publicated {
     width: 100%;
-    height: 11.5em;
+    height: 10em;
     border-radius: 0.5em;
     border: none;
+}
+
+.name-person {
+    background-color: #df744a;
+}
+
+.options-like-deleted {
+    height: 2em;
+    width: 100%;
+    background-color: #2d8d85;
 }
 
 .btn-share {

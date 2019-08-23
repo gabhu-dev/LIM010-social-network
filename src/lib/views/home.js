@@ -32,10 +32,14 @@ export default () => {
     <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue">Guardar</button>
     <button type="button" id="btn-up">subir</button>
   </label>
-  <label class="flex-c post-label bg-color-pink"> 
-  <p> nombre del que publico</p>
+  <label class="flex-c post-publicated just-cont-sb bg-color-pink"> 
+  <p class="name-person"> nombre del que publico</p>
     <div id="post-up" class=" flex-c c-darkblue">
       <td>Celda 1</td> 
+    </div>
+    <div class="options-like-deleted">
+    <button><i class='bx bx-heart'></i></button>
+    <button><i class='bx bxl-telegram'></i></button>
     </div>
   </label>
 </div>
