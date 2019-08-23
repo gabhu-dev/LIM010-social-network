@@ -5,7 +5,7 @@ export default () => {
   const template = `
   <div class ="banner bnsi-image center-items two-col">
   </div>
-  <div class="center-items two-col flex-c">
+  <div class="center-items two-col  flex-c">
       <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
       <p class="w-max saludo">Siente la ola coreana</p>
       <form name="login-form" class="flex-c center-items">

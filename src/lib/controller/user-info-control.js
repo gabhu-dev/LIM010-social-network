@@ -9,16 +9,16 @@ export const profileUser = (userName) => {
       userName.innerHTML += userEmail;
     }
   });
-  console.log(firebase.firestore().collection('users'));
-  firebase.firestore().collection('users').where("Id", "==", true)
+  // console.log(firebase.firestore().collection('users'));
+  firebase.firestore().collection('users').where('Id', '==', true)
     .get()
-    .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data(Id));
-        });
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, ' => ', doc.data(Id));
+      });
     })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
+    .catch((error) => {
+      console.log('Error getting documents: ', error);
     });
 };
