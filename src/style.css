@@ -211,6 +211,10 @@
     flex-direction: column;
     width: 100%;
 }
+<<<<<<< HEAD
+.profile-photo{
+    width: 10em;
+=======
 
 header label {
     display: inline-block;
@@ -219,6 +223,7 @@ header label {
     height: 50px;
     padding: 10px;
     border-right: 1px solid #fff;
+>>>>>>> 3ae805de0aaf9336911dc5c802e829786e8251fa
 }
 
 header label:hover {
@@ -298,8 +303,13 @@ header label:hover {
         width: 50%;
         background-size: cover;
     }
+<<<<<<< HEAD
+    .bnsi-image{
+        background-image: url(./lib/img/11.png);
+=======
     .bnsi-image {
         background-image: url(./lib/img/1.png);
+>>>>>>> 3ae805de0aaf9336911dc5c802e829786e8251fa
     }
     .bnsu-image {
         background-image: url(./lib/img/8.png);
@@ -350,6 +360,7 @@ header label:hover {
         height: 9em;
         border-radius: 2em;
         border: none;
+        background-color: #ffffff;
     }
     .btn-share {
         border: none;

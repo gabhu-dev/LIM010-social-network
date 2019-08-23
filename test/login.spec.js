@@ -3,7 +3,7 @@ import {
   signUpWithEmail,
   signInGoogle,
   signInFacebook,
-} from '../src/lib/controller/ingresar.js';
+} from '../src/lib/model/firebase-auth.js';
 
 // configuracion de mock de firebase
 const firebasemock = require('firebase-mock');

@@ -1,4 +1,4 @@
-import { addPost, update } from '../controller/home-control.js';
+import { profileUser } from '../controller/user-info-control.js';
 import { logOut } from '../controller/sign-in-control.js';
 
 export default () => {
@@ -49,12 +49,9 @@ export default () => {
   </footer>`;
   viewHome.innerHTML = template;
   viewHome.setAttribute('class', 'size flex-c just-cont-sb');
-  const btnSave = viewHome.querySelector('#btn-save');
   const btnLogOut = viewHome.querySelector('#log-out');
-  const btnUp = viewHome.querySelector('#btn-up');
-  btnSave.addEventListener('click', addPost);
   btnLogOut.addEventListener('click', logOut);
-  btnUp.addEventListener('click', update);
-
+  const userName = viewHome.querySelector('#user-name');
+  profileUser(userName);
   return viewHome;
 };
