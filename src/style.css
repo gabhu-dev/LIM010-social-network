@@ -140,8 +140,6 @@
 
 .logo {
     height: 8em;
-    /*verificar si el logo no se ve muy grande en el celular*/
-    /*border-radius: 2em;*/
     margin: 2em;
 }
 
@@ -159,9 +157,9 @@
 }
 
 .post-label {
-    width: 80%;
+    width: 100%;
     height: 11.5em;
-    border-radius: 2em;
+    border-radius: 0.5em;
     border: none;
     align-items: center;
     justify-content: center;
@@ -170,8 +168,16 @@
 
 .post {
     width: 90%;
-    height: 9em;
-    border-radius: 2em;
+    height: 8em;
+    border-radius: 0.5em;
+    border: none;
+    margin: 5%;
+}
+
+.post-publicated {
+    width: 100%;
+    height: 11.5em;
+    border-radius: 0.5em;
     border: none;
 }
 
@@ -184,67 +190,88 @@
     align-self: flex-end;
 }
 
-.logo-home {
-    width: 4em;
+.logo-home,
+.logo-nav {
+    width: 3em;
+    height: 2em;
 }
-
 
 .one-col {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 header label {
-    display: block; 
+    display: inline-block;
     font-size: xx-large;
     width: 50px;
     height: 50px;
     padding: 10px;
     border-right: 1px solid #fff;
+}
 
+header label:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2)
 }
-header label:hover{
-        cursor: pointer;
-        background: rgba(0, 0, 0, 0.2)
-    }
-    
-
-.nav ul{
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-.nav li{
-    flex-grow: 1;
-    /* border-right: 1px solid #fff; */
-border-top: 1px solid #fff;
-}
-.nav li:hover{
-    background: rgba(0,0,0,0.2);
-}
-.nav li a {
-    display: block;
-    padding:15px 20px;
-    color: #fff;
-    text-decoration: none;
-} 
-/* #btn-menu: checked-.nav {
-    margin:0;
-} */
 
 .nav {
     background-color: teal;
     width: 70%;
     position: absolute;
-     margin-left: -70%;
-   /* display: flex;
-    flex-direction: column; */
-    }
-.img-profile{
-    border-block: 3px solid black;
+    margin-left: -70%;
 }
+
+.nav ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.nav li {
+    flex-grow: 1;
+    border-top: 1px solid #fff;
+}
+
+.nav li:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#btn-menu:checked~.nav {
+    margin: 0;
+}
+
+.size-profile {
+    width: 90%;
+    height: 9em;
+    background-color: #2d8d85;
+}
+
+.img-profile {
+    margin: 5%;
+    height: 5em;
+    width: 20%;
+    background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.two-col {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    /* height: 100vh; */
+}
+
 @media screen and (min-width:1126px) {
     /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
@@ -254,12 +281,6 @@ border-top: 1px solid #fff;
     .flex-r {
         display: flex;
         flex-direction: row;
-    }
-    .two-col {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 100vh;
     }
     /*---------------------------------hu1--------------------------------------------------*/
     .banner {
@@ -285,21 +306,29 @@ border-top: 1px solid #fff;
     }
     /*-------------------------------hu3------------------------------------------------*/
     /* .h-f-height {
-        height: 5em;
-    } */
-/*    
-    header label{
+      height: 5em;
+  } */
+    header label {
         display: none;
-     } */
-    
-
-    .size-profile {
-        width: 26%;
-        height: 13em;
-        background-color: #2d8d85;
+    }
+    .nav {
+        margin: 0;
+        width: 100%;
+        position: inherit;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav li a {
+        text-align: center;
+        padding: 2%;
+    }
+    .logo-home {
+        display: none;
     }
     .post-label {
-        width: 70%;
+        width: 100%;
         height: 11.5em;
         border-radius: 2em;
         border: none;
@@ -319,8 +348,5 @@ border-top: 1px solid #fff;
         padding: .4em;
         cursor: pointer;
         align-self: flex-end;
-    }
-    .logo-home {
-        height: 4em;
     }
 }
