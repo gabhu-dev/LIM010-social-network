@@ -279,7 +279,7 @@ header label:hover {
     display: flex;
     flex-direction: column;
     width: 90%;
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 @media screen and (min-width:1126px) {
