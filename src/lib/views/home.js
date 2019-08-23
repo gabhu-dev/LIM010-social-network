@@ -35,7 +35,7 @@ export default () => {
   <label class="flex-c post-publicated just-cont-sb bg-color-pink"> 
   <p class="name-person"> nombre del que publico</p>
     <div id="post-up" class=" flex-c c-darkblue">
-      <td>Celda 1</td> 
+      <td></td> 
     </div>
     <div class="options-like-deleted">
     <button><i class='bx bx-heart'></i></button>

@@ -10,6 +10,17 @@
 //     });
 // };
 
+// export const collectionUsers = (email) => {
+//   firebase.firestore().collection('users-gaby').add({
+//    email:
+//   })
+//     .then((docRef) => {
+//       console.log('Document written with ID: ', docRef.id);
+//     })
+//     .catch((error) => {
+//       console.error('Error adding document: ', error);
+//     });
+// };
 export const addPost = () => {
   const post = document.getElementById('text-post').value;
   // eslint-disable-next-line no-console

@@ -9,11 +9,16 @@
 export const createUser = () => {
   const nickname = document.getElementById('nickname').value;
   const email = document.getElementById('email-signup').value;
-  const addUserCollection = firebase.firestore().collection('users').add({
+  const addUserCollection = firebase.firestore().collection('users-gb').add({
     Usuario: nickname,
     Correo: email,
   });
   return addUserCollection;
+};
+const subPost = () => {
+  const messageRef = firebase.firestore().collection('users-gb').doc('${doc.id}')
+    .collection('post')
+.doc('publico');
 };
 // leer la data de la base de datos
 // export const readPost = () => {
