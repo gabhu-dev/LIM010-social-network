@@ -1,5 +1,6 @@
 /*--------------------------------------Generales--------------------------------------*/
-*{
+
+* {
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     margin: 0;
@@ -50,13 +51,22 @@
     width: max-content;
     height: max-content;
 }
-.just-cont-sa{
+
+.just-cont-sa {
     justify-content: space-around;
 }
-.just-cont-sb{
+
+.just-cont-sb {
     justify-content: space-between;
 }
+
+.just-cont-cen {
+    justify-content: center;
+}
+
+
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
+
 .input-form {
     height: 3em;
     width: 20em;
@@ -66,10 +76,12 @@
     outline-style: none;
     padding: 1em;
 }
+
 .pink:focus {
     box-shadow: 0 0 5px rgb(233, 186, 186);
     border: 1px solid rgba(236, 151, 151, 0.8);
 }
+
 .btn-signup,
 .btn-signin {
     height: 2.5em;
@@ -83,73 +95,103 @@
     cursor: pointer;
     padding: 11px;
 }
+
 .btn-signin:active {
     background-color: #fdb098;
 }
+
 .btn-signup:active {
     background-color: #61d8ce;
 }
+
 .btn-registrate {
     outline: none;
     text-decoration: none;
     font-weight: 500;
 }
+
 .saludo {
     margin: 1em;
 }
+
 ::placeholder {
     padding: 3%;
 }
+
 .logos-face-google {
     height: 10%;
     display: flex;
     flex-direction: row;
     align-content: center
 }
+
 .icons-size {
     font-size: 3em;
     margin: .2em;
 }
-.btn-signin-social{
+
+.btn-signin-social {
     cursor: pointer;
     border-radius: 3em;
-    border:none;
+    border: none;
     margin: .5em;
     background-color: transparent;
 }
+
 .logo {
-    height: 8em;/*verificar si el logo no se ve muy grande en el celular*/
-    /*border-radius: 2em;*/
+    height: 8em;
     margin: 2em;
 }
+
 .error {
     color: #2d8d85;
     font-size: 1em;
     margin: 0 0 1em;
 }
+
+
 /*-------------------------------hu3------------------------------------------------*/
-.h-f-height{
+
+.h-f-height {
     height: 5em;
 }
 
 .post-label {
-    width: 80%;
+    width: 100%;
     height: 11.5em;
-    border-radius: 2em;
+    border-radius: 0.5em;
     border: none;
     align-items: center;
     justify-content: center;
     margin: 1em;
 }
 
-.post{
+.post {
     width: 90%;
-    height: 9em;
-    border-radius: 2em;
+    height: 8em;
+    border-radius: 0.5em;
+    border: none;
+    margin: 5%;
+}
+
+.post-publicated {
+    width: 100%;
+    height: 10em;
+    border-radius: 0.5em;
     border: none;
 }
 
-.btn-share{
+.name-person {
+    background-color: #df744a;
+}
+
+.options-like-deleted {
+    height: 2em;
+    width: 100%;
+    background-color: #2d8d85;
+}
+
+.btn-share {
     border: none;
     border-radius: 1em;
     margin: 1em 1.5em 0;
@@ -158,20 +200,92 @@
     align-self: flex-end;
 }
 
-.logo-home{
-    width:4em;
+.logo-home,
+.logo-nav {
+    width: 3em;
+    height: 2em;
 }
-.one-col{
+
+.one-col {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+<<<<<<< HEAD
 .profile-photo{
     width: 10em;
+=======
+
+header label {
+    display: inline-block;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-right: 1px solid #fff;
+>>>>>>> 3ae805de0aaf9336911dc5c802e829786e8251fa
 }
 
+header label:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2)
+}
 
+.nav {
+    background-color: teal;
+    width: 70%;
+    position: absolute;
+    margin-left: -70%;
+}
 
+.nav ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.nav li {
+    flex-grow: 1;
+    border-top: 1px solid #fff;
+}
+
+.nav li:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#btn-menu:checked~.nav {
+    margin: 0;
+}
+
+.size-profile {
+    width: 90%;
+    height: 9em;
+    background-color: #2d8d85;
+}
+
+.img-profile {
+    margin: 5%;
+    height: 5em;
+    width: 20%;
+    background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.two-col {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+}
 
 @media screen and (min-width:1126px) {
     /*--------------------------Generales-------------------------------------------------*/
@@ -179,15 +293,9 @@
         display: flex;
         flex-direction: column;
     }
-    .flex-r{
+    .flex-r {
         display: flex;
-        flex-direction: row; 
-    }
-    .two-col{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        height: 100vh;
+        flex-direction: row;
     }
     /*---------------------------------hu1--------------------------------------------------*/
     .banner {
@@ -195,10 +303,15 @@
         width: 50%;
         background-size: cover;
     }
+<<<<<<< HEAD
     .bnsi-image{
         background-image: url(./lib/img/11.png);
+=======
+    .bnsi-image {
+        background-image: url(./lib/img/1.png);
+>>>>>>> 3ae805de0aaf9336911dc5c802e829786e8251fa
     }
-    .bnsu-image{
+    .bnsu-image {
         background-image: url(./lib/img/8.png);
     }
     .btn-signin:hover {
@@ -212,37 +325,49 @@
         width: 38em;
     }
     /*-------------------------------hu3------------------------------------------------*/
-    .h-f-height{
-        height: 5em;
+    /* .h-f-height {
+      height: 5em;
+  } */
+    header label {
+        display: none;
     }
-
+    .nav {
+        margin: 0;
+        width: 100%;
+        position: inherit;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav li a {
+        text-align: center;
+        padding: 2%;
+    }
+    .logo-home {
+        display: none;
+    }
     .post-label {
-        width: 70%;
+        width: 100%;
         height: 11.5em;
         border-radius: 2em;
         border: none;
         align-items: center;
         justify-content: center;
     }
-
-    .post{
+    .post {
         width: 90%;
         height: 9em;
         border-radius: 2em;
         border: none;
         background-color: #ffffff;
     }
-
-    .btn-share{
+    .btn-share {
         border: none;
         border-radius: 1em;
         margin: 1em 1.5em 0;
         padding: .4em;
         cursor: pointer;
         align-self: flex-end;
-    }
-
-    .logo-home{
-        height: 4em;
     }
 }
