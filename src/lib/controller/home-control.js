@@ -1,40 +1,40 @@
 // leer post
-export const showPost = () => {
-  const tabla = document.getElementById('show-post');
-  firebase.firestore().collection('Post').onSnapshot((querySnapshot) => {
-    tabla.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      tabla.innerHTML += `<label class="flex-c post-label bg-color-pink">
-                            <div class="post flex-c c-darkblue">${doc.data().Post}</div>
-                            <button type="button" id="${doc.id}">X</button>
-                            <button type="button" id="${doc.id}">Editar</button>
-                            <p>${doc.data().Status}</p>
-                          </label>`;
-    });
-  });
-  return tabla;
-};
+// export const showPost = () => {
+//   const tabla = document.getElementById('show-post');
+//   firebase.firestore().collection('Post').onSnapshot((querySnapshot) => {
+//     tabla.innerHTML = '';
+//     querySnapshot.forEach((doc) => {
+//       tabla.innerHTML += `<label class="flex-c post-label bg-color-pink">
+//                             <div class="post flex-c c-darkblue">${doc.data().Post}</div>
+//                             <button type="button" id="${doc.id}">X</button>
+//                             <button type="button" id="${doc.id}">Editar</button>
+//                             <p>${doc.data().Status}</p>
+//                           </label>`;
+//     });
+//   });
+//   return tabla;
+// };
 
 // crear post
-export const addPost = () => {
-  const post = document.getElementById('text-post').value;
-  const status = document.getElementById('status').value;
-  firebase.firestore().collection('Post').add({
-    Post: post,
-    Status: status,
-    timePost: (new Date()).toLocaleDateString(),
-  })
-    .then((docRef) => {
-      // eslint-disable-next-line no-console
-      console.log('Document written with ID: ', docRef.id);
-      document.getElementById('text-post').value = '';
-      showPost();
-    })
-    .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error('Error adding document: ', error);
-    });
-};
+// export const addPost = () => {
+//   const post = document.getElementById('text-post').value;
+//   const status = document.getElementById('status').value;
+//   firebase.firestore().collection('Post').add({
+//     Post: post,
+//     Status: status,
+//     timePost: (new Date()).toLocaleDateString(),
+//   })
+//     .then((docRef) => {
+//       eslint-disable-next-line no-console
+//       console.log('Document written with ID: ', docRef.id);
+//       document.getElementById('text-post').value = '';
+//       showPost();
+//     })
+//     .catch((error) => {
+//       eslint-disable-next-line no-console
+//       console.error('Error adding document: ', error);
+//     });
+// };
 
 // eliminar
 // const deletePost = (id) => {
@@ -47,22 +47,22 @@ export const addPost = () => {
 //     });
 // };
 
-export const update = (e) => {
-  e.preventDefault();
-  const postUp = document.getElementById('post-up');
-  postUp.innerHTML = '';
-  firebase.firestore().collection('post').get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // eslint-disable-next-line no-console
-      console.log(`${doc.id} => ${doc.data()}`);
-      postUp.innerHTML += `
-       <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
-        <td>${doc.data().Post}</td>
-       </div>
-      `;
-    });
-  });
-};
+// export const update = (e) => {
+//   e.preventDefault();
+//   const postUp = document.getElementById('post-up');
+//   postUp.innerHTML = '';
+//   firebase.firestore().collection('post').get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       eslint-disable-next-line no-console
+//       console.log(`${doc.id} => ${doc.data()}`);
+//       postUp.innerHTML += `
+//        <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
+//         <td>${doc.data().Post}</td>
+//        </div>
+//       `;
+//     });
+//   });
+// };
 // export const signOutUser = () => {
 //   signOutLogin().then(() => {
 //     window.location.hash = '#/';
@@ -76,3 +76,10 @@ export const update = (e) => {
 // export const changeViewToMyPosts = () => {
 //   window.location.hash = '#/myPost';
 // };
+import { saveInData } from './create-user-db-control.js';
+
+export const save = (e) => {
+  e.preventDefault();
+  const textPost = document.getElementById('text-post').value;
+  saveInData(textPost);
+};

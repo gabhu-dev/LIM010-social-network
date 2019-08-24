@@ -1,5 +1,6 @@
-import { profileUser } from '../controller/user-info-control.js';
+// import { profileUser } from '../controller/user-info-control.js';
 import { logOut } from '../controller/sign-in-control.js';
+import { save } from '../controller/home-control.js';
 
 export default () => {
   const viewHome = document.createElement('div');
@@ -50,7 +51,11 @@ export default () => {
   viewHome.setAttribute('class', 'size flex-c ');
   const btnLogOut = viewHome.querySelector('#log-out');
   btnLogOut.addEventListener('click', logOut);
-  const userName = viewHome.querySelector('#user-name');
-  profileUser(userName);
+  // const userName = viewHome.querySelector('#user-name');
+  // profileUser(userName);
+  // const textPost = viewHome.querySelector('#text-post');
+  // saveInData(textPost);
+  const btnSave = viewHome.querySelector('#btn-save');
+  btnSave.addEventListener('click', save);
   return viewHome;
 };
