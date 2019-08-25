@@ -77,9 +77,17 @@
 //   window.location.hash = '#/myPost';
 // };
 import { saveInData } from './create-user-db-control.js';
+// import { currentUser } from '../model/firebase-auth.js';
 
 export const save = (e) => {
   e.preventDefault();
   const textPost = document.getElementById('text-post').value;
   saveInData(textPost);
 };
+
+// const obtainProfile = () => {
+// currentUser()
+// .then(()=>
+// let em)
+// }
+// ;

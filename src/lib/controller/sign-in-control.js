@@ -4,6 +4,7 @@ import {
   signInFacebook,
   signOut,
 } from '../model/firebase-auth.js';
+// import { obtain } from './create-user-db-control.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -15,6 +16,7 @@ export const signIn = (e) => {
       messageErrorLabel.classList.remove('error');
       messageErrorLabel.innerHTML = '';
       window.location.hash = '#/home';
+      // obtain();
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');
