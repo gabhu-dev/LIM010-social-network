@@ -1,6 +1,11 @@
+
 import { a } from '../controller/user-info-control.js';
 import { logOut } from '../controller/sign-in-control.js';
 import { currentUser } from '../model/firebase-auth.js';
+
+// import { profileUser } from '../controller/user-info-control.js';
+// import { logOut } from '../controller/sign-in-control.js';
+// import { save } from '../controller/home-control.js';
 
 export default () => {
   const viewHome = document.createElement('div');
@@ -53,7 +58,16 @@ export default () => {
   viewHome.setAttribute('class', 'size flex-c ');
   const btnLogOut = viewHome.querySelector('#log-out');
   btnLogOut.addEventListener('click', logOut);
+
   const user = currentUser();
   a(user.uid);
+
+  // const userName = viewHome.querySelector('#user-name');
+  // profileUser(userName);
+  // const textPost = viewHome.querySelector('#text-post');
+  // saveInData(textPost);
+ // const btnSave = viewHome.querySelector('#btn-save');
+  // btnSave.addEventListener('click', save);
+
   return viewHome;
 };
