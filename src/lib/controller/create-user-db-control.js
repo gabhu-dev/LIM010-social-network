@@ -1,6 +1,13 @@
 // CONTROLANDO LA DATA
 // agrega una coleccion 'users' al que le añade el nombre,email,id(autenticacion)
 export const createUser = (nombre, email, id) => {
+  // const addUserCollection = firebase.firestore().collection('users').doc(id).set({
+    // Usuario: nombre,
+    // Correo: email,
+    // Id: id,
+    // Photo: img,
+  // });
+
   const addUserCollection = firebase.firestore()
     .collection('users-g').add({
       Usuario: nombre,

@@ -15,7 +15,7 @@ export const signInFacebook = () => {
 
 export const signOut = () => firebase.auth().signOut();
 
-export const currentUser = () => firebase.auth().currentUser();
+export const currentUser = () => firebase.auth().currentUser;
 
 // export const obtainProfile = () => {
 //   const user = firebase.auth().currentUser;
