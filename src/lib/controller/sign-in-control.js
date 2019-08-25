@@ -3,7 +3,9 @@ import {
   signInEmail,
   signInFacebook,
   signOut,
+  currentUser,
 } from '../model/firebase-auth.js';
+import { createUser } from './create-user-db-control.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -12,6 +14,9 @@ export const signIn = (e) => {
   const messageErrorLabel = document.getElementById('msg-wrong');
   return signInEmail(email, password)
     .then(() => {
+      // const b = currentUser();
+      // const c = b.uid;
+      // console.log(c);
       messageErrorLabel.classList.remove('error');
       messageErrorLabel.innerHTML = '';
       window.location.hash = '#/home';
@@ -50,6 +55,8 @@ export const signInFb = () => {
 export const signInGoogleV = () => {
   signInGoogle()
     .then(() => {
+      const a = currentUser();
+      createUser(a.displayName, a.email, a.uid);
       window.location.hash = '#/home';
     }).catch((error) => {
       const errorCode = error.code;
