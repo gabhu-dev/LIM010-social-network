@@ -15,3 +15,18 @@ export const readData = (id) => {
     .get();
   return obtainPosts;
 };
+
+export const deleteData = (idDocUsers, idDocPost) => {
+  const deletePost = firebase.firestore().collection('users').doc(idDocUsers).collection('post')
+    .doc(idDocPost)
+    .delete()
+    .then(() => {
+      // eslint-disable-next-line no-console
+      console.log('Document successfully deleted!');
+    })
+    .catch((error) => {
+      // eslint-disable-next-line no-console
+      console.error('Error removing document: ', error);
+    });
+  return deletePost;
+};

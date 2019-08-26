@@ -40,12 +40,13 @@ export default () => {
        <p class="name-person"> nombre del que publico</p>
          <div id="post-up" class=" flex-c c-darkblue">
           <td>celda</td> 
+          <button>borrar</button>
          </div>
        <div class="options-like-deleted">
          <button><i class='bx bx-heart'></i></button>
          <button><i class='bx bxl-telegram'></i></button>
        </div>
-      </label>
+      </label> 
     </div>
    </div> 
    <!-- -------------------------------------------------- -->

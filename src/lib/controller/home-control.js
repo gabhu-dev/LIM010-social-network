@@ -1,5 +1,5 @@
 // aqui se JUNTAN -----------------
-import { saveInData, readData } from './post-data.js';
+import { saveInData, readData, deleteData } from './post-data.js';
 import { currentUser } from '../model/firebase-auth.js';
 
 export const save = (e) => {
@@ -17,15 +17,28 @@ export const readPost = (e) => {
   readData(user.uid)
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
+        // eslint-disable-next-line no-console
         console.log(`${doc.id} => ${doc.data()}`);
         postUp.innerHTML += `
           <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
           <td>${doc.data().post}</td>
+          <button id="delete">borrar</button>
           </div>
         `;
+        const btnDelete = document.getElementById('delete');
+        btnDelete.addEventListener('click', () => {
+          deleteData(user.uid, doc.id);
+        });
       });
     });
 };
+
+// eliminar post
+// const deleteIdPosts=(e)=>{
+// e.preventDefault();
+// const user = currentUser();
+//   deleteData(user.uid,)
+// }
 // leer post
 // export const showPost = () => {
 //   const tabla = document.getElementById('show-post');
