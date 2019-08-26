@@ -1,11 +1,9 @@
-
-import { a } from '../controller/user-info-control.js';
+import { obtainProfile } from '../controller/users-profile.js';
 import { logOut } from '../controller/sign-in-control.js';
 import { currentUser } from '../model/firebase-auth.js';
-
 // import { profileUser } from '../controller/user-info-control.js';
 // import { logOut } from '../controller/sign-in-control.js';
-// import { save } from '../controller/home-control.js';
+import { save, readPost } from '../controller/home-control.js';
 
 export default () => {
   const viewHome = document.createElement('div');
@@ -26,7 +24,7 @@ export default () => {
   <!-- ------------------------------------------------ -->
  <div class="banner-post flex-c center-items">
    <div class="center-items flex-r size-profile">
-     <div class="img-profile"></div>
+     <div id="img-profile" class="img-profile"></div>
      <div>
       <p id="user-info"></p>
      </div>
@@ -41,7 +39,7 @@ export default () => {
      <label class="flex-c post-publicated just-cont-sb bg-color-pink"> 
        <p class="name-person"> nombre del que publico</p>
          <div id="post-up" class=" flex-c c-darkblue">
-          <td></td> 
+          <td>celda</td> 
          </div>
        <div class="options-like-deleted">
          <button><i class='bx bx-heart'></i></button>
@@ -60,14 +58,16 @@ export default () => {
   btnLogOut.addEventListener('click', logOut);
 
   const user = currentUser();
-  a(user.uid);
+  obtainProfile(user.uid);
 
   // const userName = viewHome.querySelector('#user-name');
   // profileUser(userName);
   // const textPost = viewHome.querySelector('#text-post');
-  // saveInData(textPost);
- // const btnSave = viewHome.querySelector('#btn-save');
-  // btnSave.addEventListener('click', save);
+  // saveInData(textPost, user.uid);
+  const btnSave = viewHome.querySelector('#btn-save');
+  btnSave.addEventListener('click', save);
+  const btnUp = viewHome.querySelector('#btn-up');
+  btnUp.addEventListener('click', readPost);
 
   return viewHome;
 };

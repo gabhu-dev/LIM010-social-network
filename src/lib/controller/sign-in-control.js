@@ -5,8 +5,7 @@ import {
   signOut,
   currentUser,
 } from '../model/firebase-auth.js';
-import { createUser } from './create-user-db-control.js';
-// import { obtain } from './create-user-db-control.js';
+import { createUser } from './users-profile.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -15,13 +14,9 @@ export const signIn = (e) => {
   const messageErrorLabel = document.getElementById('msg-wrong');
   return signInEmail(email, password)
     .then(() => {
-      // const b = currentUser();
-      // const c = b.uid;
-      // console.log(c);
       messageErrorLabel.classList.remove('error');
       messageErrorLabel.innerHTML = '';
       window.location.hash = '#/home';
-      // obtain();
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');
@@ -44,6 +39,8 @@ export const signIn = (e) => {
 export const signInFb = () => {
   signInFacebook()
     .then(() => {
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid);
       window.location.hash = '#/home';
     }).catch((error) => {
       // Manejar errores aquí.
@@ -57,8 +54,8 @@ export const signInFb = () => {
 export const signInGoogleV = () => {
   signInGoogle()
     .then(() => {
-      const a = currentUser();
-      createUser(a.displayName, a.email, a.uid);
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid, user.photoURL);
       window.location.hash = '#/home';
     }).catch((error) => {
       const errorCode = error.code;

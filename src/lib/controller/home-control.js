@@ -1,3 +1,31 @@
+// aqui se JUNTAN -----------------
+import { saveInData, readData } from './post-data.js';
+import { currentUser } from '../model/firebase-auth.js';
+
+export const save = (e) => {
+  e.preventDefault();
+  const textPost = document.getElementById('text-post').value;
+  const user = currentUser();
+  saveInData(textPost, user.uid);
+};
+
+export const readPost = (e) => {
+  e.preventDefault();
+  const user = currentUser();
+  const postUp = document.getElementById('post-up');
+  postUp.innerHTML = '';
+  readData(user.uid)
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        postUp.innerHTML += `
+          <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
+          <td>${doc.data().post}</td>
+          </div>
+        `;
+      });
+    });
+};
 // leer post
 // export const showPost = () => {
 //   const tabla = document.getElementById('show-post');
@@ -76,18 +104,3 @@
 // export const changeViewToMyPosts = () => {
 //   window.location.hash = '#/myPost';
 // };
-import { saveInData } from './create-user-db-control.js';
-// import { currentUser } from '../model/firebase-auth.js';
-
-export const save = (e) => {
-  e.preventDefault();
-  const textPost = document.getElementById('text-post').value;
-  saveInData(textPost);
-};
-
-// const obtainProfile = () => {
-// currentUser()
-// .then(()=>
-// let em)
-// }
-// ;

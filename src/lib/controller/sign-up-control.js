@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 import { signUpWithEmail } from '../model/firebase-auth.js';
-import { createUser } from './create-user-db-control.js';
+import { createUser } from './users-profile.js';
 
 export const signUp = (e) => {
   e.preventDefault();
-  // const nickname = document.getElementById('nickname').value;
   const email = document.getElementById('email-signup').value;
   const password = document.getElementById('password-signup').value;
   const nickname = document.getElementById('nickname').value;
