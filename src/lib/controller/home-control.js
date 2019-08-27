@@ -1,5 +1,5 @@
 // aqui se JUNTAN -----------------
-import { saveInData, readData, deleteData } from './post-data.js';
+import { saveInData, deleteData, readData } from './post-data.js';
 import { currentUser } from '../model/firebase-auth.js';
 
 export const save = (e) => {
@@ -8,30 +8,52 @@ export const save = (e) => {
   const user = currentUser();
   saveInData(textPost, user.uid);
 };
+export const deleteNoteOnClick = (post) => {
+  deleteData(post.id);
+};
+
+const postItem = (postObject) => {
+  const divPostItem = document.createElement('div');
+  divPostItem.innerHTML = `<span>${postObject.data().post} </span>
+  <button id="delete-${postObject.id}">borrar</button>
+ `;
+  // agregando evento de click al btn eliminar una nota
+  divPostItem.querySelector(`#delete-${postObject.id}`)
+    .addEventListener('click', () => deleteData(currentUser().uid, postObject.id));
+  return divPostItem;
+};
 
 export const readPost = (e) => {
   e.preventDefault();
   const user = currentUser();
   const postUp = document.getElementById('post-up');
-  postUp.innerHTML = '';
-  readData(user.uid)
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // eslint-disable-next-line no-console
-        console.log(`${doc.id} => ${doc.data()}`);
-        postUp.innerHTML += `
-          <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
-          <td>${doc.data().post}</td>
-          <button id="delete">borrar</button>
-          </div>
-        `;
-        const btnDelete = document.getElementById('delete');
-        btnDelete.addEventListener('click', () => {
-          deleteData(user.uid, doc.id);
-        });
-      });
+  readData(user.uid).onSnapshot((querySnapshot) => {
+    postUp.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      // eslint-disable-next-line no-console
+      postUp.appendChild(postItem(doc));
+      // const btnDelete = postUp.querySelector('#delete-${doc.id}');
+      // postUp.querySelector(`#delete-${doc.id}`).addEventListener('click', () => console.log('diste click'));
     });
+  });
 };
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         // eslint-disable-next-line no-console
+//         console.log(`${doc.id} => ${doc.data()}`);
+//         postUp.innerHTML += `
+//           <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
+//           <td>${doc.data().post}</td>
+//           <button id="delete-${doc.id}">borrar</button>
+//           </div>
+//         `;
+//         const btnDelete = postUp.querySelector(`#delete-${doc.id}`);
+//         btnDelete.addEventListener('click', () => {
+//           deleteData(user.uid, doc.id);
+//         });
+//       });
+//     });
+// };
 
 // eliminar post
 // const deleteIdPosts=(e)=>{
@@ -75,45 +97,4 @@ export const readPost = (e) => {
 //       eslint-disable-next-line no-console
 //       console.error('Error adding document: ', error);
 //     });
-// };
-
-// eliminar
-// const deletePost = (id) => {
-//   firebase.firestore().collection('Post').doc(id).delete()
-//     .then(() => {
-//       console.log('Document successfully deleted!');
-//     })
-//     .catch((error) => {
-//       console.error('Error removing document: ', error);
-//     });
-// };
-
-// export const update = (e) => {
-//   e.preventDefault();
-//   const postUp = document.getElementById('post-up');
-//   postUp.innerHTML = '';
-//   firebase.firestore().collection('post').get().then((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//       eslint-disable-next-line no-console
-//       console.log(`${doc.id} => ${doc.data()}`);
-//       postUp.innerHTML += `
-//        <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
-//         <td>${doc.data().Post}</td>
-//        </div>
-//       `;
-//     });
-//   });
-// };
-// export const signOutUser = () => {
-//   signOutLogin().then(() => {
-//     window.location.hash = '#/';
-//   }, () => {
-//     // console.log(error);
-//   });
-// };
-// export const changeViewToProfile = () => {
-//   window.location.hash = '#/profile';
-// };
-// export const changeViewToMyPosts = () => {
-//   window.location.hash = '#/myPost';
 // };

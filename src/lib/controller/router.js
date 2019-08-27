@@ -1,5 +1,6 @@
 // esto actua como controlador general de las urls
 import { components } from '../views/components.js';
+// import { getData } from './post-data.js';
 
 export const viewTemplate = (routes) => {
   const container = document.getElementById('container');
@@ -12,6 +13,10 @@ export const viewTemplate = (routes) => {
       container.appendChild(components.signUp());
       break;
     case '#/home':
+      // getData((post) => {
+      //   container.innerHTML = '';
+      //   container.appendChild((components.home(post)));
+      // });
       container.appendChild(components.home());
       break;
     default:

@@ -1,9 +1,11 @@
 import { obtainProfile } from '../controller/users-profile.js';
 import { logOut } from '../controller/sign-in-control.js';
 import { currentUser } from '../model/firebase-auth.js';
+// import { itemPost } from './post.js';
 // import { profileUser } from '../controller/user-info-control.js';
 // import { logOut } from '../controller/sign-in-control.js';
 import { save, readPost } from '../controller/home-control.js';
+// import { deleteData } from '../controller/post-data.js';
 
 export default () => {
   const viewHome = document.createElement('div');
@@ -36,7 +38,7 @@ export default () => {
        <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue">Guardar</button>
        <button type="button" id="btn-up">subir</button>
      </label>
-     <label class="flex-c post-publicated just-cont-sb bg-color-pink"> 
+     <label id="label-publicate" class="flex-c post-publicated just-cont-sb bg-color-pink"> 
        <p class="name-person"> nombre del que publico</p>
          <div id="post-up" class=" flex-c c-darkblue">
           <td>celda</td> 
@@ -45,7 +47,7 @@ export default () => {
        <div class="options-like-deleted">
          <button><i class='bx bx-heart'></i></button>
          <button><i class='bx bxl-telegram'></i></button>
-       </div>
+       </div> 
       </label> 
     </div>
    </div> 
@@ -69,6 +71,10 @@ export default () => {
   btnSave.addEventListener('click', save);
   const btnUp = viewHome.querySelector('#btn-up');
   btnUp.addEventListener('click', readPost);
+  // const label = viewHome.querySelector('label-publicate');
+  // posts.forEach((post) => {
+  //   label.appendChild(itemPost(post));
+  // });
 
   return viewHome;
 };
