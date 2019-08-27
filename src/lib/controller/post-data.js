@@ -13,18 +13,6 @@ export const saveInData = (textPost, id) => {
   return messageRef;
 };
 
-// export const getData = (callback, id) => {
-//   const getPost = firebase.firestore().collection('users').doc(id).collection('post')
-//     .onSnapshot((querySnapshot) => {
-//       const data = [];
-//       querySnapshot.forEach((doc) => {
-//         data.push({ id: doc.id, ...doc.data() });
-//       });
-//       callback(data);
-//     }) ;
-//   return getPost;
-// };
-// creo que es xq cambiaste esto a read data
 export const readData = id => firebase.firestore().collection('users').doc(id).collection('post');
 
 export const deleteData = (idDocUsers, idDocPost) => {
@@ -41,4 +29,18 @@ export const deleteData = (idDocUsers, idDocPost) => {
       console.error('Error removing document: ', error);
     });
   return deletePost;
+};
+export const editData = (idDocUsers, idDocPost, textPost) => {
+  const updateData = firebase.firestore().collection('users').doc(idDocUsers).collection('post')
+    .doc(idDocPost);
+  return updateData.update({
+    post: textPost,
+  })
+    .then(() => {
+      console.log('Document successfully updated!');
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error('Error updating document: ', error);
+    });
 };

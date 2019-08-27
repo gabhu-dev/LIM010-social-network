@@ -15,10 +15,10 @@ export const obtainProfile = (id) => {
     .then((doc) => {
       if (doc.exists) {
         const userInfo = document.getElementById('user-info');
-        const img = document.getElementById('img-profile');
+        // const img = document.getElementById('img-profile');
         userInfo.innerHTML = `<p class="">${doc.data().Usuario}</p>`;
         userInfo.innerHTML += `<p class="">${doc.data().Correo}</p>`;
-        img.innerHTML += `<div>${doc.data().Photo}</div>`;
+        // img.innerHTML += `<div>${doc.data().Photo}</div>`;
         console.log('Document data:', doc);
       } else {
         // doc.data() will be undefined in this case

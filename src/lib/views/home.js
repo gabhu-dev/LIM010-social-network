@@ -24,30 +24,29 @@ export default () => {
     </nav>
   </header>
   <!-- ------------------------------------------------ -->
- <div class="banner-post flex-c center-items">
+ <div class="banner-post flex-c">
    <div class="center-items flex-r size-profile">
-     <div id="img-profile" class="img-profile"></div>
+     <div id="img-profile" class="img-profile">name</div>
      <div>
       <p id="user-info"></p>
      </div>
    </div>
-   <div class="two-col center-items">
+   <div class="divpost">
      <label class="post-label bg-color-pink">
        <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
+       <div class="buttons-post-label">
        <button type="button" id="btn-img"><i class='bx bxs-image'></i></button>
        <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue">Guardar</button>
        <button type="button" id="btn-up">subir</button>
+       </div>
      </label>
-     <label id="label-publicate" class="flex-c post-publicated just-cont-sb bg-color-pink"> 
-       <p class="name-person"> nombre del que publico</p>
-         <div id="post-up" class=" flex-c c-darkblue">
-          <td>celda</td> 
-          <button>borrar</button>
+         <div id="post-up" class=" post-up flex-c c-darkblue bg-color-pink">
+      
          </div>
-       <div class="options-like-deleted">
+       <!-- <div class="options-like-deleted">
          <button><i class='bx bx-heart'></i></button>
          <button><i class='bx bxl-telegram'></i></button>
-       </div> 
+       </div> -->
       </label> 
     </div>
    </div> 
@@ -63,10 +62,6 @@ export default () => {
   const user = currentUser();
   obtainProfile(user.uid);
 
-  // const userName = viewHome.querySelector('#user-name');
-  // profileUser(userName);
-  // const textPost = viewHome.querySelector('#text-post');
-  // saveInData(textPost, user.uid);
   const btnSave = viewHome.querySelector('#btn-save');
   btnSave.addEventListener('click', save);
   const btnUp = viewHome.querySelector('#btn-up');
