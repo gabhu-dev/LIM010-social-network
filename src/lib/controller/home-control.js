@@ -4,12 +4,13 @@ export const showPost = () => {
   firebase.firestore().collection('Post').onSnapshot((querySnapshot) => {
     tabla.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      tabla.innerHTML += `<label class="flex-c post-label bg-color-pink">
-                            <div class="post flex-c c-darkblue">${doc.data().Post}</div>
-                            <button type="button" id="${doc.id}">X</button>
-                            <button type="button" id="${doc.id}">Editar</button>
-                            <p>${doc.data().Status}</p>
-                          </label>`;
+      tabla.innerHTML += `
+      <label class="flex-c post-label bg-color-pink">
+        <div class="post flex-c c-darkblue">${doc.data().Post}</div>
+        <button type="button" id="${doc.id}">X</button>
+        <button type="button" id="${doc.id}">Editar</button>
+        <p>${doc.data().Status}</p>
+      </label>`;
     });
   });
   return tabla;

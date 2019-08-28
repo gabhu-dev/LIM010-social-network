@@ -15,11 +15,11 @@ export const createUser = () => {
   });
   return addUserCollection;
 };
-const subPost = () => {
-  const messageRef = firebase.firestore().collection('users-gb').doc('${doc.id}')
-    .collection('post')
-.doc('publico');
-};
+// const subPost = () => {
+//   const messageRef = firebase.firestore().collection('users-gb').doc('${doc.id}')
+//     .collection('post')
+// .doc('publico');
+// };
 // leer la data de la base de datos
 // export const readPost = () => {
 //   const upPost = firebase.firestore().collection('users').get().then((querySnapshot) => {
