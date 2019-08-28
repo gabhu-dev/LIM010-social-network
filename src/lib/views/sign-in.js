@@ -7,7 +7,7 @@ export default () => {
   </div>
   <div class="center-items two-col  flex-c">
       <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo" alt="logo hey! hallyu">
-      <p class="w-max saludo">Siente la ola coreana</p>
+      <!--<p class="w-max saludo">Siente la ola coreana</p>-->
       <form name="login-form" class="flex-c center-items">
         <input type="email" name="email" placeholder=" &#128100; Correo Electrónico" id="email" class="input-form flex-c pink" required focus>
         <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password" class="input-form flex-c pink" required>
