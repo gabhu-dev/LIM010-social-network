@@ -1,5 +1,11 @@
-import { profileUser } from '../controller/user-info-control.js';
+import { obtainProfile } from '../controller/users-profile.js';
 import { logOut } from '../controller/sign-in-control.js';
+import { currentUser } from '../model/firebase-auth.js';
+// import { itemPost } from './post.js';
+// import { profileUser } from '../controller/user-info-control.js';
+// import { logOut } from '../controller/sign-in-control.js';
+import { save, readPost } from '../controller/home-control.js';
+// import { deleteData } from '../controller/post-data.js';
 
 export default () => {
   const viewHome = document.createElement('div');
@@ -18,28 +24,30 @@ export default () => {
     </nav>
   </header>
   <!-- ------------------------------------------------ -->
- <div class="banner-post flex-c center-items">
+ <div class="banner-post flex-c">
    <div class="center-items flex-r size-profile">
-     <div class="img-profile"></div>
-     <div>Nombre del usuario</div>
+     <div id="img-profile" class="img-profile">name</div>
+     <div>
+      <p id="user-info"></p>
+     </div>
    </div>
-   <div class="two-col center-items">
+   <div class="divpost">
      <label class="post-label bg-color-pink">
        <input type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
+       <div class="buttons-post-label">
        <button type="button" id="btn-img"><i class='bx bxs-image'></i></button>
        <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue">Guardar</button>
        <button type="button" id="btn-up">subir</button>
+       </div>
      </label>
-     <label class="flex-c post-publicated just-cont-sb bg-color-pink"> 
-       <p class="name-person"> nombre del que publico</p>
-         <div id="post-up" class=" flex-c c-darkblue">
-          <td></td> 
+         <div id="post-up" class=" post-up flex-c c-darkblue bg-color-pink">
+      
          </div>
-       <div class="options-like-deleted">
+       <!-- <div class="options-like-deleted">
          <button><i class='bx bx-heart'></i></button>
          <button><i class='bx bxl-telegram'></i></button>
-       </div>
-      </label>
+       </div> -->
+      </label> 
     </div>
    </div> 
    <!-- -------------------------------------------------- -->
@@ -50,7 +58,18 @@ export default () => {
   viewHome.setAttribute('class', 'size flex-c ');
   const btnLogOut = viewHome.querySelector('#log-out');
   btnLogOut.addEventListener('click', logOut);
-  const userName = viewHome.querySelector('#user-name');
-  profileUser(userName);
+
+  const user = currentUser();
+  obtainProfile(user.uid);
+
+  const btnSave = viewHome.querySelector('#btn-save');
+  btnSave.addEventListener('click', save);
+  const btnUp = viewHome.querySelector('#btn-up');
+  btnUp.addEventListener('click', readPost);
+  // const label = viewHome.querySelector('label-publicate');
+  // posts.forEach((post) => {
+  //   label.appendChild(itemPost(post));
+  // });
+
   return viewHome;
 };

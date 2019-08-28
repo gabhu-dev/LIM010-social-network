@@ -1,79 +1,80 @@
-// leer post
-export const showPost = () => {
-  const tabla = document.getElementById('show-post');
-  firebase.firestore().collection('Post').onSnapshot((querySnapshot) => {
-    tabla.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      tabla.innerHTML += `
-      <label class="flex-c post-label bg-color-pink">
-        <div class="post flex-c c-darkblue">${doc.data().Post}</div>
-        <button type="button" id="${doc.id}">X</button>
-        <button type="button" id="${doc.id}">Editar</button>
-        <p>${doc.data().Status}</p>
-      </label>`;
-    });
-  });
-  return tabla;
-};
+// aqui se JUNTAN -----------------
+import {
+  saveInData,
+  deleteData,
+  readData,
+  // editData,
+} from './post-data.js';
+import { currentUser } from '../model/firebase-auth.js';
 
-// crear post
-export const addPost = () => {
-  const post = document.getElementById('text-post').value;
-  const status = document.getElementById('status').value;
-  firebase.firestore().collection('Post').add({
-    Post: post,
-    Status: status,
-    timePost: (new Date()).toLocaleDateString(),
-  })
-    .then((docRef) => {
-      // eslint-disable-next-line no-console
-      console.log('Document written with ID: ', docRef.id);
-      document.getElementById('text-post').value = '';
-      showPost();
-    })
-    .catch((error) => {
-      // eslint-disable-next-line no-console
-      console.error('Error adding document: ', error);
-    });
-};
-
-// eliminar
-// const deletePost = (id) => {
-//   firebase.firestore().collection('Post').doc(id).delete()
-//     .then(() => {
-//       console.log('Document successfully deleted!');
-//     })
-//     .catch((error) => {
-//       console.error('Error removing document: ', error);
-//     });
-// };
-
-export const update = (e) => {
+export const save = (e) => {
   e.preventDefault();
+  const textPost = document.getElementById('text-post').value;
+  const user = currentUser();
+  saveInData(textPost, user.uid);
+};
+// export const deleteNoteOnClick = (post) => {
+//     deleteData(post.id);
+// };
+
+const postItem = (postObject) => {
+  const divPostItem = document.createElement('div');
+  divPostItem.innerHTML = `
+  <label id="label-publicate" class="flex-c post-publicated just-cont-sb bg-color-pink">
+  <p class="name-person">nombre<button id="delete-${postObject.id}" class="btn-save">x</button> </p>
+  <span>${postObject.data().post} </span>
+  
+
+  <div class="options-like-deleted">
+         <button><i class='bx bx-heart'></i></button>
+         <button id="edit-${postObject.id}"><i class='bx bxl-telegram'></i></button>
+       </div>
+  </label>
+ `;
+  // agregando evento de click al btn eliminar una nota
+  const btnDelete = divPostItem.querySelector(`#delete-${postObject.id}`);
+  btnDelete.addEventListener('click', () => deleteData(currentUser().uid, postObject.id));
+  // agregando el evento de click al btn editar nota
+
+  const btnEdit = divPostItem.querySelector(`#edit-${postObject.id}`);
+  btnEdit.addEventListener('click', () => {
+    console.log('diste click');
+    // texto = '';
+    const texto = document.getElementById('text-post');
+    const word = 'hoña';
+    texto.innerHTML = word;
+    // editData(currentUser().uid, postObject.id, textPost);
+  });
+
+  return divPostItem;
+};
+
+export const readPost = (e) => {
+  e.preventDefault();
+  const user = currentUser();
   const postUp = document.getElementById('post-up');
-  postUp.innerHTML = '';
-  firebase.firestore().collection('post').get().then((querySnapshot) => {
+  readData(user.uid).onSnapshot((querySnapshot) => {
+    postUp.innerHTML = '';
     querySnapshot.forEach((doc) => {
       // eslint-disable-next-line no-console
-      console.log(`${doc.id} => ${doc.data()}`);
-      postUp.innerHTML += `
-       <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
-        <td>${doc.data().Post}</td>
-       </div>
-      `;
+      postUp.appendChild(postItem(doc));
     });
   });
 };
-// export const signOutUser = () => {
-//   signOutLogin().then(() => {
-//     window.location.hash = '#/';
-//   }, () => {
-//     // console.log(error);
-//   });
-// };
-// export const changeViewToProfile = () => {
-//   window.location.hash = '#/profile';
-// };
-// export const changeViewToMyPosts = () => {
-//   window.location.hash = '#/myPost';
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         // eslint-disable-next-line no-console
+//         console.log(`${doc.id} => ${doc.data()}`);
+//         postUp.innerHTML += `
+//           <div id="post-up" class="bg-color-pink w-h-max post-label flex-c c-darkblue">
+//           <td>${doc.data().post}</td>
+//           <button id="delete-${doc.id}">borrar</button>
+//           </div>
+//         `;
+//         const btnDelete = postUp.querySelector(`#delete-${doc.id}`);
+//         btnDelete.addEventListener('click', () => {
+//           deleteData(user.uid, doc.id);
+//         });
+//       });
+//     });
 // };

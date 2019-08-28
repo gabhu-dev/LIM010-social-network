@@ -3,7 +3,9 @@ import {
   signInEmail,
   signInFacebook,
   signOut,
+  currentUser,
 } from '../model/firebase-auth.js';
+import { createUser } from './users-profile.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -37,6 +39,8 @@ export const signIn = (e) => {
 export const signInFb = () => {
   signInFacebook()
     .then(() => {
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid);
       window.location.hash = '#/home';
     }).catch((error) => {
       // Manejar errores aquí.
@@ -50,6 +54,8 @@ export const signInFb = () => {
 export const signInGoogleV = () => {
   signInGoogle()
     .then(() => {
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid, user.photoURL);
       window.location.hash = '#/home';
     }).catch((error) => {
       const errorCode = error.code;

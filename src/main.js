@@ -12,6 +12,8 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// export const userCollection = firebase.firestore().collection('users');
+
 const init = () => {
   viewTemplate(window.location.hash);
   window.addEventListener('hashchange', () => viewTemplate(window.location.hash));

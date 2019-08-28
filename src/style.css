@@ -1,152 +1,152 @@
 /*--------------------------------------Generales--------------------------------------*/
 
 * {
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .flex-c {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-r {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .center-items {
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
 .size {
-  min-height: 100vh;
-  width: 100%;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .bg-color-blue {
-  background-color: #8fd8d2;
+    background-color: #8fd8d2;
 }
 
 .bg-color-pink {
-  background-color: #fedcd2;
+    background-color: #fedcd2;
 }
 
 .c-darkpink {
-  color: #df744a;
+    color: #df744a;
 }
 
 .c-darkblue {
-  color: #2d8d85;
+    color: #2d8d85;
 }
 
 .w-h-max {
-  width: max-content;
-  height: max-content;
+    width: max-content;
+    height: max-content;
 }
 
 .just-cont-sa {
-  justify-content: space-around;
+    justify-content: space-around;
 }
 
 .just-cont-sb {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .just-cont-cen {
-  justify-content: center;
+    justify-content: center;
 }
 
 
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
 
 .input-form {
-  height: 3em;
-  width: 20em;
-  border-radius: 2em;
-  border: none;
-  margin: 1em;
-  outline-style: none;
-  padding: 1em;
+    height: 3em;
+    width: 20em;
+    border-radius: 2em;
+    border: none;
+    margin: 1em;
+    outline-style: none;
+    padding: 1em;
 }
 
 .pink:focus {
-  box-shadow: 0 0 5px rgb(233, 186, 186);
-  border: 1px solid rgba(236, 151, 151, 0.8);
+    box-shadow: 0 0 5px rgb(233, 186, 186);
+    border: 1px solid rgba(236, 151, 151, 0.8);
 }
 
 .btn-signup,
 .btn-signin {
-  height: 2.5em;
-  width: max-content;
-  border-radius: 2em;
-  border: none;
-  outline: none;
-  font-size: 1em;
-  font-weight: 500;
-  margin: 1em;
-  cursor: pointer;
-  padding: 11px;
+    height: 2.5em;
+    width: max-content;
+    border-radius: 2em;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 1em;
+    cursor: pointer;
+    padding: 11px;
 }
 
 .btn-signin:active {
-  background-color: #fdb098;
+    background-color: #fdb098;
 }
 
 .btn-signup:active {
-  background-color: #61d8ce;
+    background-color: #61d8ce;
 }
 
 .btn-registrate {
-  outline: none;
-  text-decoration: none;
-  font-weight: 500;
+    outline: none;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .saludo {
-  margin: 1em;
+    margin: 1em;
 }
 
 ::placeholder {
-  padding: 3%;
+    padding: 3%;
 }
 
 .logos-face-google {
-  height: 10%;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
 .icons-size {
-  font-size: 3em;
-  margin: .2em;
+    font-size: 3em;
+    margin: .2em;
 }
 
 .btn-signin-social {
-  cursor: pointer;
-  border-radius: 3em;
-  border: none;
-  margin: .5em;
-  background-color: transparent;
+    cursor: pointer;
+    border-radius: 3em;
+    border: none;
+    margin: .5em;
+    background-color: transparent;
 }
 
 .logo {
-  height: 8em;
-  margin: 2em;
+    height: 8em;
+    margin: 2em;
 }
 
 .error {
-  color: #2d8d85;
-  font-size: 1em;
-  margin: 0 0 1em;
+    color: #2d8d85;
+    font-size: 1em;
+    margin: 0 0 1em;
 }
 
 
@@ -157,218 +157,241 @@
 }
 
 .post-label {
-  width: 100%;
-  height: 11.5em;
-  border-radius: 0.5em;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  margin: 1em;
+    width: 100%;
+    height: 11.5em;
+    border-radius: 0.5em;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .post {
-  width: 90%;
-  height: 8em;
-  border-radius: 0.5em;
-  border: none;
-  margin: 5%;
+    width: 90%;
+    height: 8em;
+    border-radius: 0.5em;
+    border: none;
+    margin: 1em 2em;
 }
 
 .post-publicated {
-  width: 100%;
-  height: 10em;
-  border-radius: 0.5em;
-  border: none;
+    width: 100%;
+    height: 10em;
+    border-radius: 0.5em;
+    border: none;
+    margin-bottom: 3%;
 }
 
 .name-person {
-  background-color: #df744a;
+    background-color: #df744a;
+    height: 2.1em;
 }
 
 .options-like-deleted {
-  height: 2em;
-  width: 100%;
-  background-color: #2d8d85;
+    height: 3em;
+    width: 100%;
+    background-color: #2d8d85;
 }
 
+
+/* 
 .btn-share {
-  border: none;
-  border-radius: 1em;
-  margin: 1em 1.5em 0;
-  padding: .4em;
-  cursor: pointer;
-  align-self: flex-end;
-}
+    border: none;
+    border-radius: 1em;
+    margin: 1em 1.5em 0;
+    padding: .4em;
+    cursor: pointer;
+    align-self: flex-end;
+} */
 
 .logo-home,
 .logo-nav {
-  width: 3em;
-  height: 2em;
+    width: 3em;
+    height: 2em;
 }
 
 .one-col {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 header label {
-  display: inline-block;
-  font-size: xx-large;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  border-right: 1px solid #fff;
+    display: inline-block;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-right: 1px solid #fff;
 }
 
 header label:hover {
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .nav {
-  background-color: teal;
-  width: 70%;
-  position: absolute;
-  margin-left: -70%;
+    background-color: teal;
+    width: 70%;
+    position: absolute;
+    margin-left: -70%;
 }
 
 .nav ul {
-  margin: 0;
-  list-style: none;
-  padding: 0;
+    margin: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .nav li {
-  flex-grow: 1;
-  border-top: 1px solid #fff;
+    flex-grow: 1;
+    border-top: 1px solid #fff;
 }
 
 .nav li:hover {
-  background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .nav li a {
-  display: block;
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
 }
 
 #btn-menu:checked~.nav {
-  margin: 0;
+    margin: 0;
 }
 
 .size-profile {
-  width: 90%;
-  height: 9em;
-  background-color: #2d8d85;
+    width: 90%;
+    height: 9em;
+    background-color: #2d8d85;
 }
 
 .img-profile {
     margin: 5%;
     height: 5em;
     width: 20%;
-    background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg');
+    /* background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
 }
 
+.btn-save {
+    width: 3em;
+    background-color: #df744a;
+    float: right;
+    border: none;
+}
 
 @media screen and (min-width:1000px) {
     /*--------------------------Generales-------------------------------------------------*/
-.flex-c {
-  display: flex;
-  flex-direction: column;
-}
-.flex-r {
-  display: flex;
-  flex-direction: row;
-} 
-.two-col {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 100vh;
-}
+    .flex-c {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-r {
+        display: flex;
+        flex-direction: row;
+    }
+    .two-col {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+    }
     /*---------------------------------hu1--------------------------------------------------*/
-.banner {
-  flex-grow: 1;
-  width: 50%;
-  background-size: cover;
-}
-    
-.bnsi-image {
-  background-image: url(./lib/img/1.png);
-}
-.bnsu-image {
-  background-image: url(./lib/img/8.png);
-}
-.btn-signin:hover {
-  background-color: #fdb098;
-}
-.btn-signup:hover {
-  background-color: #61d8ce;
-}
-.input-form {
-  height: 4em;
-  width: 38em;
-}
+    .buttons-post-label {
+        width: 50%;
+        background-color: #2d8d85;
+        display: flex;
+        justify-content: space-around;
+    }
+    .divpost {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+    }
+    .banner {
+        flex-grow: 1;
+        width: 50%;
+        background-size: cover;
+    }
+    .bnsi-image {
+        background-image: url(./lib/img/1.png);
+    }
+    .bnsu-image {
+        background-image: url(./lib/img/8.png);
+    }
+    .btn-signin:hover {
+        background-color: #fdb098;
+    }
+    .btn-signup:hover {
+        background-color: #61d8ce;
+    }
+    .input-form {
+        height: 4em;
+        width: 38em;
+    }
     /*-------------------------------hu3------------------------------------------------*/
     /* .h-f-height {
       height: 5em;
   } */
-header label {
-  display: none;
-}
-.nav {
-  margin: 0;
-  width: 100%;
-  position: inherit;
-}
-.nav ul {
-  display: flex;
-  flex-direction: row;
-}
-.nav li a {
-  text-align: center;
-  padding: 2%;
-}
-.logo-home {
-  display: none;
-}
-.post-label {
-  width: 100%;
-  height: 11.5em;
-  border-radius: 2em;
-  border: none;
-  align-items: center;
-  justify-content: center;
-}
-.post {
-  width: 90%;
-  height: 9em;
-  border-radius: 2em;
-  border: none;
-  background-color: #ffffff;
-}
-.btn-share {
-  border: none;
-  border-radius: 1em;
-  margin: 1em 1.5em 0;
-  padding: .4em;
-  cursor: pointer;
-  align-self: flex-end;
-}
-.banner-post{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.size-profile{
-  width: 50%;
-  height: 5em;
-  background-color: #2d8d85;
-}
+    header label {
+        display: none;
+    }
+    .nav {
+        margin: 0;
+        width: 100%;
+        position: inherit;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    .nav li a {
+        text-align: center;
+        padding: 2%;
+    }
+    .logo-home {
+        display: none;
+    }
+    .post-label {
+        margin: 1em;
+    }
+    .post {
+        width: 90%;
+        height: 9em;
+        border-radius: 0.5em;
+        border: none;
+        background-color: #ffffff;
+    }
+    /* .btn-share {
+        border: none;
+        border-radius: 1em;
+        margin: 1em 1.5em 0;
+        padding: .4em;
+        cursor: pointer;
+        align-self: flex-end;
+    } */
+    .banner-post {
+        background-image: url(https://decora24.com/wp-content/uploads/2018/07/341392.jpg);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .size-profile {
+        width: 30%;
+        height: 10em;
+        background-color: #2d8d85;
+        margin: 2%;
+    }
+    .post-up {
+        background-color: transparent;
+        width: -webkit-fill-available;
+    }
 }
