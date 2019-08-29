@@ -399,4 +399,9 @@ header label:hover {
         resize: none;
         font-family: 'Quicksand', sans-serif;
     } */
+    .img-preview{
+        border:2px solid black;
+        height: 5em;
+        width: 7em;
+    }
 }

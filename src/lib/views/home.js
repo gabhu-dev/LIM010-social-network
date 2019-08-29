@@ -4,6 +4,7 @@ import { logOut } from '../controller/sign-in-control.js';
 import { currentUser } from '../model/firebase-auth.js';
 import { listPosts } from './view-post.js';
 import { functionSharePost } from '../controller/post-controll.js';
+import { upImgs } from '../model/firebase-db.js';
 
 export default (allPost) => {
   const viewHome = document.createElement('div');
@@ -33,7 +34,7 @@ export default (allPost) => {
       <div class="post-label bg-color-pink">
         <textarea cols="50" rows="2" type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
         </textarea>
-        <img id="img-preview"></img>
+        <img id="img-preview" class="img-preview"></img>
         <select id="mode">
           <option value="Público">Público</option>
           <option value="Privado">Privado</option>
@@ -67,11 +68,12 @@ export default (allPost) => {
   const user = currentUser();
   obtainProfile(user.uid);
   // cargar una imagen
-  // const imageUp = document.getElementById('img-preview');
+  const imageUp = document.getElementById('img-preview');
   const btnImage = viewHome.querySelector('#btn-img');
   btnImage.addEventListener('change', (e) => {
     const file = e.target.files[0];
-    console.log(file);
+    const post = new Post();
+    post.upImgs(file);
   });
   return viewHome;
 };

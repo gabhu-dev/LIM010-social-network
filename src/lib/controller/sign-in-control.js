@@ -40,7 +40,7 @@ export const signInFb = () => {
   signInFacebook()
     .then(() => {
       const user = currentUser();
-      createUser(user.displayName, user.email, user.uid);
+      createUser(user.displayName, user.email, user.uid, user.photoURL);
       window.location.hash = '#/home';
     }).catch((error) => {
       // Manejar errores aquí.
