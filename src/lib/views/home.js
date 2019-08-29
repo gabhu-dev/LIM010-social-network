@@ -31,12 +31,14 @@ export default (allPost) => {
     </div>
     <div class="two-col center-items">
       <div class="post-label bg-color-pink">
-        <textarea cols="50" rows="2" type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
+        <textarea cols="50" rows="2" type="text" id="text-post" class="post flex-c c-darkblue" placeholder="¿Qué quieres compartir?">
+        </textarea>
+        <img id="img-preview"></img>
         <select id="mode">
           <option value="Público">Público</option>
           <option value="Privado">Privado</option>
         </select>
-        <button type="button" id="btn-img"><i class='bx bxs-image'></i></button>
+        <input type="file" id="btn-img">
         <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue">Compartir</button>
       </div>
     </div>
@@ -64,5 +66,12 @@ export default (allPost) => {
   // Da el usuario actual y muestra sus datos al loguearse
   const user = currentUser();
   obtainProfile(user.uid);
+  // cargar una imagen
+  // const imageUp = document.getElementById('img-preview');
+  const btnImage = viewHome.querySelector('#btn-img');
+  btnImage.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+  });
   return viewHome;
 };

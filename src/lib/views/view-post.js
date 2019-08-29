@@ -31,19 +31,16 @@ export const listPosts = (data) => {
   btnDelete.addEventListener('click', () => deleteData(currentUser().uid, data.id));
   // Editar un post
   const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
-
   btnEdit.addEventListener('click', () => {
-
     const idoc = `${data.Id}`;
     const uid = `${data.id}`;
-    const posts = `${data.post}`;
-    divPostItem.querySelector(`#${data.Id}`).disabled = false;
+    // const posts = `${data.post}`;
+    divPostItem.getElementById(`#${data.Id}`).disabled = false;
 
     const btnSaveEdit = document.getElementById('edit-post');
     btnSaveEdit.classList.remove('hide');
 
     const prueba = document.getElementById(`${data.Id}`);
-  
     prueba.addEventListener('focus', () => {
       console.log(prueba.value);
       btnSaveEdit.addEventListener('click', () => {
