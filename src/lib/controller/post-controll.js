@@ -28,9 +28,9 @@ export const functionSharePost = (event) => {
   addPost(textPost, user.uid, user.displayName, mode, countLike)
     .then(() => {
       document.getElementById('text-post').value = '';
-      alert('Post agregado');// poner en la pantalla el mensaje sucess
+      alert('Post agregado'); // poner en la pantalla el mensaje sucess
     }).catch((error) => {
-      console.log('error al añadir post', error);// poner en la pantalla el mensaje fail
+      console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
     });
 };
 
