@@ -5,7 +5,7 @@ import { addPost } from '../model/firebase-db.js';
 
 // guardar en un array la data para agregar la propiedad id en el objeto--para llamar en la ruta
 export const getPosts = (dataPost) => {
-  firebase.firestore().collection('users')// .doc(bEEN9XL3z8dPy7gxL2hlcmgKQX23).collection('post')
+  firebase.firestore().collection('users') // .doc(bEEN9XL3z8dPy7gxL2hlcmgKQX23).collection('post')
     .onSnapshot((querySnapshot) => {
       // const data = [];
       console.log('hola');
@@ -25,8 +25,8 @@ export const functionSharePost = (event) => {
   addPost(textPost, user.uid, mode, countLike)
     .then(() => {
       document.getElementById('text-post').value = '';
-      alert('Post agregado');// poner en la pantalla el mensaje sucess
+      alert('Post agregado'); // poner en la pantalla el mensaje sucess
     }).catch((error) => {
-      console.log('error al añadir post', error);// poner en la pantalla el mensaje fail
+      console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
     });
 };
