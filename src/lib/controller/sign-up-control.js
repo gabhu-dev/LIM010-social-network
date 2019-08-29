@@ -8,6 +8,7 @@ export const signUp = (e) => {
   const password = document.getElementById('password-signup').value;
   const nickname = document.getElementById('nickname').value;
   const messageErrorLabel = document.getElementById('msg-warning');
+  const foto = 'foto';
   signUpWithEmail(email, password)
     .then(() => {
       messageErrorLabel.classList.remove('error');
@@ -15,7 +16,7 @@ export const signUp = (e) => {
       const user = firebase.auth().currentUser;
       console.log(user);
       window.location.hash = '#/';
-      createUser(nickname, email, user.uid);
+      createUser(nickname, email, user.uid, foto);
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');

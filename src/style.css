@@ -207,8 +207,7 @@
 
 .logo-home,
 .logo-nav {
-    width: 3em;
-    height: 2em;
+    height: 2.5em;
 }
 
 .one-col {
@@ -273,7 +272,6 @@ header label:hover {
 .img-profile {
     margin: 5%;
     height: 5em;
-    width: 20%;
     /* background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
@@ -394,4 +392,11 @@ header label:hover {
         background-color: transparent;
         width: -webkit-fill-available;
     }
+    .cursor {
+        cursor: pointer;
+    }
+    /* textarea{
+        resize: none;
+        font-family: 'Quicksand', sans-serif;
+    } */
 }
