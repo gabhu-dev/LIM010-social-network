@@ -2,7 +2,7 @@
 import { obtainProfile } from '../controller/users-profile.js';
 import { logOut } from '../controller/sign-in-control.js';
 import { currentUser } from '../model/firebase-auth.js';
-import { listPosts } from './view-post.js';
+import { listPosts } from './view-post-profile.js';
 import { addData } from '../controller/post-controll.js';
 
 export default (allPost) => {
@@ -15,9 +15,8 @@ export default (allPost) => {
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-home" alt="logo hey! hallyu">
     <nav class="nav">
       <ul class="flex-c">
-        <li><a href="#/profile">usuario</a></li>
+        <li><a href="">usuario</a></li>
         <li><a href=""> <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav" alt="logo hey! hallyu"></a></li>
-        <li type="button" id="log-out"><a href="">cerrar sesion</a></li>
       </ul>
     </nav>
   </header>
@@ -31,26 +30,11 @@ export default (allPost) => {
     </div>
     <div class="two-col center-items no-center">
 
-      <div class="post-label bg-color-pink flex-c center-items">
-
-        <textarea cols="50" rows="2" type="text" id="text-post" class="post c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
-
-        <div class="flex-r">
-          <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button>
-          <select id="mode" class="al-self-center">
-            <option value="Público">Público</option>
-            <option value="Privado">Privado</option>
-          </select>
-          <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
-        <div>
-
-      </div>
-
     </div>
     <p id="alert-msg" class=""></p>
     
   </div> 
-  <div class="form-post post-label" id="container-list-post"></div>
+  <div class="form-post post-label" id="container-list-post-privat"></div>
    <!-- -------------------------------------------------- -->
   <!--<footer class="flex-r bg-color-pink h-f-height center-items">
     <p class="w-h-max">Creado por Gabhu y Sara con <3. Todos los Derechos Reservados.</p>
@@ -59,7 +43,7 @@ export default (allPost) => {
   viewHome.setAttribute('class', 'size flex-c ');
 
   const btnSharePost = viewHome.querySelector('#btn-save');
-  const containerListPost = viewHome.querySelector('#container-list-post');
+  const containerListPost = viewHome.querySelector('#container-list-post-privat');
   const btnLogOut = viewHome.querySelector('#log-out');
 
   // Publicar post

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { deleteData, editData } from '../controller/post-controll.js';
 import { currentUser } from '../model/firebase-auth.js';
 
