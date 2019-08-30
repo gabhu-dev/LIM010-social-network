@@ -409,8 +409,19 @@ header label:hover {
     .cursor {
         cursor: pointer;
     }
+
     .no-center{
         justify-content: flex-start;
         align-items: end;
+
+    /* textarea{
+        resize: none;
+        font-family: 'Quicksand', sans-serif;
+    } */
+    .img-preview{
+        border:2px solid black;
+        height: 5em;
+        width: 7em;
+
     }
 }

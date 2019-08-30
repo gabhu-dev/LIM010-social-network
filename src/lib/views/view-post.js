@@ -33,6 +33,7 @@ export const listPosts = (data) => {
   btnDelete.addEventListener('click', () => deleteData(currentUser().uid, data.id));
   // Editar un post
   const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
+
   // btnEdit.addEventListener('click', () => edit(data.Id, data.id)); // de la funcion que no funciona correctamente
 
   btnEdit.addEventListener('click', () => {
@@ -44,6 +45,7 @@ export const listPosts = (data) => {
     const textArea = divPostItem.querySelector(`#${data.Id}`);
     textArea.addEventListener('focus', () => {
       console.log(textArea.value);
+
       btnSaveEdit.addEventListener('click', () => {
         console.log(textArea.value);
         editData(idoc, uid, textArea.value);
