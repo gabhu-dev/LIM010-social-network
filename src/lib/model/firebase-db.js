@@ -1,9 +1,21 @@
 /* eslint-disable max-len */
 import { currentUser } from './firebase-auth.js';
 
-export const getPost = (callback) => {
+export const getPostProfile = (callback) => {
   const user = currentUser();
   firebase.firestore().collection('users').doc(user.uid).collection('post')
+    .orderBy('timePost', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() });
+      });
+      callback(data);
+    });
+};
+
+export const getPost = (callback) => {
+  firebase.firestore().collection('post-publics')
     .orderBy('timePost', 'desc')
     .onSnapshot((querySnapshot) => {
       const data = [];
@@ -27,6 +39,20 @@ export const addPost = (textPost, id, name, mode) => {
     });
   return messageRef;
 };
+
+
+export const addPostPublic = (textPost, id, name, mode) => {
+  const messageRef = firebase.firestore().collection('post').doc(id).collection('post')
+    .add({
+      post: textPost,
+      Id: id,
+      user: name,
+      privacity: mode,
+      like: 0,
+      timePost: new Date(),
+    });
+  return messageRef;
+  
 // para añadir imagenes
 export const upImgs = (file, uid) => {
   const refStorage = firebase.storage().ref(`imgsPosts/${uid}/${file.name}`);

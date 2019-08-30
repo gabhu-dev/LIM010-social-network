@@ -63,6 +63,15 @@
 .just-cont-cen {
     justify-content: center;
 }
+.al-self-start {
+    align-self: flex-start;
+}
+.al-self-center {
+    align-self: center;
+}
+.al-self-end {
+    align-self: flex-end ;
+}
 
 
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
@@ -157,53 +166,57 @@
 }
 
 .post-label {
-    width: 100%;
-    height: 11.5em;
-    border-radius: 0.5em;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 1em auto;
+    border-radius: 1em;
+    width: 70%
 }
 
 .post {
     width: 90%;
+    padding: .5em;
     height: 8em;
-    border-radius: 0.5em;
+    border-radius: .5em;
     border: none;
-    margin: 1em 2em;
+    margin: 1em;
+    resize: none;
+    background-color: #ffffff;
+}
+.post-v {
+    padding: .5em;
+    border: none;
+    resize: none;
+    
 }
 
 .post-publicated {
-    width: 100%;
-    height: 10em;
-    border-radius: 0.5em;
-    border: none;
-    margin-bottom: 3%;
+    margin: 1.5em;
 }
 
 .name-person {
-    background-color: #df744a;
-    height: 2.1em;
+    padding: 1em 1em 0;
 }
-
+.w-80{
+    width: 80%;
+}
+.m-auto {
+    margin: auto;
+}
+.m-info{
+    margin: 0 1em;
+}
 .options-like-deleted {
-    height: 3em;
-    width: 100%;
-    background-color: #2d8d85;
+    margin: 1em auto;
 }
 
-
-/* 
 .btn-share {
+    height: max-content;
+    width: max-content;
     border: none;
     border-radius: 1em;
-    margin: 1em 1.5em 0;
-    padding: .4em;
+    margin: 0 1em 1em;
+    padding: .5em;
     cursor: pointer;
-    align-self: flex-end;
-} */
+}
 
 .logo-home,
 .logo-nav {
@@ -279,7 +292,8 @@ header label:hover {
 }
 
 .btn-save {
-    width: 3em;
+    width: max-content;
+    height: max-content;
     background-color: #df744a;
     float: right;
     border: none;
@@ -395,6 +409,11 @@ header label:hover {
     .cursor {
         cursor: pointer;
     }
+
+    .no-center{
+        justify-content: flex-start;
+        align-items: end;
+
     /* textarea{
         resize: none;
         font-family: 'Quicksand', sans-serif;
@@ -403,5 +422,6 @@ header label:hover {
         border:2px solid black;
         height: 5em;
         width: 7em;
+
     }
 }
