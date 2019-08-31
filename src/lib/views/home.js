@@ -6,8 +6,8 @@ import { listPosts } from './view-post.js';
 
 import { addData } from '../controller/post-controll.js';
 
-import { functionSharePost } from '../controller/post-controll.js';
-import { upImgs } from '../model/firebase-db.js';
+
+// import { upImgs } from '../model/firebase-db.js';
 
 
 export default (allPost) => {
@@ -40,14 +40,14 @@ export default (allPost) => {
       <div class="post-label bg-color-pink flex-c center-items">
 
         <textarea cols="50" rows="2" type="text" id="text-post" class="post c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
-<img id="img-preview" class="img-preview"></img>
+<!-- <img id="img-preview" class="img-preview"></img> -->
         <div class="flex-r">
-          <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button>
+          <!-- <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button> -->
           <select id="mode" class="al-self-center">
             <option value="Público">Público</option>
             <option value="Privado">Privado</option>
           </select> 
-<input type="file" id="btn-img">
+          <!-- <input type="file" id="btn-img"> -->
           <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
         <div>
 
@@ -85,12 +85,15 @@ export default (allPost) => {
   const user = currentUser();
   obtainProfile(user.uid);
   // cargar una imagen
-  const imageUp = document.getElementById('img-preview');
-  const btnImage = viewHome.querySelector('#btn-img');
-  btnImage.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    const post = new Post();
-    post.upImgs(file);
-  });
+  // const imageUp = document.getElementById('img-preview');
+  // const btnImage = viewHome.querySelector('#btn-img');
+  // btnImage.addEventListener('change', (e) => {
+  //   const file = e.target.files[0];
+  //   const filePath = 'upload/imagen.png';
+  //   const ref = firebase.storage().ref(filePath);
+  //   const task = firebase.storage().put(filePath, file);
+  //   // eslint-disable-next-line no-console
+  //   console.log(file);
+  // });
   return viewHome;
 };

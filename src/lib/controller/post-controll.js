@@ -1,5 +1,5 @@
-/* eslint-disable no-alert */
 /* eslint-disable no-console */
+/* eslint-disable no-alert */
 import { currentUser } from '../model/firebase-auth.js';
 import { addPost, addPostPublic } from '../model/firebase-db.js';
 
@@ -38,20 +38,20 @@ export const addData = (event) => {
   const user = currentUser();
   const countLike = 0;
   if (mode === 'Público') {
-    addPostPublic(textPost, user.uid, user.displayName, mode, countLike)
+    addPostPublic(textPost, user.uid, user.displayName, mode)
       .then(() => {
         document.getElementById('text-post').value = '';
-        alert('Post agregado');// poner en la pantalla el mensaje success
+        alert('Post agregado'); // poner en la pantalla el mensaje success
       }).catch((error) => {
-        console.log('error al añadir post', error);// poner en la pantalla el mensaje fail
+        console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
       });
   } else {
     addPost(textPost, user.uid, user.displayName, mode, countLike)
       .then(() => {
         document.getElementById('text-post').value = '';
-        alert('Post agregado');// poner en la pantalla el mensaje success
+        alert('Post agregado'); // poner en la pantalla el mensaje success
       }).catch((error) => {
-        console.log('error al añadir post', error);// poner en la pantalla el mensaje fail
+        console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
       });
   }
 };
