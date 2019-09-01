@@ -20,6 +20,7 @@ export const listPosts = (data) => {
         <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
       </div>
     </label>  
+
     <div class="options-like-deleted">
       <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
@@ -33,6 +34,27 @@ export const listPosts = (data) => {
       `;
     divPostItem.innerHTML = template;
     divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80');
+
+     /* <div class="options-like-deleted">
+        <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
+        <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
+        <button id="delete-${data.Id}" class="btn-share cursor">Eliminar</button>
+        <button id="comment"class="btn-share">comentar</button>
+      </div>
+      <div id="container-comment" class ="comments hide">
+        <div>
+        <p class="name-comment">nombre de quien comento</p>
+        <div class="comment-share"> el comentario </div>
+        </div>
+      </div>`;
+  divPostItem.innerHTML = template;
+  divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80');
+  // Elimina un post
+  const btnDelete = divPostItem.querySelector(`#delete-${data.Id}`);
+  btnDelete.addEventListener('click', () => deleteData(currentUser().uid, data.id));
+  // Editar un post
+  const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);*/
+
 
     const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
     const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);

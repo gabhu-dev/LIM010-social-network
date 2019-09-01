@@ -13,10 +13,11 @@ export const signIn = (e) => {
   const password = document.getElementById('password').value;
   const messageErrorLabel = document.getElementById('msg-wrong');
   return signInEmail(email, password)
-    .then(() => {
-      messageErrorLabel.classList.remove('error');
-      messageErrorLabel.innerHTML = '';
-      window.location.hash = '#/home';
+    .then((user) => {
+      // messageErrorLabel.classList.remove('error');
+      // messageErrorLabel.innerHTML = '';
+      // window.location.hash = '#/home';
+      console.log(user);
     })
     .catch((error) => {
       messageErrorLabel.classList.add('error');
