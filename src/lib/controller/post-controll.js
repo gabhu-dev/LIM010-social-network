@@ -1,33 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 import { currentUser } from '../model/firebase-auth.js';
-import { addPost, addPostPublic } from '../model/firebase-db.js';
-
-// // guardar en un array la data para agregar la propiedad id en el objeto--para llamar en la ruta
-// export const getPosts = (dataPost) => {
-//   const user = currentUser();
-//   firebase.firestore().collection('post-public')
-//     .onSnapshot((querySnapshot) => {
-//       // const data = [];
-//       console.log('hola');
-//       querySnapshot.forEach((doc) => {
-//         dataPost({ id: doc.id, ...doc.data() });
-//       });
-//     });
-// };//Borrrar urgente
-
-// // guardar en un array la data para agregar la propiedad id en el objeto--para llamar en la ruta
-// export const getPosts = (dataPost) => {
-//   const user = currentUser();
-//   firebase.firestore().collection('users').doc(user.uid).collection('post')
-//     .onSnapshot((querySnapshot) => {
-//       // const data = [];
-//       console.log('hola');
-//       querySnapshot.forEach((doc) => {
-//         dataPost({ id: doc.id, ...doc.data() });
-//       });
-//     });
-// };
+import { addPost } from '../model/firebase-db.js';
 
 // agregar un post en la bd
 export const addData = (event) => {
@@ -37,28 +11,18 @@ export const addData = (event) => {
   // const alertMsg = document.getElementById('alert-msg');
   const user = currentUser();
   const countLike = 0;
-  if (mode === 'Público') {
-    addPostPublic(textPost, user.uid, user.displayName, mode)
-      .then(() => {
-        document.getElementById('text-post').value = '';
-        alert('Post agregado'); // poner en la pantalla el mensaje success
-      }).catch((error) => {
-        console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
-      });
-  } else {
-    addPost(textPost, user.uid, user.displayName, mode, countLike)
-      .then(() => {
-        document.getElementById('text-post').value = '';
-        alert('Post agregado'); // poner en la pantalla el mensaje success
-      }).catch((error) => {
-        console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
-      });
-  }
+  addPost(textPost, user.uid, user.displayName, user.email, mode, countLike)
+    .then(() => {
+      document.getElementById('text-post').value = '';
+      alert('Post agregado'); // poner en la pantalla el mensaje success
+    }).catch((error) => {
+      console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
+    });
 };
 
 // Eliminar el post en bd
-export const deleteData = (idDocUsers, idDocPost) => {
-  const deletePost = firebase.firestore().collection('users').doc(idDocUsers).collection('post')
+export const deleteData = (idDocPost) => {
+  const deletePost = firebase.firestore().collection('posts')
     .doc(idDocPost)
     .delete()
     .then(() => {
@@ -73,8 +37,8 @@ export const deleteData = (idDocUsers, idDocPost) => {
 };
 
 // Editar el post
-export const editData = (idDocUsers, idDocPost, textPost) => {
-  const updateData = firebase.firestore().collection('users').doc(idDocUsers).collection('post')
+export const editData = (idDocPost, textPost) => {
+  const updateData = firebase.firestore().collection('posts')
     .doc(idDocPost);
   return updateData.update({
     post: textPost,

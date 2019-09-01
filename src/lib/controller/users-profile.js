@@ -20,7 +20,7 @@ export const obtainProfile = (id) => {
         userInfo.innerHTML = `<p class="">${doc.data().Usuario}</p>`;
         userInfo.innerHTML += `<p class="">${doc.data().Correo}</p>`;
         img.innerHTML += `<img src="${doc.data().Photo}" class="img-profile" alt="foto de perfil de ${doc.data().Usuario}">`;
-        console.log('Document data:', doc.data());
+        // console.log('Document data:', doc.data());
       } else {
         // doc.data() will be undefined in this case
         console.log('No such document!');
