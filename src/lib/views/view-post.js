@@ -25,6 +25,13 @@ export const listPosts = (data) => {
         <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
         <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
         <button id="delete-${data.Id}" class="btn-share cursor">Eliminar</button>
+        <button id="comment"class="btn-share">comentar</button>
+      </div>
+      <div id="container-comment" class ="comments hide">
+        <div>
+        <p class="name-comment">nombre de quien comento</p>
+        <div class="comment-share"> el comentario </div>
+        </div>
       </div>`;
   divPostItem.innerHTML = template;
   divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80');

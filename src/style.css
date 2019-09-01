@@ -63,14 +63,17 @@
 .just-cont-cen {
     justify-content: center;
 }
+
 .al-self-start {
     align-self: flex-start;
 }
+
 .al-self-center {
     align-self: center;
 }
+
 .al-self-end {
-    align-self: flex-end ;
+    align-self: flex-end;
 }
 
 
@@ -181,11 +184,11 @@
     resize: none;
     background-color: #ffffff;
 }
+
 .post-v {
     padding: .5em;
     border: none;
     resize: none;
-    
 }
 
 .post-publicated {
@@ -195,15 +198,19 @@
 .name-person {
     padding: 1em 1em 0;
 }
-.w-80{
+
+.w-80 {
     width: 80%;
 }
+
 .m-auto {
     margin: auto;
 }
-.m-info{
+
+.m-info {
     margin: 0 1em;
 }
+
 .options-like-deleted {
     margin: 1em auto;
 }
@@ -279,13 +286,12 @@ header label:hover {
 .size-profile {
     width: 90%;
     height: 9em;
-    background-color: #2d8d85;
 }
 
 .img-profile {
-    margin: 5%;
-    height: 5em;
-    /* background-image: url('http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg'); */
+    margin: 1%;
+    height: 4.5em;
+    /* background-image: url(http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -297,6 +303,16 @@ header label:hover {
     background-color: #df744a;
     float: right;
     border: none;
+}
+
+.name-comment {
+    background-color: #fdb098;
+}
+
+.comment-share {
+    width: 90%;
+    height: 2em;
+    border: 1px solid black;
 }
 
 @media screen and (min-width:1000px) {
@@ -399,7 +415,6 @@ header label:hover {
     .size-profile {
         width: 30%;
         height: 10em;
-        background-color: #2d8d85;
         margin: 2%;
     }
     .post-up {
@@ -409,19 +424,29 @@ header label:hover {
     .cursor {
         cursor: pointer;
     }
-
-    .no-center{
+    .no-center {
         justify-content: flex-start;
         align-items: end;
-
+    }
     /* textarea{
         resize: none;
         font-family: 'Quicksand', sans-serif;
     } */
-    .img-preview{
+    /* .img-preview{
         border:2px solid black;
         height: 5em;
-        width: 7em;
-
+        width: 7em; */
+    .img-profile-font {
+        height: 50%;
+        width: 100%;
+        border: 1px solid black;
+    }
+    .user-info {
+        margin: 5%;
+    }
+    .comments {
+        height: 8em;
+        width: 100%;
+        border: 1px solid black;
     }
 }

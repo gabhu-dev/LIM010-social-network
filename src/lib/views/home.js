@@ -28,13 +28,15 @@ export default (allPost) => {
   </header>
   <!-- ------------------------------------------------ -->
   <div class="banner-post flex-c center-items">
-    <div class="center-items flex-r size-profile al-self-start">
-      <div id="img-profile" class="img-profile"></div>
-      <div>
-        <p id="user-info"></p>
+  <!-- ------------------ profile------------------------ -->
+    <div class="center-items size-profile al-self-start">
+      <div id="img-profile-font" class="img-profile-font bg-color-blue">img-font</div>
+      <div class="flex-r bg-color-pink">
+        <div id="img-profile" class="img-profile"></div>
+        <p id="user-info" class="user-info"></p>
       </div>
     </div>
-
+  <!-- ------------------------------------------------- -->
     <div class="two-col center-items no-center">
 
       <div class="post-label bg-color-pink flex-c center-items">
@@ -50,12 +52,7 @@ export default (allPost) => {
           <!-- <input type="file" id="btn-img"> -->
           <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
         <div>
-
-
-   
-       
-   
-      </div>
+ </div>
 
     </div>
     <p id="alert-msg" class=""></p>
