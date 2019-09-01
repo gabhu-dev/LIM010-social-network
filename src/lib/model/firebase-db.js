@@ -1,21 +1,6 @@
 /* eslint-disable max-len */
-import { currentUser } from './firebase-auth.js';
-
-export const getPostProfile = (callback) => {
-  const user = currentUser();
-  firebase.firestore().collection('users').doc(user.uid).collection('post')
-    .orderBy('timePost', 'desc')
-    .onSnapshot((querySnapshot) => {
-      const data = [];
-      querySnapshot.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
-      });
-      callback(data);
-    });
-};
-
 export const getPost = (callback) => {
-  firebase.firestore().collection('post-publics')
+  firebase.firestore().collection('posts')
     .orderBy('timePost', 'desc')
     .onSnapshot((querySnapshot) => {
       const data = [];
@@ -26,33 +11,53 @@ export const getPost = (callback) => {
     });
 };
 
-// Post
-export const addPost = (textPost, id, name, mode) => {
-  const messageRef = firebase.firestore().collection('users').doc(id).collection('post')
+// Post privado
+export const addPost = (textPost, id, name, mail, mode) => {
+  const messageRef = firebase.firestore().collection('posts')
     .add({
       post: textPost,
-      Id: id,
+      idUser: id,
       user: name,
+      email: mail,
       privacity: mode,
       like: 0,
       timePost: new Date(),
     });
   return messageRef;
 };
+// Añadir comentarios
+export const addComment = (textComment, mail, idDoc, id) => firebase.firestore().collection('posts').doc(idDoc).collection('comments')
+  .add({
+    comment: textComment,
+    email: mail,
+    idPost: idDoc,
+    idUser: id,
+    timeComment: new Date(),
+  });
 
-
-export const addPostPublic = (textPost, id, name, mode) => {
-  const messageRef = firebase.firestore().collection('post-publics')
-    .add({
-      post: textPost,
-      Id: id,
-      user: name,
-      privacity: mode,
-      like: 0,
-      timePost: new Date(),
+export const readComments = (idPost, callback) => {
+  firebase.firestore().collection('posts').doc(idPost).collection('comments')
+    .orderBy('time', 'desc')
+    .onSnapshot((datos) => {
+      const data = [];
+      datos.forEach((doc) => {
+        data.push({ id: doc.id, ...doc.data() });
+        // console.log(data);
+      });
+      callback(data);
     });
-  return messageRef;
 };
+
+// export const deleteComment = (idD, id) => firebase.firestore().collection('posts').doc(idD).collection('comments')
+//   .doc(id)
+//   .delete();
+// export const editComment = (idD, id, newText) => firebase.firestore().collection('posts').doc(idD).collection('comments')
+//   .doc(id)
+//   .update({
+//     comentario: newText,
+//   });
+
+
 // para añadir imagenes
 // export const upImgs = (file, uid) => {
 //   const refStorage = firebase.storage().ref(`imgsPosts/${uid}/${file.name}`);
