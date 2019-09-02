@@ -171,7 +171,7 @@
 .post-label {
     margin: 1em auto;
     border-radius: 1em;
-    width: 70%
+    width: 95%;
 }
 
 .post {
@@ -192,15 +192,18 @@
 }
 
 .post-publicated {
-    margin: 1.5em;
+    width: 100%;
+    padding: 3%;
+    height: max-content;
 }
 
 .name-person {
     padding: 1em 1em 0;
+    background-color: #df744a;
 }
 
 .w-80 {
-    width: 80%;
+    width: 100%;
 }
 
 .m-auto {
@@ -216,7 +219,6 @@
 }
 
 .btn-share {
-    height: max-content;
     width: max-content;
     border: none;
     border-radius: 1em;
@@ -225,9 +227,9 @@
     cursor: pointer;
 }
 
-.logo-home,
-.logo-nav {
+.logo-home {
     height: 2.5em;
+    margin-left: 28%;
 }
 
 .one-col {
@@ -286,6 +288,7 @@ header label:hover {
 .size-profile {
     width: 90%;
     height: 9em;
+    margin: 5%;
 }
 
 .img-profile {
@@ -315,6 +318,10 @@ header label:hover {
     border: 1px solid black;
 }
 
+.banner-post {
+    background-color: #FFA69E;
+}
+
 @media screen and (min-width:1000px) {
     /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
@@ -332,6 +339,10 @@ header label:hover {
         height: 100vh;
     }
     /*---------------------------------hu1--------------------------------------------------*/
+    .logo-nav {
+        display: block;
+        height: 2.5em;
+    }
     .buttons-post-label {
         width: 50%;
         background-color: #2d8d85;

@@ -13,14 +13,14 @@ export const listPosts = (data) => {
   // if (data.privacity === 'Público' || data.user === currentUser().displayName) {
   template = `
     <label id="label-publicate" class="flex-c just-cont-sb">
-      <p class="name-person">Publicado por ${data.email}</p>
-      <textarea id="text-${data.id}" class="post c-darkblue" disabled>${data.post}</textarea>
-      <button type="button" class="hide" id="edit-post">Guardar</button>
-      <div class="flex-r m-auto">
+      <p class="name-person">Publicado por ${data.email}</p> <div class="flex-r m-auto">
         <p class="m-info">${data.privacity}</p>
         <p class="m-info">${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
         <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
       </div>
+      <textarea id="text-${data.id}" class="post-publicated c-darkblue" disabled>${data.post}</textarea>
+      <button type="button" class="hide" id="edit-post">Guardar</button>
+     
     </label>  
 
     <div class="options-like-deleted">
