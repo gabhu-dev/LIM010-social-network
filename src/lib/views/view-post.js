@@ -19,13 +19,17 @@ export const listPosts = (data) => {
         <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
       </div>
       <textarea id="text-${data.id}" class="post-publicated c-darkblue" disabled>${data.post}</textarea>
-      <button type="button" class="hide" id="edit-post">Guardar</button>
+      <select class="hide" id="select-mode">
+        <option value="Público">Público</option>
+        <option value="Privado">Privado</option>
+      </select>
      
     </label>  
 
     <div class="options-like-deleted">
       <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'>${data.like}</i></button>
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
+      <button type="button" class="hide" id="edit-post">Guardar</button>
       <button id="delete-${data.id}" class="btn-share cursor">Eliminar</button>
     </div>
     <div id="textarea-comment" class="">
@@ -42,6 +46,7 @@ export const listPosts = (data) => {
   const btnComment = divPostItem.querySelector('#btn-comment');
   const btnLike = divPostItem.querySelector(`#like-${data.id}`);
   const comments = divPostItem.querySelector('#comments-container');
+  const modeEdit = divPostItem.querySelector('#select-mode');
 
   if (data.idUser !== currentUser().uid) {
     btnDelete.classList.add('hide');
@@ -52,14 +57,18 @@ export const listPosts = (data) => {
     btnEdit.addEventListener('click', () => {
       divPostItem.querySelector(`#text-${data.id}`).disabled = false;
       const btnSaveEdit = divPostItem.querySelector('#edit-post');
+      btnEdit.classList.add('hide');
       btnSaveEdit.classList.remove('hide');
+      modeEdit.classList.remove('hide');
       const textArea = divPostItem.querySelector(`#text-${data.id}`);
       textArea.select();
-      textArea.addEventListener('focus', () => {
+      textArea.addEventListener('click', () => {
         console.log(textArea.value);
         btnSaveEdit.addEventListener('click', () => {
+          divPostItem.querySelector(`#text-${data.id}`).disabled = true;
+          btnEdit.classList.remove('hide');
           console.log(textArea.value);
-          editPost(`${data.id}`, textArea.value);
+          editPost(`${data.id}`, textArea.value, modeEdit.value);
           btnSaveEdit.classList.add('hide');
         });
       });
