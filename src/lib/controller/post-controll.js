@@ -3,6 +3,7 @@
 import { currentUser } from '../model/firebase-auth.js';
 import { addPost } from '../model/firebase-db.js';
 
+
 // agregar un post en la bd
 export const addData = (event) => {
   event.preventDefault();
@@ -39,10 +40,9 @@ export const deleteData = (idDocPost) => {
 // Editar el post
 export const editData = (idDocPost, textPost) => {
   const updateData = firebase.firestore().collection('posts')
-    .doc(idDocPost);
-  return updateData.update({
-    post: textPost,
-  })
+    .doc(idDocPost).update({
+      post: textPost,
+    })
     .then(() => {
       console.log('Document successfully updated!');
     })
@@ -50,26 +50,5 @@ export const editData = (idDocPost, textPost) => {
       // The document probably doesn't exist.
       console.error('Error updating document: ', error);
     });
+  return updateData;
 };
-
-// Esta funcion no funciona correctamente::D
-/* export const edit = (Id, id) => {
-  const idDoc = `${Id}`;
-  const uid = `${id}`;
-  const textPost = document.querySelector(`#${Id}`);
-  textPost.disabled = false;
-
-  const btnSaveEdit = document.querySelector('#edit-post');
-  btnSaveEdit.classList.remove('hide');
-
-  const textArea = document.querySelector(`#${Id}`);
-
-  textArea.addEventListener('focus', () => {
-    console.log(textArea.value);
-    btnSaveEdit.addEventListener('click', () => {
-      console.log(textArea.value);
-      editData(idDoc, uid, textArea.value);
-      btnSaveEdit.classList.add('hide');
-    });
-  });
-}; */

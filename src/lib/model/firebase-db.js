@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 export const getPost = (callback) => {
   firebase.firestore().collection('posts')
@@ -35,17 +36,36 @@ export const addComment = (textComment, mail, idDoc, id) => firebase.firestore()
     timeComment: new Date(),
   });
 
-export const readComments = (idPost, callback) => {
-  firebase.firestore().collection('posts').doc(idPost).collection('comments')
-    .orderBy('time', 'desc')
-    .onSnapshot((datos) => {
-      const data = [];
-      datos.forEach((doc) => {
-        data.push({ id: doc.id, ...doc.data() });
-        // console.log(data);
-      });
-      callback(data);
+export const add = (textPost) => {
+  const aderido = firebase.firestore().collection('posts')
+    .add({
+      post: textPost,
     });
+  return aderido;
+};
+// export const readComments = (idPost, callback) => {
+//   firebase.firestore().collection('posts').doc(idPost).collection('comments')
+//     .orderBy('time', 'desc')
+//     .onSnapshot((datos) => {
+//       const data = [];
+//       datos.forEach((doc) => {
+//         data.push({ id: doc.id, ...doc.data() });
+//         // console.log(data);
+//       });
+//       callback(data);
+//     });
+// };
+export const readComments = (idPost) => {
+  const readme = firebase.firestore().collection('posts').doc(idPost).collection('comments')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        const commentsCon = document.getElementById('comments-container');
+        commentsCon.innerHTML += doc.data().comment;
+      });
+    });
+  return readme;
 };
 
 // export const deleteComment = (idD, id) => firebase.firestore().collection('posts').doc(idD).collection('comments')

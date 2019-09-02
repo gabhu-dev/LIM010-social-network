@@ -15,12 +15,12 @@ export default (allPost) => {
   <!-- --------------------header---------------------------- -->
   <header class="bg-color-blue ">
   <input type="checkbox" id="btn-menu" class="hide" >
-  <label for="btn-menu"><i class='bx bx-menu bx-flip-vertical nav-icon' ></i></label>
+  <label for="btn-menu"><i class='bx bx-menu nav-icon' style='color:#f3ecec'  ></i></label>
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-home" alt="logo hey! hallyu">
     <nav class="nav">
       <ul class="flex-c">
         <li><a href="#">${user.email}</a></li>
-        <li><a href="#/home"> <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav" alt="logo hey! hallyu"></a></li>
+        <li class="hide"><a href="#/home"> <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav" alt="logo hey! hallyu"></a></li>
         <li type="button" id="log-out"><a href="">Cerrar Sesión</a></li>
       </ul>
     </nav>

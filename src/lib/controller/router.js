@@ -19,15 +19,8 @@ export const viewTemplate = (routes) => {
         container.appendChild(components.home(objData));
       };
       getPost(callback);
-      // container.appendChild(components.home());
       break;
-    // case '#/profile':
-    //   const callbackp = (objData) => {
-    //     container.innerHTML = '';
-    //     container.appendChild(components.profile(objData));
-    //   };
-    //   getPostProfile(callbackp);
-    //   break;
+
     default:
       container.appendChild(components.signIn());
       break;
