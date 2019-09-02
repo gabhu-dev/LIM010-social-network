@@ -1,10 +1,8 @@
 /* eslint-disable no-console */
 import MockFirebase from 'mock-cloud-firestore';
-// import { add, getPost } from '../src/lib/model/firebase-db.js';
 import {
   addPost, getPost, deletePost, editPost,
 } from '../src/lib/model/firebase-db.js';
-// // configuracion de mock de firebase
 
 const fixtureData = {
   __collection__: {
@@ -64,29 +62,3 @@ describe('edit post', () => {
       },
     )));
 });
-// const fixtureData = {
-//   __collection__: {
-//     post: {
-//       __doc__: {
-//         abc123: {
-//           post: 'sembrar fresa',
-//         },
-//         abc124: {
-//           post: 'cosechar manzana',
-//         },
-//       },
-//     },
-//   },
-// };
-// global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
-
-// describe('lista de post', () => {
-//   it('Debería porder agregar un post', done => add('comprar frutas')
-//     .then(() => getPost(
-//       (data) => {
-//         const result = data.find(post => post.post === 'comprar frutas');
-//         expect(result.post).toBe('comprar frutas');
-//         done();
-//       },
-//     )));
-// });
