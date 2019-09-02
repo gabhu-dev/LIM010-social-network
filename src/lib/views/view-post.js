@@ -22,6 +22,7 @@ export const listPosts = (data) => {
         <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
       </div>
     </label>  
+
     <div class="options-like-deleted">
       <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'>${data.like}</i></button>
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>

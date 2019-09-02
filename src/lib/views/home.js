@@ -27,26 +27,32 @@ export default (allPost) => {
   </header>
   <!-- ------------------------------------------------ -->
   <div class="banner-post flex-c center-items">
-    <div class="center-items flex-r size-profile al-self-start">
-      <div id="img-profile" class="img-profile"></div>
-      <div>
-        <p id="user-info"></p>
+  <!-- ------------------ profile------------------------ -->
+    <div class="center-items size-profile al-self-start">
+      <div id="img-profile-font" class="img-profile-font bg-color-blue">img-font</div>
+      <div class="flex-r bg-color-pink">
+        <div id="img-profile" class="img-profile"></div>
+        <p id="user-info" class="user-info"></p>
       </div>
     </div>
+
+  <!-- ------------------------------------------------- -->
     <div class="two-col center-items no-center">
       <div class="post-label bg-color-pink flex-c center-items">
         <textarea cols="50" rows="2" type="text" id="text-post" class="post c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
-  <!-- <img id="img-preview" class="img-preview"></img> -->
-          <div class="flex-r">
-            <!-- <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button> -->
-            <select id="mode" class="al-self-center">
-              <option value="Público">Público</option>
-              <option value="Privado">Privado</option>
-            </select> 
-            <!-- <input type="file" id="btn-img"> -->
-            <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
-          <div>
-      </div>
+
+
+<!-- <img id="img-preview" class="img-preview"></img> -->
+        <div class="flex-r">
+          <!-- <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button> -->
+          <select id="mode" class="al-self-center">
+            <option value="Público">Público</option>
+            <option value="Privado">Privado</option>
+          </select> 
+          <!-- <input type="file" id="btn-img"> -->
+          <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
+        <div>
+ </div>
     </div>
     <p id="alert-msg" class=""></p>
   </div> 
