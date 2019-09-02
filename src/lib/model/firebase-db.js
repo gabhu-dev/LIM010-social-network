@@ -30,6 +30,7 @@ export const editPost = (idDocPost, textPost, mode) => firebase.firestore().coll
   .update({
     post: textPost,
     privacity: mode,
+    timePost: new Date(),
   })
   .then(() => {
     console.log('Document successfully updated!');
@@ -78,10 +79,16 @@ export const deleteComment = (idD, id) => firebase.firestore().collection('posts
   });
 
 // Edita los comentarios
-export const editComment = (idPost, idUser, newTextComment) => firebase.firestore().collection('posts').doc(idPost).collection('comments')
-  .doc(idUser)
+export const editComment = (idPost, idComment, textComment) => firebase.firestore().collection('posts').doc(idPost).collection('comments')
+  .doc(idComment)
   .update({
-    comment: newTextComment,
+    comment: textComment,
+  })
+  .then(() => {
+    console.log('Document successfully updated!');
+  })
+  .catch((error) => {
+    console.error('Error updating document: ', error);
   });
 
 // Llama  los comentarios

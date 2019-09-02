@@ -31,22 +31,36 @@ export const viewComment = (obj) => {
       deleteComment(obj.idPost, obj.id);
     });
 
-    if (currentUser().uid !== obj.idUser) {
+    btnEditComment.classList.remove('hide');
+    btnEditComment.addEventListener('click', () => {
+      btnSaveComment.classList.remove('hide');
       btnEditComment.classList.add('hide');
-    } else {
+      textArea.disabled = false;
+      textArea.select();
+    });
+    btnSaveComment.addEventListener('click', () => {
+      editComment(obj.idPost, obj.id, textArea.value);
       btnEditComment.classList.remove('hide');
-      btnEditComment.addEventListener('click', () => {
-        btnSaveComment.classList.remove('hide');
-        btnEditComment.classList.add('hide');
-        textArea.disabled = false;
-        textArea.select();
-      });
-      btnSaveComment.addEventListener('click', () => {
-        editComment(obj.idPost, obj.idUser, textArea.value);
-        btnEditComment.classList.remove('hide');
-        btnSaveComment.classList.add('hide');
-      });
-    }
+      btnSaveComment.classList.add('hide');
+    });
   }
+
+  //   if (currentUser().uid !== obj.idUser) {
+  //     btnEditComment.classList.add('hide');
+  //   } else {
+  //     btnEditComment.classList.remove('hide');
+  //     btnEditComment.addEventListener('click', () => {
+  //       btnSaveComment.classList.remove('hide');
+  //       btnEditComment.classList.add('hide');
+  //       textArea.disabled = false;
+  //       textArea.select();
+  //     });
+  //     btnSaveComment.addEventListener('click', () => {
+  //       editComment(obj.idPost, obj.idUser, textArea.value);
+  //       btnEditComment.classList.remove('hide');
+  //       btnSaveComment.classList.add('hide');
+  //     });
+  //   }
+  // }
   return divCommentItem;
 };
