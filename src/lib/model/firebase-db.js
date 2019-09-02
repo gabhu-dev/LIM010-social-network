@@ -25,10 +25,11 @@ export const deletePost = idDocPost => firebase.firestore().collection('posts')
   });
 
 // Edita el post
-export const editPost = (idDocPost, textPost) => firebase.firestore().collection('posts')
+export const editPost = (idDocPost, textPost, mode) => firebase.firestore().collection('posts')
   .doc(idDocPost)
   .update({
     post: textPost,
+    privacity: mode,
   })
   .then(() => {
     console.log('Document successfully updated!');

@@ -75,8 +75,16 @@
 .al-self-end {
     align-self: flex-end;
 }
-
-
+.m-auto {
+    margin: auto;
+}
+.w-80 {
+    width: 100%;
+}
+textarea{
+    resize: none;
+    font-family: 'Quicksand', sans-serif;
+}
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
 
 .input-form {
@@ -181,14 +189,12 @@
     border-radius: .5em;
     border: none;
     margin: 1em;
-    resize: none;
     background-color: #ffffff;
 }
 
 .post-v {
     padding: .5em;
     border: none;
-    resize: none;
 }
 
 .post-publicated {
@@ -200,14 +206,6 @@
 .name-person {
     padding: 1em 1em 0;
     background-color: #df744a;
-}
-
-.w-80 {
-    width: 100%;
-}
-
-.m-auto {
-    margin: auto;
 }
 
 .m-info {
@@ -439,10 +437,7 @@ header label:hover {
         justify-content: flex-start;
         align-items: end;
     }
-    /* textarea{
-        resize: none;
-        font-family: 'Quicksand', sans-serif;
-    } */
+     
     /* .img-preview{
         border:2px solid black;
         height: 5em;
