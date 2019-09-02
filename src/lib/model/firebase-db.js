@@ -1,4 +1,49 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
+
+// Agrega un post
+export const addPost = (textPost, id, name, mail, mode, like) => firebase.firestore().collection('posts')
+  .add({
+    post: textPost,
+    idUser: id,
+    user: name,
+    email: mail,
+    privacity: mode,
+    likes: like,
+    timePost: new Date(),
+  });
+
+// Elimina un post
+export const deletePost = idDocPost => firebase.firestore().collection('posts')
+  .doc(idDocPost)
+  .delete()
+  .then(() => {
+    console.log('Document successfully deleted!');
+  })
+  .catch((error) => {
+    console.error('Error removing document: ', error);
+  });
+
+// Edita el post
+export const editPost = (idDocPost, textPost) => firebase.firestore().collection('posts')
+  .doc(idDocPost)
+  .update({
+    post: textPost,
+  })
+  .then(() => {
+    console.log('Document successfully updated!');
+  })
+  .catch((error) => {
+    console.error('Error updating document: ', error);
+  });
+
+
+// Actualiza los likes
+export const editLikes = (idD, like) => firebase.firestore().collection('posts').doc(idD).update({
+  likes: like,
+});
+
+// Llama los posts se usa en router
 export const getPost = (callback) => {
   firebase.firestore().collection('posts')
     .orderBy('timePost', 'desc')
@@ -11,21 +56,7 @@ export const getPost = (callback) => {
     });
 };
 
-// Post privado
-export const addPost = (textPost, id, name, mail, mode) => {
-  const messageRef = firebase.firestore().collection('posts')
-    .add({
-      post: textPost,
-      idUser: id,
-      user: name,
-      email: mail,
-      privacity: mode,
-      like: 0,
-      timePost: new Date(),
-    });
-  return messageRef;
-};
-// Añadir comentarios
+// Agrega comentarios
 export const addComment = (textComment, mail, idDoc, id) => firebase.firestore().collection('posts').doc(idDoc).collection('comments')
   .add({
     comment: textComment,
@@ -34,29 +65,37 @@ export const addComment = (textComment, mail, idDoc, id) => firebase.firestore()
     idUser: id,
     timeComment: new Date(),
   });
+// Elimina los comentarios
+export const deleteComment = (idD, id) => firebase.firestore().collection('posts').doc(idD).collection('comments')
+  .doc(id)
+  .delete()
+  .then(() => {
+    console.log('Comentario eliminado!');
+  })
+  .catch((error) => {
+    console.error('No se pudo eliminar el comentario: ', error);
+  });
 
+// Edita los comentarios
+export const editComment = (idPost, idUser, newTextComment) => firebase.firestore().collection('posts').doc(idPost).collection('comments')
+  .doc(idUser)
+  .update({
+    comment: newTextComment,
+  });
+
+// Llama  los comentarios
 export const readComments = (idPost, callback) => {
   firebase.firestore().collection('posts').doc(idPost).collection('comments')
-    .orderBy('time', 'desc')
-    .onSnapshot((datos) => {
+    .orderBy('timeComment', 'desc')
+    .onSnapshot((querySnapshot) => {
       const data = [];
-      datos.forEach((doc) => {
+      querySnapshot.forEach((doc) => {
         data.push({ id: doc.id, ...doc.data() });
         // console.log(data);
       });
       callback(data);
     });
 };
-
-// export const deleteComment = (idD, id) => firebase.firestore().collection('posts').doc(idD).collection('comments')
-//   .doc(id)
-//   .delete();
-// export const editComment = (idD, id, newText) => firebase.firestore().collection('posts').doc(idD).collection('comments')
-//   .doc(id)
-//   .update({
-//     comentario: newText,
-//   });
-
 
 // para añadir imagenes
 // export const upImgs = (file, uid) => {
