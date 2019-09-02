@@ -1,56 +1,52 @@
-// import { currentUser } from '../model/firebase-auth.js';
-// import { deleteComment, editComment } from '../model/firebase-db.js';
+import { currentUser } from '../model/firebase-auth.js';
+import { deleteComment, editComment } from '../model/firebase-db.js';
 
-export const viewComment = (objComment) => {
-  const commentContainer = document.createElement('div');
-  commentContainer.innerHTML = '';
-  const commentTemplate = `  
+export const viewComment = (obj) => {
+  const time = new Date(obj.timeComment.toDate());
+  const divCommentItem = document.createElement('div');
+  divCommentItem.innerHTML = '';
+  const template = `  
+  <p class="" id="nombre">Comentado por ${obj.email}</p>
+  <p class="m-info">el ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
+  <p class="m-info">a las ${time.getHours()}${':'}${time.getMinutes()}</p>
+  <textarea id="comment" class="post c-darkblue" type="text" disabled>${obj.comment}</textarea>
     <div class="">
-      <p class="" id="nombre">${objComment.email}</p>
-      <p class=""><i class="clock-icon fa fa-clock-o" aria-hidden="true"></i> ${objComment.timeComment}</p>
-    </div>
-    <div class="">
-      <textarea id="comment" class="" type="text">${objComment.coment}</textarea>
-      <div class="">
-        <i id="btn-delete-comentario" class="" aria-hidden="true"></i>
-        <i id="edit-coment" class="" aria-hidden="true"></i>
-        <i id="save" class="" aria-hidden="true"></i>
-      </div>
-    </div>
-    `;
-  commentContainer.innerHTML = commentTemplate;
-  commentContainer.setAttribute('class', 'bg-color-blue');
-  // commentContainer.classList.add('container-comment');
-  //   const eliminar = commentContainer.querySelector('#btn-delete-comentario');
-  //   const textArea = commentContainer.querySelector('#comment');
-  //   const edit = commentContainer.querySelector('#edit-coment');
-  //   const save = commentContainer.querySelector('#save');
-  //   if (currentUser().email !== objComment.idUsuario) {
-  //     eliminar.classList.add('hide');
-  //     edit.classList.add('hide');
-  //     textArea.disabled = true;
-  //   } else {
-  //     textArea.disabled = true;
-  //     eliminar.addEventListener('click', () => {
-  //       deleteComment(objComment.idPost, objComment.id);
-  //     });
-  //     if (currentUser().email !== objComment.correo) {
-  //       edit.classList.add('hide');
-  //     } else {
-  //       edit.classList.remove('hide');
-  //       edit.addEventListener('click', () => {
-  //         save.classList.remove('hide');
-  //         edit.classList.add('hide');
-  //         textArea.disabled = false;
-  //         textArea.select();
-  //       });
-  //       save.addEventListener('click', () => {
-  //         editComment(objComment.idPost, objComment.id, textArea.value);
-  //         edit.classList.remove('hide');
-  //         save.classList.add('hide');
-  //         textArea.disabled = true;
-  //       });
-  //     }
-  //   }
-  return commentContainer;
+      <button type="button" id="btn-delete-comment" class="btn-share">Eliminar</button>
+      <button type="button" id="btn-edit-comment" class="btn-share">Editar</button>
+      <button type="button" id="btn-save-comment" class="hide btn-share">Guardar Edición</button>
+    </div>`;
+
+  divCommentItem.innerHTML = template;
+
+  const textArea = divCommentItem.querySelector('#comment');
+  const btnDeleteComment = divCommentItem.querySelector('#btn-delete-comment');
+  const btnEditComment = divCommentItem.querySelector('#btn-edit-comment');
+  const btnSaveComment = divCommentItem.querySelector('#btn-save-comment');
+
+  if (currentUser().uid !== obj.idUser) {
+    btnDeleteComment.classList.add('hide');
+    btnEditComment.classList.add('hide');
+  } else {
+    btnDeleteComment.addEventListener('click', () => {
+      deleteComment(obj.idPost, obj.id);
+    });
+
+    if (currentUser().uid !== obj.idUser) {
+      btnEditComment.classList.add('hide');
+    } else {
+      btnEditComment.classList.remove('hide');
+      btnEditComment.addEventListener('click', () => {
+        btnSaveComment.classList.remove('hide');
+        btnEditComment.classList.add('hide');
+        textArea.disabled = false;
+        textArea.select();
+      });
+      btnSaveComment.addEventListener('click', () => {
+        editComment(obj.idPost, obj.idUser, textArea.value);
+        btnEditComment.classList.remove('hide');
+        btnSaveComment.classList.add('hide');
+      });
+    }
+  }
+  return divCommentItem;
 };

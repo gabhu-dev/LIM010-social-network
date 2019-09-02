@@ -20,7 +20,8 @@ export const viewTemplate = (routes) => {
       };
       getPost(callback);
       break;
-
+    // case '#/profile':
+    //   break;
     default:
       container.appendChild(components.signIn());
       break;
