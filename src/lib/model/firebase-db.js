@@ -19,10 +19,10 @@ export const deletePost = idDocPost => firebase.firestore().collection('posts')
   .delete()
   .then(() => {
     console.log('Document successfully deleted!');
-  })
-  .catch((error) => {
-    console.error('Error removing document: ', error);
   });
+  // .catch((error) => {
+  //   console.error('Error removing document: ', error);
+  // });
 
 // Edita el post
 export const editPost = (idDocPost, textPost, mode) => firebase.firestore().collection('posts')
@@ -33,10 +33,10 @@ export const editPost = (idDocPost, textPost, mode) => firebase.firestore().coll
   })
   .then(() => {
     console.log('Document successfully updated!');
-  })
-  .catch((error) => {
-    console.error('Error updating document: ', error);
   });
+  // .catch((error) => {
+  //   console.error('Error updating document: ', error);
+  // });
 
 
 // Actualiza los likes
@@ -72,10 +72,10 @@ export const deleteComment = (idD, id) => firebase.firestore().collection('posts
   .delete()
   .then(() => {
     console.log('Comentario eliminado!');
-  })
-  .catch((error) => {
-    console.error('No se pudo eliminar el comentario: ', error);
   });
+  // .catch((error) => {
+  //   console.error('No se pudo eliminar el comentario: ', error);
+  // });
 
 // Edita los comentarios
 export const editComment = (idPost, idUser, newTextComment) => firebase.firestore().collection('posts').doc(idPost).collection('comments')
@@ -97,25 +97,3 @@ export const readComments = (idPost, callback) => {
       callback(data);
     });
 };
-
-// para añadir imagenes
-// export const upImgs = (file, uid) => {
-//   const refStorage = firebase.storage().ref(`imgsPosts/${uid}/${file.name}`);
-//   const task = refStorage.put(file);
-//   task.on('state_changed',
-//     (Snapshot) => {
-//       const porcentaje = Snapshot.bytesTransferred / Snapshot.totalBytes * 100 $('.determinate').attr('style', `with:${porcentaje}%`);
-//     },
-//     (err) => {
-//       console.log(`error subiendo = >${err.message}`, 4000);
-//     },
-//     () => {
-//       task.Snapshot.ref.getDownloadURL()
-//         .then((url) => {
-//           console.log(url);
-//           sessionStorage.setItem('imgNewPost', url);
-//         }).catch(err => console.log(err));
-//     });
-//
-// subir img a storage
-// const upImgs
