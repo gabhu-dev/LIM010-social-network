@@ -93,8 +93,8 @@ export const readComments = (idPost, callback) => {
         data.push({ id: doc.id, ...doc.data() });
         // console.log(data);
       });
+      callback(data);
     });
-  return readme;
 };
 
 // para añadir imagenes

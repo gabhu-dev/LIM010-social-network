@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 import MockFirebase from 'mock-cloud-firestore';
 // import { add, getPost } from '../src/lib/model/firebase-db.js';
-import { addPost, getPost } from '../src/lib/model/firebase-db.js';
-import { deleteData, editData } from '../src/lib/controller/post-controll.js';
+import {
+  addPost, getPost, deletePost, editPost,
+} from '../src/lib/model/firebase-db.js';
 // // configuracion de mock de firebase
 
 const fixtureData = {
@@ -10,7 +11,7 @@ const fixtureData = {
     posts: {
       __doc__: {
         abc123: {
-          post: 'sembrar fresa',
+          post: 'yo veo doramas en dramafever',
           idUser: 123456,
           user: 'gabriela',
           email: 'gabhu@hotmail.es',
@@ -18,7 +19,7 @@ const fixtureData = {
           like: 1,
         },
         abc124: {
-          post: 'cosechar manzana',
+          post: 'oh hayllu ,me encanta',
           idUser: 789101,
           user: 'sara',
           email: 'sabsusu@hotmail.com',
@@ -32,18 +33,18 @@ const fixtureData = {
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 describe('lista de posts', () => {
-  it('Debería poder agregar un post', done => addPost('comprar frutas', 121314, 'rita', 'rita@hotmail.com', 'public', 1)
+  it('Debería poder agregar un post', done => addPost('me gustan doramas', 121314, 'rita', 'rita@hotmail.com', 'public', 1)
     .then(() => getPost(
       (data) => {
-        const result = data.find(posts => posts.post === 'comprar frutas');
-        expect(result.post).toBe('comprar frutas');
+        const result = data.find(posts => posts.post === 'me gustan doramas');
+        expect(result.post).toBe('me gustan doramas');
         done();
       },
     )));
 });
 
 describe('delete post', () => {
-  it('Debería poder eliminar el post con el id: abc124', done => deleteData('abc124')
+  it('Debería poder eliminar el post con el id: abc124', done => deletePost('abc124')
     .then(() => getPost(
       (data) => {
         const result = data.find(posts => posts.id === 'abc124');
@@ -54,11 +55,11 @@ describe('delete post', () => {
 });
 
 describe('edit post', () => {
-  it('Debería poder editar post con id:abc123', done => editData('abc123', 'sembrar frutas')
+  it('Debería poder editar post con id:abc123', done => editPost('abc123', '¿qué dorama miro?')
     .then(() => getPost(
       (data) => {
-        const result = data.find(posts => posts.post === 'sembrar frutas');
-        expect(result.post).toBe('sembrar frutas');
+        const result = data.find(posts => posts.post === '¿qué dorama miro?');
+        expect(result.post).toBe('¿qué dorama miro?');
         done();
       },
     )));
