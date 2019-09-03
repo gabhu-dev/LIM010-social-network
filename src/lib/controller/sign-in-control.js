@@ -51,7 +51,7 @@ export const signInFb = () => {
     });
 };
 
-export const signInGoogleV = () => {
+export const signInWithGoogle = () => {
   signInGoogle()
     .then(() => {
       const user = currentUser();
