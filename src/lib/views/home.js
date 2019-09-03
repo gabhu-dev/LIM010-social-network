@@ -19,7 +19,7 @@ export default (allPost) => {
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-home" alt="logo hey! hallyu">
     <nav class="nav">
       <ul class="flex-c">
-        <li><a href="#">${user.email}</a></li>
+        <li><a href="#">Perfil de : ${user.email}</a></li>
     <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav hide" alt="logo hey! hallyu">
         <li type="button" id="log-out"><a href=""><i class='bx bx-exit bx-rotate-180' style='color:#f3e7e7'  ></i>Cerrar Sesión</a></li>
       </ul>
@@ -29,7 +29,7 @@ export default (allPost) => {
   <div class="banner-post flex-c center-items">
   <!-- ------------------ profile------------------------ -->
     <div class="center-items size-profile al-self-start">
-      <div id="img-profile-font" class="img-profile-font bg-color-pink"></div>
+      <div id="img-profile-font" class="img-profile-font bg-color-pink "></div>
       <div class="flex-r bg-color-pink">
         <div id="img-profile" class="img-profile"></div>
         <p id="user-info" class="user-info"></p>

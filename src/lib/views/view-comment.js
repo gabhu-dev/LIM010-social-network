@@ -6,18 +6,20 @@ export const viewComment = (obj) => {
   const divCommentItem = document.createElement('div');
   divCommentItem.innerHTML = '';
   const template = `  
-  <p class="" id="nombre">Comentado por ${obj.email}</p>
-  <p class="m-info">el ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
-  <p class="m-info">a las ${time.getHours()}${':'}${time.getMinutes()}</p>
+  <p class="info-comment" id="nombre">${obj.email}</p>
+  <div class="date flex-r">
+  <p class="m-info info-comment">el ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
+  <p class="m-info info-comment">a las ${time.getHours()}${':'}${time.getMinutes()}</p>
+  </div>
   <textarea id="comment" class="post c-darkblue" type="text" disabled>${obj.comment}</textarea>
     <div class="">
-      <button type="button" id="btn-delete-comment" class="btn-share">Eliminar</button>
-      <button type="button" id="btn-edit-comment" class="btn-share">Editar</button>
-      <button type="button" id="btn-save-comment" class="hide btn-share">Guardar Edición</button>
+      <button type="button" id="btn-delete-comment" class="btn-share m-bott-1">Eliminar</button>
+      <button type="button" id="btn-edit-comment" class="btn-share m-bott-1">Editar</button>
+      <button type="button" id="btn-save-comment" class="hide btn-share m-bott-1">Guardar Edición</button>
     </div>`;
 
   divCommentItem.innerHTML = template;
-
+  divCommentItem.setAttribute('class', 'bg-color-darkblue shad  br-1 m-bott-1');
   const textArea = divCommentItem.querySelector('#comment');
   const btnDeleteComment = divCommentItem.querySelector('#btn-delete-comment');
   const btnEditComment = divCommentItem.querySelector('#btn-edit-comment');

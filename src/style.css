@@ -39,6 +39,17 @@
     background-color: #fedcd2;
 }
 
+.bg-color-darkpink{
+    background-color: #df744a;
+}
+
+.bg-color-darkblue{
+    background-color:rgba(85, 169, 162, .25);
+}
+.shad{
+    box-shadow: inset 0 0 .5em;
+    color:rgba(45,141,133,.5);
+}
 .c-darkpink {
     color: #df744a;
 }
@@ -46,6 +57,7 @@
 .c-darkblue {
     color: #2d8d85;
 }
+
 
 .w-h-max {
     width: max-content;
@@ -79,11 +91,25 @@
 .m-auto {
     margin: auto;
 }
-
+.pad-1{
+    padding: 1em;
+}
 .w-80 {
     width: 100%;
 }
-
+.br-1{
+    border-radius: 1em;
+}
+.m-bott-1{
+    margin-bottom: 1em;
+}
+.border{
+    border: solid #ffffff;
+}
+.info-comment{
+    padding: .5em 1em;
+    color: #2d8d85;
+}
 textarea {
     resize: none;
     font-family: 'Quicksand', sans-serif;
@@ -199,7 +225,6 @@ textarea {
 .post {
     width: 90%;
     padding: .5em;
-    height: 8em;
     border-radius: .5em;
     border: none;
     margin: 1em;
@@ -213,12 +238,14 @@ textarea {
 
 .post-publicated {
     width: 100%;
-    padding: 3%;
+    padding: 3% 5%;
+    border: none;
     height: max-content;
+    background-color:#ffffff;
 }
 
 .name-person {
-    padding: 1%;
+    padding: 3%;
     border-bottom: 2px solid white;
 }
 
@@ -249,12 +276,12 @@ strong {
     border-radius: 1em;
     padding: .5em;
     cursor: pointer;
-    margin-left: 3%;
+    margin-left: 6%;
 }
 
 .logo-home {
     height: 2.5em;
-    margin-left: 40%;
+    margin-left: 30%;
 }
 
 .logo-nav {
@@ -441,7 +468,6 @@ header label:hover {
     }
     .post {
         width: 90%;
-        height: 9em;
         border-radius: 0.5em;
         border: none;
         background-color: #ffffff;
@@ -458,6 +484,7 @@ header label:hover {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        background-color: #ffffff;
     }
     .size-profile {
         width: 30%;
@@ -483,7 +510,6 @@ header label:hover {
         background-image: url(./lib/img/profile-font.png);
         background-size: contain;
         height: 50%;
-        background-repeat: no-repeat;
     }
     .comments {
         height: 8em;
