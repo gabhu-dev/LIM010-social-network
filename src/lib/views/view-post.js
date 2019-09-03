@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 
 import { currentUser } from '../model/firebase-auth.js';
-import { deletePost, editPost, addComment, readComments, editLikes } from '../model/firebase-db.js';
+import { deletePost, editPost, addComment, readComments, editLikes, readLikes } from '../model/firebase-db.js';
 import { viewComment } from './view-comment.js';
 
 export const listPosts = (data) => {
@@ -29,6 +29,7 @@ export const listPosts = (data) => {
 
     <div class="options-like-deleted">
       <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
+      <p id="counter-like"></p> 
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
       <button type="button" class="hide cursor  btn-share" id="edit-post">Guardar Edición</button>
       <button id="delete-${data.id}" class="btn-share cursor">Eliminar</button>
@@ -69,8 +70,19 @@ export const listPosts = (data) => {
     });
   }
   btnLike.addEventListener('click', () => {
-    const valor = data.like + 1;
-    editLikes(data.id, valor);
+    const valor = data.likes + 1;
+    console.log(valor);
+    editLikes(data.id, valor)
+      .then(() => {
+        readLikes(`${data.id}`)
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              console.log(`${doc.id} => ${doc.data()}`);
+              // const likeWrite = document.getElementById('counter-like');
+              // likeWrite.innerHTML = doc.data().likes;
+            });
+          });
+      });
   });
 
   btnComment.addEventListener('click', () => {

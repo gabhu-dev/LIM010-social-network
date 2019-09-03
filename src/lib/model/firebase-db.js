@@ -20,9 +20,9 @@ export const deletePost = idDocPost => firebase.firestore().collection('posts')
   .then(() => {
     console.log('Document successfully deleted!');
   });
-  // .catch((error) => {
-  //   console.error('Error removing document: ', error);
-  // });
+// .catch((error) => {
+//   console.error('Error removing document: ', error);
+// });
 
 // Edita el post
 export const editPost = (idDocPost, textPost, mode) => firebase.firestore().collection('posts')
@@ -35,16 +35,16 @@ export const editPost = (idDocPost, textPost, mode) => firebase.firestore().coll
   .then(() => {
     console.log('Document successfully updated!');
   });
-  // .catch((error) => {
-  //   console.error('Error updating document: ', error);
-  // });
+// .catch((error) => {
+//   console.error('Error updating document: ', error);
+// });
 
 
 // Actualiza los likes
 export const editLikes = (idD, like) => firebase.firestore().collection('posts').doc(idD).update({
   likes: like,
 });
-
+export const readLikes = idD => firebase.firestore().collection('posts').doc(idD).get();
 // Llama los posts se usa en router
 export const getPost = (callback) => {
   firebase.firestore().collection('posts')
@@ -74,9 +74,9 @@ export const deleteComment = (idD, id) => firebase.firestore().collection('posts
   .then(() => {
     console.log('Comentario eliminado!');
   });
-  // .catch((error) => {
-  //   console.error('No se pudo eliminar el comentario: ', error);
-  // });
+// .catch((error) => {
+//   console.error('No se pudo eliminar el comentario: ', error);
+// });
 
 // Edita los comentarios
 export const editComment = (idPost, idComment, textComment) => firebase.firestore().collection('posts').doc(idPost).collection('comments')
