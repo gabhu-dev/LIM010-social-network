@@ -15,9 +15,9 @@ export const listPosts = (data) => {
     <label id="label-publicate" class="flex-c just-cont-sb">
       <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
        <div class="flex-r date bg-color-pink">
-        <p class="m-info">${data.privacity}</p>
-        <p class="m-info">${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
-        <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
+        <p class="m-info">el    ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
+        <p class="m-info">a las   ${time.getHours()}${':'}${time.getMinutes()}</p>
+        <p class="m-info"><strong>${data.privacity}</strong></p>
       </div>
       <textarea id="text-post" class="post-publicated c-darkblue" disabled>${data.post}</textarea>
       <select class="hide" id="select-mode">
@@ -27,17 +27,18 @@ export const listPosts = (data) => {
      
     </label>  
 
-    <div class="options-like-deleted">
+    <div class="options-like-deleted flex-r">
       <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
       <p id="counter-like"></p> 
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
       <button type="button" class="hide cursor  btn-share" id="edit-post">Guardar Edición</button>
       <button id="delete-${data.id}" class="btn-share cursor">Eliminar</button>
     </div>
-    <div id="textarea-comment" class="">
+    <div id="textarea-comment" class="bg-color-darkblue shad  br-1 m-bott-1">
       <textarea id="new-comment" class="post c-darkblue" type="text" placeholder="Escribe tu comentario" /></textarea>
-      <button type="button" id="btn-comment" class="btn-share cursor bg-color-pink">Comentar</button>
+      <button type="button" id="btn-comment" class="btn-share cursor bg-color-pink m-bott-1">Comentar</button>
     </div>
+    <p class="m-auto pad-1">Comentarios: </p>
     <div id="comments-container" class=""></<div>`;
 
   divPostItem.innerHTML = template;
