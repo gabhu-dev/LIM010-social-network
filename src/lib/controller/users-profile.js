@@ -20,7 +20,7 @@ export const obtainProfile = (id) => {
         const img = document.getElementById('img-profile');
         userInfo.innerHTML = `<p class="">${doc.data().Usuario}</p>`;
         userInfo.innerHTML += `<p class="">${doc.data().Correo}</p>`;
-        img.innerHTML += `<img src="${doc.data().Photo}" class="img-profile" alt="foto de perfil de ${doc.data().Usuario}">`;
+        img.innerHTML = `<img src="${doc.data().Photo}" class="img-profile" alt="foto de perfil de ${doc.data().Usuario}">`;
         userName.innerHTML = doc.data().Usuario;
         // console.log('Document data:', doc.data());
       } else {

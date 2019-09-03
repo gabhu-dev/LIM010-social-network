@@ -10,7 +10,8 @@ export const listPosts = (data) => {
   const time = new Date(data.timePost.toDate());
   const divPostItem = document.createElement('div');
   let template = '';
-  template = `
+  if (data.privacity === 'Público' || data.user === currentUser().displayName) {
+    template = `
   <label id="label-publicate" class="flex-c just-cont-sb">
     <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
     <div class="flex-r date bg-color-pink">
@@ -38,45 +39,45 @@ export const listPosts = (data) => {
   <p class="m-auto pad-1">Comentarios: </p>
   <div id="comments-container" class=""></<div>`;
 
-  divPostItem.innerHTML = template;
-  divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80 shadow');
+    divPostItem.innerHTML = template;
+    divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80 shadow');
 
-  const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
-  const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
-  const btnComment = divPostItem.querySelector('#btn-comment');
-  const comments = divPostItem.querySelector('#comments-container');
-  const modeEdit = divPostItem.querySelector('#select-mode');
-  const btnSaveEdit = divPostItem.querySelector('#edit-post');
-  const textArea = divPostItem.querySelector('#text-post');
+    const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
+    const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
+    const btnComment = divPostItem.querySelector('#btn-comment');
+    const comments = divPostItem.querySelector('#comments-container');
+    const modeEdit = divPostItem.querySelector('#select-mode');
+    const btnSaveEdit = divPostItem.querySelector('#edit-post');
+    const textArea = divPostItem.querySelector('#text-post');
 
-  if (data.idUser !== currentUser().uid) {
-    btnDelete.classList.add('hide');
-    btnEdit.classList.add('hide');
-  } else {
-    btnDelete.addEventListener('click', () => deletePost(`${data.id}`));
-
-    btnEdit.addEventListener('click', () => {
+    if (data.idUser !== currentUser().uid) {
+      btnDelete.classList.add('hide');
       btnEdit.classList.add('hide');
-      btnSaveEdit.classList.remove('hide');
-      modeEdit.classList.remove('hide');
-      textArea.disabled = false;
-      textArea.select();
+    } else {
+      btnDelete.addEventListener('click', () => deletePost(`${data.id}`));
+
+      btnEdit.addEventListener('click', () => {
+        btnEdit.classList.add('hide');
+        btnSaveEdit.classList.remove('hide');
+        modeEdit.classList.remove('hide');
+        textArea.disabled = false;
+        textArea.select();
+      });
+
+      btnSaveEdit.addEventListener('click', () => {
+        editPost(`${data.id}`, textArea.value, modeEdit.value);
+      });
+    }
+
+    btnComment.addEventListener('click', () => {
+      const comment = divPostItem.querySelector('#new-comment').value;
+      addComment(comment, currentUser().email, `${data.id}`, currentUser().uid);
     });
 
-    btnSaveEdit.addEventListener('click', () => {
-      editPost(`${data.id}`, textArea.value, modeEdit.value);
+    readComments(`${data.id}`, (dato) => {
+      comments.innerHTML = '';
+      dato.forEach(obj => comments.appendChild(viewComment(obj)));
     });
   }
-
-  btnComment.addEventListener('click', () => {
-    const comment = divPostItem.querySelector('#new-comment').value;
-    addComment(comment, currentUser().email, `${data.id}`, currentUser().uid);
-  });
-
-  readComments(`${data.id}`, (dato) => {
-    comments.innerHTML = '';
-    dato.forEach(obj => comments.appendChild(viewComment(obj)));
-  });
-
   return divPostItem;
 };
