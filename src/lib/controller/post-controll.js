@@ -20,25 +20,3 @@ export const addData = (event) => {
       console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
     });
 };
-
-// Esta funcion no funciona correctamente::D
-/* export const edit = (Id, id) => {
-  const idDoc = `${Id}`;
-  const uid = `${id}`;
-  const textPost = document.querySelector(`#${Id}`);
-  textPost.disabled = false;
-
-  const btnSaveEdit = document.querySelector('#edit-post');
-  btnSaveEdit.classList.remove('hide');
-
-  const textArea = document.querySelector(`#${Id}`);
-
-  textArea.addEventListener('focus', () => {
-    console.log(textArea.value);
-    btnSaveEdit.addEventListener('click', () => {
-      console.log(textArea.value);
-      editData(idDoc, uid, textArea.value);
-      btnSaveEdit.classList.add('hide');
-    });
-  });
-}; */

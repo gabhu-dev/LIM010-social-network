@@ -13,7 +13,8 @@ export const listPosts = (data) => {
   // if (data.privacity === 'Público' || data.user === currentUser().displayName) {
   template = `
     <label id="label-publicate" class="flex-c just-cont-sb">
-      <p class="name-person">Publicado por ${data.email}</p> <div class="flex-r m-auto">
+      <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
+       <div class="flex-r date bg-color-pink">
         <p class="m-info">${data.privacity}</p>
         <p class="m-info">${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
         <p class="m-info">${time.getHours()}${':'}${time.getMinutes()}</p>
@@ -27,7 +28,7 @@ export const listPosts = (data) => {
     </label>  
 
     <div class="options-like-deleted">
-      <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'>${data.like}</i></button>
+      <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
       <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
       <button type="button" class="hide cursor  btn-share" id="edit-post">Guardar Edición</button>
       <button id="delete-${data.id}" class="btn-share cursor">Eliminar</button>
@@ -39,7 +40,7 @@ export const listPosts = (data) => {
     <div id="comments-container" class=""></<div>`;
 
   divPostItem.innerHTML = template;
-  divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80');
+  divPostItem.setAttribute('class', 'flex-c  bg-color-blue post-label w-80 shadow');
 
   const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
   const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
@@ -49,7 +50,7 @@ export const listPosts = (data) => {
   const modeEdit = divPostItem.querySelector('#select-mode');
   const btnSaveEdit = divPostItem.querySelector('#edit-post');
   const textArea = divPostItem.querySelector('#text-post');
-  
+
   if (data.idUser !== currentUser().uid) {
     btnDelete.classList.add('hide');
     btnEdit.classList.add('hide');

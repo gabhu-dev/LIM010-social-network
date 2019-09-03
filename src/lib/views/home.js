@@ -20,8 +20,8 @@ export default (allPost) => {
     <nav class="nav">
       <ul class="flex-c">
         <li><a href="#">${user.email}</a></li>
-        <li class="hide"><a href="#/home"> <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav" alt="logo hey! hallyu"></a></li>
-        <li type="button" id="log-out"><a href="">Cerrar Sesión</a></li>
+    <img src="https://raw.githubusercontent.com/gabhu-dev/LIM010-social-network/master/src/lib/img/logo3.png"/ class="logo-nav hide" alt="logo hey! hallyu">
+        <li type="button" id="log-out"><a href=""><i class='bx bx-exit bx-rotate-180' style='color:#f3e7e7'  ></i>Cerrar Sesión</a></li>
       </ul>
     </nav>
   </header>
@@ -29,7 +29,7 @@ export default (allPost) => {
   <div class="banner-post flex-c center-items">
   <!-- ------------------ profile------------------------ -->
     <div class="center-items size-profile al-self-start">
-      <div id="img-profile-font" class="img-profile-font bg-color-blue">img-font</div>
+      <div id="img-profile-font" class="img-profile-font bg-color-pink"></div>
       <div class="flex-r bg-color-pink">
         <div id="img-profile" class="img-profile"></div>
         <p id="user-info" class="user-info"></p>
@@ -37,22 +37,18 @@ export default (allPost) => {
     </div>
 
   <!-- ------------------------------------------------- -->
-    <div class="two-col center-items no-center">
-      <div class="post-label bg-color-pink flex-c center-items">
+    <div class="two-col center-items no-center width">
+      <div class="post-label bg-color-pink flex-c center-items shadow">
         <textarea cols="50" rows="2" type="text" id="text-post" class="post c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
 
-
-<!-- <img id="img-preview" class="img-preview"></img> -->
-        <div class="flex-r">
-          <!-- <button type="button" id="btn-img" class="al-self-start btn-share"><i class='bx bxs-image'></i></button> -->
+        <div class="flex-r share-label">
           <select id="mode" class="al-self-center">
             <option value="Público">Público</option>
             <option value="Privado">Privado</option>
           </select> 
-          <!-- <input type="file" id="btn-img"> -->
           <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
         <div>
- </div>
+     </div>
     </div>
     <p id="alert-msg" class=""></p>
   </div> 

@@ -75,16 +75,21 @@
 .al-self-end {
     align-self: flex-end;
 }
+
 .m-auto {
     margin: auto;
 }
+
 .w-80 {
     width: 100%;
 }
-textarea{
+
+textarea {
     resize: none;
     font-family: 'Quicksand', sans-serif;
 }
+
+
 /*----------------------------------------- hu1,hu2--------------------------------------------*/
 
 .input-form {
@@ -176,6 +181,15 @@ textarea{
     height: 5em;
 }
 
+.shadow {
+    box-shadow: 2px 2px 10px #666;
+}
+
+.user-info {
+    margin: 5%;
+    border-bottom: 2px solid white;
+}
+
 .post-label {
     margin: 1em auto;
     border-radius: 1em;
@@ -204,30 +218,48 @@ textarea{
 }
 
 .name-person {
-    padding: 1em 1em 0;
-    background-color: #df744a;
+    padding: 1%;
+    border-bottom: 2px solid white;
+}
+
+strong {
+    color: #2d8d85;
 }
 
 .m-info {
     margin: 0 1em;
 }
 
+.width {
+    width: 90%;
+}
+
+.date {
+    width: 100%;
+    padding: 2% 0 2%;
+}
+
 .options-like-deleted {
-    margin: 1em auto;
+    margin: 1em;
 }
 
 .btn-share {
     width: max-content;
     border: none;
     border-radius: 1em;
-    margin: 0 1em 1em;
     padding: .5em;
     cursor: pointer;
+    margin-left: 3%;
 }
 
 .logo-home {
     height: 2.5em;
-    margin-left: 28%;
+    margin-left: 40%;
+}
+
+.logo-nav {
+    height: 2.5em;
+    margin: 0.1em;
 }
 
 .one-col {
@@ -265,7 +297,6 @@ header label:hover {
 
 .nav li {
     flex-grow: 1;
-    border-top: 1px solid #fff;
 }
 
 .nav li:hover {
@@ -285,8 +316,9 @@ header label:hover {
 
 .size-profile {
     width: 90%;
-    height: 9em;
+    height: max-content;
     margin: 5%;
+    box-shadow: 2px 2px 10px #666;
 }
 
 .img-profile {
@@ -317,7 +349,14 @@ header label:hover {
 }
 
 .banner-post {
-    background-color: #FFA69E;
+    background-color: #D1EBD9;
+}
+
+.share-label {
+    display: flex;
+    margin: 2%;
+    justify-content: flex-end;
+    width: 92%;
 }
 
 @media screen and (min-width:1000px) {
@@ -416,7 +455,6 @@ header label:hover {
         align-self: flex-end;
     } */
     .banner-post {
-        background-image: url(https://decora24.com/wp-content/uploads/2018/07/341392.jpg);
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -437,18 +475,15 @@ header label:hover {
         justify-content: flex-start;
         align-items: end;
     }
-     
     /* .img-preview{
         border:2px solid black;
         height: 5em;
         width: 7em; */
     .img-profile-font {
+        background-image: url(./lib/img/profile-font.png);
+        background-size: contain;
         height: 50%;
-        width: 100%;
-        border: 1px solid black;
-    }
-    .user-info {
-        margin: 5%;
+        background-repeat: no-repeat;
     }
     .comments {
         height: 8em;
