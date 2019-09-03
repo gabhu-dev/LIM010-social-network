@@ -15,8 +15,8 @@ export const addData = (event) => {
   addPost(textPost, user.uid, user.displayName, user.email, mode, countLike)
     .then(() => {
       document.getElementById('text-post').value = '';
-      alert('Post agregado'); // poner en la pantalla el mensaje success
+      alert('Su post se agregó!!!'); // poner en la pantalla el mensaje exitoso.
     }).catch((error) => {
-      console.log('error al añadir post', error); // poner en la pantalla el mensaje fail
+      console.log('error al añadir post', error); // poner en la pantalla el mensaje.
     });
 };
