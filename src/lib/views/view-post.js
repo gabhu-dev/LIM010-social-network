@@ -10,10 +10,10 @@ export const listPosts = (data) => {
   const time = new Date(data.timePost.toDate());
   const divPostItem = document.createElement('div');
   let template = '';
-  if (data.privacity === 'Público' || data.user === currentUser().displayName) {
+  if (data.privacity === 'Público' || data.email === currentUser().email) {
     template = `
   <label id="label-publicate" class="flex-c just-cont-sb">
-    <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
+    <p class="name-person bg-color-pink">Publicado por <strong>${data.user}</strong></p>
     <div class="flex-r date bg-color-pink">
       <p class="m-info">el    ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
       <p class="m-info">a las   ${time.getHours()}${':'}${time.getMinutes()}</p>
