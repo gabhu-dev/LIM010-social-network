@@ -44,7 +44,16 @@ export const editPost = (idDocPost, textPost, mode) => firebase.firestore().coll
 export const editLikes = (idD, like) => firebase.firestore().collection('posts').doc(idD).update({
   likes: like,
 });
-export const readLikes = idD => firebase.firestore().collection('posts').doc(idD).get();
+export const readLikes = (idD) => {
+  const readDataLikes = firebase.firestore().collection('posts').doc(idD).get()
+    .then((onSnapshot) => {
+      // querySnapshot.forEach((doc) => {
+      //   console.log(`${doc.id} => ${doc.data()}`);
+      // });
+      console.log(onSnapshot);
+    });
+  return readDataLikes;
+};
 // Llama los posts se usa en router
 export const getPost = (callback) => {
   firebase.firestore().collection('posts')

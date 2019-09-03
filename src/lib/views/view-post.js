@@ -73,17 +73,20 @@ export const listPosts = (data) => {
   btnLike.addEventListener('click', () => {
     const valor = data.likes + 1;
     console.log(valor);
-    editLikes(data.id, valor)
-      .then(() => {
-        readLikes(`${data.id}`)
-          .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              console.log(`${doc.id} => ${doc.data()}`);
-              // const likeWrite = document.getElementById('counter-like');
-              // likeWrite.innerHTML = doc.data().likes;
-            });
-          });
-      });
+    editLikes(data.id, valor);
+    console.log(data.id);
+    readLikes(data.id);
+    // .then(() => {
+    //   readLikes(data.id);
+    // readLikes(data.id)
+    //   .then((querySnapshot) => {
+    //     querySnapshot.forEach((doc) => {
+    //       console.log(`${doc.id} => ${doc.data()}`);
+    //       // const likeWrite = document.getElementById('counter-like');
+    //       // likeWrite.innerHTML = doc.data().likes;
+    // });
+    // });
+    //  });
   });
 
   btnComment.addEventListener('click', () => {
