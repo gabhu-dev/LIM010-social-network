@@ -14,10 +14,13 @@ export default () => {
     <input type="password" name="password" placeholder=" &#128274; Contraseña" id="password-signup" class="input-form pink" required>
     <button  class="btn-signup bg-color-blue c-darkblue" id="btn-sign-up">Registrar</button>
     <p class="error" id="msg-warning" ></p>
-	</form>`;
+  </form>`;
+
   formSignUp.innerHTML = template;
   formSignUp.setAttribute('class', 'bg-color-pink flex-r size center-items');
+
   const btnSignUp = formSignUp.querySelector('#btn-sign-up');
   btnSignUp.addEventListener('click', signUp);
+
   return formSignUp;
 };

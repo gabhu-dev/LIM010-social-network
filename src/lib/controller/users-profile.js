@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-// CONTROLANDO LA DATA-users
 // Agrega una coleccion 'users' al que le añade el nombre,email,id(autenticacion)
+// falta testear y ponerlo en model
 export const createUser = (nombre, email, id, photo) => {
   const addUserCollection = firebase.firestore().collection('users').doc(id).set({
     Usuario: nombre,
@@ -16,10 +16,12 @@ export const obtainProfile = (id) => {
     .then((doc) => {
       if (doc.exists) {
         const userInfo = document.getElementById('user-info');
+        const userName = document.getElementById('user-name');
         const img = document.getElementById('img-profile');
         userInfo.innerHTML = `<p class="">${doc.data().Usuario}</p>`;
         userInfo.innerHTML += `<p class="">${doc.data().Correo}</p>`;
         img.innerHTML += `<img src="${doc.data().Photo}" class="img-profile" alt="foto de perfil de ${doc.data().Usuario}">`;
+        userName.innerHTML = doc.data().Usuario;
         // console.log('Document data:', doc.data());
       } else {
         // doc.data() will be undefined in this case
