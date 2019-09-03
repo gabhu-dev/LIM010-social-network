@@ -3,8 +3,9 @@ import {
   signInEmail,
   signInFacebook,
   signOut,
-} from './ingresar.js';
-// import { userCollection } from './post.js';
+  currentUser,
+} from '../model/firebase-auth.js';
+import { createUser } from './users-profile.js';
 
 export const signIn = (e) => {
   e.preventDefault();
@@ -38,6 +39,8 @@ export const signIn = (e) => {
 export const signInFb = () => {
   signInFacebook()
     .then(() => {
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid, user.photoURL);
       window.location.hash = '#/home';
     }).catch((error) => {
       // Manejar errores aquí.
@@ -51,11 +54,9 @@ export const signInFb = () => {
 export const signInGoogleV = () => {
   signInGoogle()
     .then(() => {
-      // userCollection(user.user.displayName);
-      // console.log(user.user.displayName);
-      // .then(() => {
+      const user = currentUser();
+      createUser(user.displayName, user.email, user.uid, user.photoURL);
       window.location.hash = '#/home';
-      // console.log(user);
     }).catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {

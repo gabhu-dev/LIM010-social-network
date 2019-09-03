@@ -1,5 +1,7 @@
+/* eslint-disable no-case-declarations */
 // esto actua como controlador general de las urls
 import { components } from '../views/components.js';
+import { getPost } from '../model/firebase-db.js';
 
 export const viewTemplate = (routes) => {
   const container = document.getElementById('container');
@@ -12,8 +14,14 @@ export const viewTemplate = (routes) => {
       container.appendChild(components.signUp());
       break;
     case '#/home':
-      container.appendChild(components.home());
+      const callback = (objData) => {
+        container.innerHTML = '';
+        container.appendChild(components.home(objData));
+      };
+      getPost(callback);
       break;
+    // case '#/profile':
+    //   break;
     default:
       container.appendChild(components.signIn());
       break;

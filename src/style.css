@@ -39,6 +39,17 @@
     background-color: #fedcd2;
 }
 
+.bg-color-darkpink{
+    background-color: #df744a;
+}
+
+.bg-color-darkblue{
+    background-color:rgba(85, 169, 162, .25);
+}
+.shad{
+    box-shadow: inset 0 0 .5em;
+    color:rgba(45,141,133,.5);
+}
 .c-darkpink {
     color: #df744a;
 }
@@ -46,6 +57,7 @@
 .c-darkblue {
     color: #2d8d85;
 }
+
 
 .w-h-max {
     width: max-content;
@@ -62,6 +74,45 @@
 
 .just-cont-cen {
     justify-content: center;
+}
+
+.al-self-start {
+    align-self: flex-start;
+}
+
+.al-self-center {
+    align-self: center;
+}
+
+.al-self-end {
+    align-self: flex-end;
+}
+
+.m-auto {
+    margin: auto;
+}
+.pad-1{
+    padding: 1em;
+}
+.w-80 {
+    width: 100%;
+}
+.br-1{
+    border-radius: 1em;
+}
+.m-bott-1{
+    margin-bottom: 1em;
+}
+.border{
+    border: solid #ffffff;
+}
+.info-comment{
+    padding: .5em 1em;
+    color: #2d8d85;
+}
+textarea {
+    resize: none;
+    font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -122,7 +173,7 @@
     height: 10%;
     display: flex;
     flex-direction: row;
-    align-content: center
+    align-content: center;
 }
 
 .icons-size {
@@ -140,8 +191,6 @@
 
 .logo {
     height: 8em;
-    /*verificar si el logo no se ve muy grande en el celular*/
-    /*border-radius: 2em;*/
     margin: 2em;
 }
 
@@ -158,55 +207,186 @@
     height: 5em;
 }
 
+.shadow {
+    box-shadow: 2px 2px 10px #666;
+}
+
+.user-info {
+    margin: 5%;
+    border-bottom: 2px solid white;
+}
+
 .post-label {
-    width: 80%;
-    height: 11.5em;
-    border-radius: 2em;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
+    margin: 1em auto;
+    border-radius: 1em;
+    width: 95%;
 }
 
 .post {
     width: 90%;
-    height: 9em;
-    border-radius: 2em;
+    padding: .5em;
+    border-radius: .5em;
     border: none;
+    margin: 1em;
+    background-color: #ffffff;
+}
+
+.post-v {
+    padding: .5em;
+    border: none;
+}
+
+.post-publicated {
+    width: 100%;
+    padding: 3% 5%;
+    border: none;
+    height: max-content;
+    background-color:#ffffff;
+}
+
+.name-person {
+    padding: 3%;
+    border-bottom: 2px solid white;
+}
+
+strong {
+    color: #2d8d85;
+}
+
+.m-info {
+    margin: 0 1em;
+}
+
+.width {
+    width: 90%;
+}
+
+.date {
+    width: 100%;
+    padding: 2% 0 2%;
+}
+
+.options-like-deleted {
+    margin: 1em;
 }
 
 .btn-share {
+    width: max-content;
     border: none;
     border-radius: 1em;
-    margin: 1em 1.5em 0;
-    padding: .4em;
+    padding: .5em;
     cursor: pointer;
-    align-self: flex-end;
+    margin-left: 6%;
 }
 
 .logo-home {
-    width: 4em;
+    height: 2.5em;
+    margin-left: 30%;
 }
 
+.logo-nav {
+    height: 2.5em;
+    margin: 0.1em;
+}
 
 .one-col {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-.nav ul {
-    display: flex;
-    list-style: none;
-}
-.label-nav{
-    display: block;
+
+header label {
+    display: inline-block;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
     padding: 10px;
+    border-right: 1px solid #fff;
 }
-.label-nav:hover {
-cursor: pointer;
-background:rgba(0,0,0,0.2);
+
+header label:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
 }
-@media screen and (min-width:1126px) {
+
+.nav {
+    background-color: teal;
+    width: 70%;
+    position: absolute;
+    margin-left: -70%;
+}
+
+.nav ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.nav li {
+    flex-grow: 1;
+}
+
+.nav li:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#btn-menu:checked~.nav {
+    margin: 0;
+}
+
+.size-profile {
+    width: 90%;
+    height: max-content;
+    margin: 5%;
+    box-shadow: 2px 2px 10px #666;
+}
+
+.img-profile {
+    margin: 1%;
+    height: 4.5em;
+    /* background-image: url(http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.btn-save {
+    width: max-content;
+    height: max-content;
+    background-color: #df744a;
+    float: right;
+    border: none;
+}
+
+.name-comment {
+    background-color: #fdb098;
+}
+
+.comment-share {
+    width: 90%;
+    height: 2em;
+    border: 1px solid black;
+}
+
+.banner-post {
+    background-color: #D1EBD9;
+}
+
+.share-label {
+    display: flex;
+    margin: 2%;
+    justify-content: flex-end;
+    width: 92%;
+}
+
+@media screen and (min-width:1000px) {
     /*--------------------------Generales-------------------------------------------------*/
     .flex-c {
         display: flex;
@@ -223,6 +403,22 @@ background:rgba(0,0,0,0.2);
         height: 100vh;
     }
     /*---------------------------------hu1--------------------------------------------------*/
+    .logo-nav {
+        display: block;
+        height: 2.5em;
+    }
+    .buttons-post-label {
+        width: 50%;
+        background-color: #2d8d85;
+        display: flex;
+        justify-content: space-around;
+    }
+    .divpost {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-items: center;
+    }
     .banner {
         flex-grow: 1;
         width: 50%;
@@ -245,53 +441,79 @@ background:rgba(0,0,0,0.2);
         width: 38em;
     }
     /*-------------------------------hu3------------------------------------------------*/
-    .h-f-height {
-        height: 5em;
-    }
-  
-    .nav {
-        width: 90%;
-        background-color: #df744a;
-    }
-    .label-nav{
+    /* .h-f-height {
+      height: 5em;
+  } */
+    header label {
         display: none;
+    }
+    .nav {
+        margin: 0;
+        width: 100%;
+        position: inherit;
     }
     .nav ul {
         display: flex;
-        list-style: none;
+        flex-direction: row;
     }
-    .list {
-        margin: 1em 3em 0em 2em;
+    .nav li a {
+        text-align: center;
+        padding: 2%;
     }
-   
-    .size-profile {
-        width: 26%;
-        height: 13em;
-        background-color: #2d8d85;
+    .logo-home {
+        display: none;
     }
     .post-label {
-        width: 70%;
-        height: 11.5em;
-        border-radius: 2em;
-        border: none;
-        align-items: center;
-        justify-content: center;
+        margin: 1em;
     }
     .post {
         width: 90%;
-        height: 9em;
-        border-radius: 2em;
+        border-radius: 0.5em;
         border: none;
+        background-color: #ffffff;
     }
-    .btn-share {
+    /* .btn-share {
         border: none;
         border-radius: 1em;
         margin: 1em 1.5em 0;
         padding: .4em;
         cursor: pointer;
         align-self: flex-end;
+    } */
+    .banner-post {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #ffffff;
     }
-    .logo-home {
-        height: 4em;
+    .size-profile {
+        width: 30%;
+        height: 10em;
+        margin: 2%;
+    }
+    .post-up {
+        background-color: transparent;
+        width: -webkit-fill-available;
+    }
+    .cursor {
+        cursor: pointer;
+    }
+    .no-center {
+        justify-content: flex-start;
+        align-items: end;
+    }
+    /* .img-preview{
+        border:2px solid black;
+        height: 5em;
+        width: 7em; */
+    .img-profile-font {
+        background-image: url(./lib/img/profile-font.png);
+        background-size: contain;
+        height: 50%;
+    }
+    .comments {
+        height: 8em;
+        width: 100%;
+        border: 1px solid black;
     }
 }
