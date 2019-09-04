@@ -57,6 +57,6 @@ describe('cerrar sesion', () => {
   });
 });
 
-describe('current user',()=>{
-  it('deberia poder leer ')
-})
+// describe('current user',()=>{
+//   it('deberia poder leer ')
+// })
