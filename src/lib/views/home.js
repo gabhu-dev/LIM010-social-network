@@ -41,7 +41,7 @@ export default (allPost) => {
             <option value="Público">Público</option>
             <option value="Privado">Privado</option>
           </select>
-          <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
+          <button type="button" id="btn-save" class="bg-color-white btn-share c-darkblue al-self-end">Compartir</button>
         </div>
   </div>
   <div class="form-post post-label" id="container-list-post">

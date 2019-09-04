@@ -5,21 +5,24 @@ export const viewComment = (obj) => {
   const time = new Date(obj.timeComment.toDate());
   const divCommentItem = document.createElement('div');
   divCommentItem.innerHTML = '';
-  const template = `  
-  <p class="info-comment" id="nombre">${obj.email}</p>
-  <div class="date flex-r">
-    <p class="m-info info-comment">el ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
-    <p class="m-info info-comment">a las ${time.getHours()}${':'}${time.getMinutes()}</p>
+  const template = `
+  <div class="bg-color-lightpink br-1 flex-c al-self-center w-90">
+  <div class="flex-r just-cont-sa">
+    <p class="pad-025 c-darkblue f-size-08" id="nombre ">${obj.email}</p>
+    <p class="pad-025 c-darkblue f-size-08">el ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
+    <p class="pad-025 c-darkblue f-size-08">a las ${time.getHours()}${':'}${time.getMinutes()}</p>
   </div>
-  <textarea id="comment" class="post c-darkblue" type="text" disabled>${obj.comment}</textarea>
-  <div class="">
-    <button type="button" id="btn-delete-comment" class="btn-share m-bott-1">Eliminar</button>
-    <button type="button" id="btn-edit-comment" class="btn-share m-bott-1">Editar</button>
-    <button type="button" id="btn-save-comment" class="hide btn-share m-bott-1">Guardar Edición</button>
+  <textarea id="comment" class="w-80 no-border pad-025 br-1 c-darkblue al-self-center bg-color-lightpink" type="text" disabled>${obj.comment}</textarea>
+  </div>
+  
+  <div class="flex-r center-items just-cont-sa m-025">
+    <button type="button" id="btn-delete-comment" class="btn-share bg-color-blue">Eliminar</button>
+    <button type="button" id="btn-edit-comment" class="btn-share bg-color-blue">Editar</button>
+    <button type="button" id="btn-save-comment" class="hide btn-share bg-color-darkblue">Guardar Edición</button>
   </div>`;
 
   divCommentItem.innerHTML = template;
-  divCommentItem.setAttribute('class', 'bg-color-darkblue shad  br-1 m-bott-1');
+  divCommentItem.setAttribute('class', 'bg-color-white m-05 h-8 flex-c');
 
   const textArea = divCommentItem.querySelector('#comment');
   const btnDeleteComment = divCommentItem.querySelector('#btn-delete-comment');
