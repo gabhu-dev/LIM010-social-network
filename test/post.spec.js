@@ -1,7 +1,15 @@
 /* eslint-disable no-console */
 import MockFirebase from 'mock-cloud-firestore';
 import {
-  addPost, getPost, deletePost, editPost, addComment, readComments, deleteComment, editComment,
+  addPost,
+  getPost,
+  deletePost,
+  editPost,
+  addComment,
+  readComments,
+  deleteComment,
+  editComment,
+  editLikes,
 } from '../src/lib/model/firebase-db.js';
 
 const fixtureData = {
@@ -14,7 +22,7 @@ const fixtureData = {
           user: 'gabriela',
           email: 'gabhu@hotmail.es',
           privacity: 'publico',
-          like: 1,
+          likes: 1,
           __collection__: {
             comments: {
               __doc__: {
@@ -34,7 +42,7 @@ const fixtureData = {
           user: 'sara',
           email: 'sabsusu@hotmail.com',
           privacity: 'privado',
-          like: 0,
+          likes: 0,
           __collection__: {
             comments: {
               __doc__: {
@@ -116,4 +124,15 @@ describe('edit comment', () => {
         expect(result.comment).toBe('a mi no me gustan');
         done();
       })));
+});
+
+describe('edit like', () => {
+  it('Debería poder cambiar likes en el post con id:abc123', done => editLikes('abc123', 2)
+    .then(() => getPost(
+      (data) => {
+        const result = data.find(posts => posts.likes === 2);
+        expect(result.likes).toBe(2);
+        done();
+      },
+    )));
 });

@@ -5,7 +5,7 @@ import {
   signOut,
   currentUser,
 } from '../model/firebase-auth.js';
-import { createUser } from './users-profile.js';
+import { createUser } from '../model/firebase-db.js';
 
 export const signIn = (e) => {
   e.preventDefault();
