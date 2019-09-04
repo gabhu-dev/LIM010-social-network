@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 
 import { currentUser } from '../model/firebase-auth.js';
-import { deletePost, editPost, addComment, readComments } from '../model/firebase-db.js';
+import { deletePost, editPost, addComment, readComments, editLikes } from '../model/firebase-db.js';
 import { viewComment } from './view-comment.js';
 
 export const listPosts = (data) => {
@@ -27,7 +27,7 @@ export const listPosts = (data) => {
   </label>  
   <div class="options-like-deleted flex-r">
     <button id="like-${data.id}" class="btn-share"><i class='bx bx-heart cursor'></i></button>
-    <p id="counter-like"></p> 
+    <p id="counter-like">${data.likes}</p> 
     <button id="edit-${data.id}" class="btn-share"><i class='bx bx-edit cursor'>Editar</i></button>
     <button type="button" class="hide cursor  btn-share" id="edit-post">Guardar Edición</button>
     <button id="delete-${data.id}" class="btn-share cursor">Eliminar</button>
@@ -44,6 +44,7 @@ export const listPosts = (data) => {
 
     const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
     const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);
+    const btnLike = divPostItem.querySelector(`#like-${data.id}`);
     const btnComment = divPostItem.querySelector('#btn-comment');
     const comments = divPostItem.querySelector('#comments-container');
     const modeEdit = divPostItem.querySelector('#select-mode');
@@ -77,6 +78,11 @@ export const listPosts = (data) => {
     readComments(`${data.id}`, (dato) => {
       comments.innerHTML = '';
       dato.forEach(obj => comments.appendChild(viewComment(obj)));
+    });
+
+    btnLike.addEventListener('click', () => {
+      const likeValor = data.likes + 1;
+      editLikes(data.id, likeValor);
     });
   }
   return divPostItem;
