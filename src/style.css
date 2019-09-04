@@ -34,7 +34,9 @@
 .bg-color-blue {
     background-color: #8fd8d2;
 }
-
+.bg-color-lightpink{
+    background-color: #ffeeea;
+}
 .bg-color-pink {
     background-color: #fedcd2;
 }
@@ -46,6 +48,9 @@
 .bg-color-darkblue{
     background-color:rgba(85, 169, 162, .25);
 }
+.bg-color-white{
+    background-color: #ffffff;
+}
 .shad{
     box-shadow: inset 0 0 .5em;
     color:rgba(45,141,133,.5);
@@ -53,12 +58,25 @@
 .c-darkpink {
     color: #df744a;
 }
-
+.h-1{
+    height: 1em;
+}
+.h-6{
+    height: 6em;
+}
+.h-8{
+    height: 8em;
+}
+.w-90{
+    width: 90%;
+}
 .c-darkblue {
     color: #2d8d85;
 }
 
-
+.no-border{
+    border: none;
+}
 .w-h-max {
     width: max-content;
     height: max-content;
@@ -91,11 +109,23 @@
 .m-auto {
     margin: auto;
 }
+.m-025{
+    margin: .25em;
+}
+.m-05{
+    margin: .5em 0;
+}
+.pad-025{
+    padding: .25em;
+}
 .pad-1{
     padding: 1em;
 }
 .w-80 {
     width: 100%;
+}
+.f-size-08{
+    font-size: .8em;
 }
 .br-1{
     border-radius: 1em;
@@ -107,12 +137,23 @@
     border: solid #ffffff;
 }
 .info-comment{
-    padding: .5em 1em;
+    padding: .25em .75em;
     color: #2d8d85;
 }
 textarea {
     resize: none;
     font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.write-comments{
+        height: 3.5em;
+        width: 95%;
+        padding: .25em .75em;
+        margin: .3em;
+        border: none;
+        border: solid  #fedcd2 1.5px;
 }
 
 
@@ -237,9 +278,11 @@ textarea {
 }
 
 .post-publicated {
-    width: 100%;
-    padding: 3% 5%;
+    width: 95%;
+    padding: .25em .75em;
     border: none;
+    margin:.25em;
+    border: solid #efb9a4 1px;
     height: max-content;
     background-color:#ffffff;
 }
@@ -252,7 +295,7 @@ textarea {
 strong {
     color: #2d8d85;
 }
-
+#FEDCD2
 .m-info {
     margin: 0 1em;
 }
@@ -263,7 +306,7 @@ strong {
 
 .date {
     width: 100%;
-    padding: 2% 0 2%;
+    padding: .25em .75em;
 }
 
 .options-like-deleted {
@@ -276,7 +319,6 @@ strong {
     border-radius: 1em;
     padding: .5em;
     cursor: pointer;
-    margin-left: 6%;
 }
 
 .logo-home {
