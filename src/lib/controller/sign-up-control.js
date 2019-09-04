@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { signUpWithEmail } from '../model/firebase-auth.js';
-import { createUser } from './users-profile.js';
+import { createUser } from '../model/firebase-db.js';
 
 export const signUp = (e) => {
   e.preventDefault();
