@@ -109,6 +109,9 @@
 .m-auto {
     margin: auto;
 }
+.m-r-1{
+    margin-right: 1em;
+}
 .m-025{
     margin: .25em;
 }

@@ -37,11 +37,11 @@ export default (allPost) => {
       <div class="post-label bg-color-pink flex-c center-items shadow">
         <textarea cols="50" rows="2" type="text" id="text-post" class="post c-darkblue" placeholder="¿Qué quieres compartir?"></textarea>
         <div class="flex-r share-label">
-          <select id="mode" class="al-self-center">
+          <select id="mode" class="al-self-center m-r-1">
             <option value="Público">Público</option>
             <option value="Privado">Privado</option>
           </select>
-          <button type="button" id="btn-save" class="bg-color-white btn-share c-darkblue al-self-end">Compartir</button>
+          <button type="button" id="btn-save" class="bg-color-blue btn-share c-darkblue al-self-end">Compartir</button>
         </div>
   </div>
   <div class="form-post post-label" id="container-list-post">
