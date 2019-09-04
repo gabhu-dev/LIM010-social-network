@@ -13,8 +13,8 @@ export const listPosts = (data) => {
   if (data.privacity === 'Público' || data.email === currentUser().email) {
     template = `
   <label id="label-publicate" class="flex-c just-cont-sb">
-    <p class="name-person bg-color-pink">Publicado por <strong>${data.user}</strong></p>
-    <div class="flex-r date bg-color-pink just-cont-sa">
+    <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
+    <div class="flex-r date bg-color-pink">
       <p class="m-info">el    ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
       <p class="m-info">a las   ${time.getHours()}${':'}${time.getMinutes()}</p>
       <p class="m-info"><strong>${data.privacity}</strong></p>
