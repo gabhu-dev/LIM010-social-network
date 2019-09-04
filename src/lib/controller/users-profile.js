@@ -1,10 +1,12 @@
+import { obtainCollectionUsers } from '../model/firebase-db.js';
+
 /* eslint-disable no-console */
 // Agrega una coleccion 'users' al que le añade el nombre,email,id(autenticacion)
 // falta testear y ponerlo en model
 
 
 export const obtainProfile = (id) => {
-  firebase.firestore().collection('users').doc(id).get()
+  obtainCollectionUsers(id)
     .then((doc) => {
       if (doc.exists) {
         const userInfo = document.getElementById('user-info');

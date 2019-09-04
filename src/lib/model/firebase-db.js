@@ -1,4 +1,3 @@
-
 // coleccion user
 export const createUser = (nombre, email, id, photo) => {
   const addUserCollection = firebase.firestore().collection('users').doc(id).set({
@@ -9,8 +8,9 @@ export const createUser = (nombre, email, id, photo) => {
   });
   return addUserCollection;
 };
-export const obtainUsers = (id) => {
-  firebase.firestore().collection('users').doc(id).get();
+export const obtainCollectionUsers = (id) => {
+  const get = firebase.firestore().collection('users').doc(id).get();
+  return get;
 };
 // Agrega un post
 export const addPost = (textPost, id, name, mail, mode, like) => firebase.firestore().collection('posts')
