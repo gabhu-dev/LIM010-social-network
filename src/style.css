@@ -280,7 +280,6 @@ textarea {
 .post-publicated {
     width: 95%;
     padding: .25em .75em;
-    border: none;
     margin:.25em;
     border: solid #efb9a4 1px;
     height: max-content;
@@ -295,7 +294,6 @@ textarea {
 strong {
     color: #2d8d85;
 }
-#FEDCD2
 .m-info {
     margin: 0 1em;
 }
@@ -393,7 +391,6 @@ header label:hover {
 .img-profile {
     margin: 1%;
     height: 4.5em;
-    /* background-image: url(http://www.coca-colamexico.com.mx/content/dam/journey/mx/es/private/historia/2018/agosto/gato-agosto.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -483,9 +480,6 @@ header label:hover {
         width: 38em;
     }
     /*-------------------------------hu3------------------------------------------------*/
-    /* .h-f-height {
-      height: 5em;
-  } */
     header label {
         display: none;
     }
@@ -514,14 +508,6 @@ header label:hover {
         border: none;
         background-color: #ffffff;
     }
-    /* .btn-share {
-        border: none;
-        border-radius: 1em;
-        margin: 1em 1.5em 0;
-        padding: .4em;
-        cursor: pointer;
-        align-self: flex-end;
-    } */
     .banner-post {
         display: flex;
         flex-direction: row;
@@ -544,10 +530,7 @@ header label:hover {
         justify-content: flex-start;
         align-items: end;
     }
-    /* .img-preview{
-        border:2px solid black;
-        height: 5em;
-        width: 7em; */
+
     .img-profile-font {
         background-image: url(./lib/img/profile-font.png);
         background-size: contain;
