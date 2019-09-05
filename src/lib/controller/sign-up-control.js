@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { signUpWithEmail } from '../model/firebase-auth.js';
+import { signUpWithEmail, currentUser } from '../model/firebase-auth.js';
 import { createUser } from '../model/firebase-db.js';
 
 export const signUp = (e) => {
@@ -13,7 +13,7 @@ export const signUp = (e) => {
     .then(() => {
       messageErrorLabel.classList.remove('error');
       messageErrorLabel.innerHTML = '';
-      const user = firebase.auth().currentUser;
+      const user = currentUser();
       console.log(user);
       window.location.hash = '#/';
       createUser(nickname, email, user.uid, foto);

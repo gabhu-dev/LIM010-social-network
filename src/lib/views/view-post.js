@@ -14,12 +14,12 @@ export const listPosts = (data) => {
     template = `
   <label id="label-publicate" class="flex-c just-cont-sb">
     <p class="name-person bg-color-pink">Publicado por <strong>${data.email}</strong></p>
-    <div class="flex-r date bg-color-pink">
+    <div class="flex-r date bg-color-pink just-cont-sa">
       <p class="m-info">el    ${time.getDate()}${'/'}${time.getMonth() + 1}${'/'}${time.getFullYear()}</p>
       <p class="m-info">a las   ${time.getHours()}${':'}${time.getMinutes()}</p>
       <p class="m-info"><strong>${data.privacity}</strong></p>
     </div>
-    <textarea id="text-post" class="post-publicated c-darkblue br-1 al-self-center" disabled>${data.post}</textarea>
+    <textarea id="text-post" class="post-publicated c-darkblue al-self-center" disabled>${data.post}</textarea>
     <select class="hide" id="select-mode">
       <option value="Público">Público</option>
       <option value="Privado">Privado</option>
