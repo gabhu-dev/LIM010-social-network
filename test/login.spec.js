@@ -58,14 +58,10 @@ describe('cerrar sesion', () => {
   });
 });
 
+
 describe('current user', () => {
-  it('deberia poder leer la data del usuario', () => {
-    signInEmail('laboratoria@lab.com', '123456789')
-      .then(() => {
-        currentUser()
-          .then((user) => {
-            expect(user.email).toBe('laboratoria@lab.com');
-          });
-      });
-  });
+  it('debería devolver usuario con sesión activa', () => signInEmail('laboratoria@gmail.com', '123456').then(() => {
+    const user = currentUser();
+    expect(user.email).toBe('laboratoria@gmail.com');
+  }));
 });
