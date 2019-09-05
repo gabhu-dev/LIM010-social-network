@@ -3,6 +3,8 @@ import {
   signUpWithEmail,
   signInGoogle,
   signInFacebook,
+  signOut,
+  currentUser,
 } from '../src/lib/model/firebase-auth.js';
 
 // configuracion de mock de firebase
@@ -42,4 +44,29 @@ describe('login con facebook', () => {
     .then((user) => {
       expect(user.providerData[0].providerId).toBe('facebook.com');
     }));
+});
+
+describe('cerrar sesion', () => {
+  it('deberia cerrar sesion', (done) => {
+    signInEmail('laboratoria@hotmail.la', '123456')
+      .then(() => {
+        signOut()
+          .then((response) => {
+            expect(response).toBe(undefined);
+            done();
+          });
+      });
+  });
+});
+
+describe('current user', () => {
+  it('deberia poder leer la data del usuario', () => {
+    signInEmail('laboratoria@lab.com', '123456789')
+      .then(() => {
+        currentUser()
+          .then((user) => {
+            expect(user.email).toBe('laboratoria@lab.com');
+          });
+      });
+  });
 });

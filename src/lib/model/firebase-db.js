@@ -85,8 +85,8 @@ export const readComments = (idPost, callback) => {
     });
 };
 export const editLikes = (idD, like) => {
-  const fy = firebase.firestore().collection('posts').doc(idD).update({
+  const likeData = firebase.firestore().collection('posts').doc(idD).update({
     likes: like,
   });
-  return fy;
+  return likeData;
 };
