@@ -145,10 +145,11 @@
 }
 textarea {
     resize: none;
-    font-family: 'Quicksand', sans-serif;
 }
 
-
+.b-radius{
+    border-radius: 1em;
+}
 
 .write-comments{
         height: 3.5em;
@@ -252,7 +253,7 @@ textarea {
 }
 
 .shadow {
-    box-shadow: 2px 2px 10px #666;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);;
 }
 
 .user-info {
@@ -388,7 +389,7 @@ header label:hover {
     width: 90%;
     height: max-content;
     margin: 5%;
-    box-shadow: 2px 2px 10px #666;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 }
 
 .img-profile {
@@ -535,8 +536,11 @@ header label:hover {
     }
 
     .img-profile-font {
-        background-image: url(./lib/img/profile-font.png);
+        background-image: url(./lib/img/cactus-wallpaper-tres.png);
         background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #ffe7df;
         height: 50%;
     }
     .comments {

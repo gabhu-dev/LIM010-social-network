@@ -27,9 +27,9 @@ export const listPosts = (data) => {
   </label>  
   <div class="m-bott-1 flex-r just-cont-sa">
     <button id="like-${data.id}" class="btn-share bg-color-darkpink"><i id="counter-like" class='bx bx-heart cursor'>${data.likes}</i></button>
-    <button id="edit-${data.id}" class="btn-share bg-color-blue"><i class='bx bx-edit cursor'>Editar</i></button>
-    <button type="button" class="hide cursor  btn-share bg-color-blue" id="edit-post">Guardar Edición</button>
-    <button id="delete-${data.id}" class="btn-share cursor bg-color-blue">Eliminar</button>
+    <button type="button" id="edit-${data.id}" class="btn-share bg-color-blue cursor"><i class='bx bx-edit'></i>Editar</button>
+    <button type="button" id="edit-post" class="hide cursor btn-share bg-color-blue">Guardar Edición</button>
+    <button type="button" id="delete-${data.id}" class="btn-share cursor bg-color-blue">Eliminar</button>
   </div>
   
   <div id="textarea-comment" class="bg-color-white h-6 flex-c">
@@ -39,7 +39,7 @@ export const listPosts = (data) => {
   <div id="comments-container" class=""></<div>`;
 
     divPostItem.innerHTML = template;
-    divPostItem.setAttribute('class', 'flex-c  bg-color-white post-label w-80 shadow');
+    divPostItem.setAttribute('class', 'flex-c b-radius bg-color-white post-label w-80 shadow ');
 
     const btnDelete = divPostItem.querySelector(`#delete-${data.id}`);
     const btnEdit = divPostItem.querySelector(`#edit-${data.id}`);

@@ -25,7 +25,7 @@ export default (allPost) => {
 
   <div class="banner-post flex-c center-items">
     <div class="center-items size-profile al-self-start">
-      <div id="img-profile-font" class="img-profile-font bg-color-pink ">
+      <div id="img-profile-font" class="img-profile-font">
       </div>
       <div class="flex-r bg-color-pink">
         <div id="img-profile" class="img-profile">
